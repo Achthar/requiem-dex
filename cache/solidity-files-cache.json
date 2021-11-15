@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/achthar/requiem-dex/contracts/AssetHelpers.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "c63a605b25690f4204b55dc0f8ce8d30",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "7f66f52c383050bdcbe8794e4a5f5646",
       "sourceName": "contracts/AssetHelpers.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -33,11 +33,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -47,18 +42,18 @@
         "./interfaces/IAsset.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "AssetHelpers"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/ERC20/IERC20.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "dad9c7a1fc79d7cc0d45bfeeafff2374",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "9d6ad90f7887eebd6a1833d82b989f09",
       "sourceName": "contracts/interfaces/ERC20/IERC20.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -85,28 +80,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IERC20"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IWETH.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "f77618e9ac021fdb46293bf6af138c1d",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "e574bed52d313692102b4749397d2b73",
       "sourceName": "contracts/interfaces/IWETH.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -133,11 +123,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -145,18 +130,18 @@
         "./ERC20/IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IWETH"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IAsset.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "e3073f955add7b77a4e44d6a4ebec573",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "b4186733bffe857a954f33d6d5d802e4",
       "sourceName": "contracts/interfaces/IAsset.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -183,28 +168,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IAsset"
       ]
     },
     "/home/achthar/requiem-dex/contracts/AssetTransfersHandler.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "44307c7ab31aeffed2927af9a4821361",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "54436e06655d5be081b9686a0fe71418",
       "sourceName": "contracts/AssetTransfersHandler.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -231,11 +211,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -250,18 +225,18 @@
         "./AssetHelpers.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "AssetTransfersHandler"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/RequiemErrors.sol": {
-      "lastModificationDate": 1636979824326,
-      "contentHash": "21ba8b0aa43f77ea7c2a8ff951fa14b8",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "5c72b2da6c683fad85346e01ee7227bc",
       "sourceName": "contracts/libraries/helpers/RequiemErrors.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -288,17 +263,12 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Errors",
@@ -306,11 +276,11 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/SafeERC20.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "cb46052dde5a2dd168850d5f72e38966",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "25438666af6a050f84ce8e952cc8fe32",
       "sourceName": "contracts/libraries/SafeERC20.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -337,11 +307,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -350,18 +315,18 @@
         "../interfaces/ERC20/IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "SafeERC20"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/Address.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "a4e60af0285f42d890966cf36f941a12",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "1b438824f0e2f4786f53c04869d941eb",
       "sourceName": "contracts/libraries/Address.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -388,11 +353,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -400,18 +360,18 @@
         "./helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Address"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IVault.sol": {
-      "lastModificationDate": 1636973886474,
-      "contentHash": "c8348fc96bea6cd854237a07b229bffa",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "81b974e7bdd68674a1ba86c40cc2d159",
       "sourceName": "contracts/interfaces/IVault.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -438,11 +398,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -457,18 +412,18 @@
         "./IProtocolFeesCollector.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IVault"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/ISignaturesValidator.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "f49c94a207f865e36878381c7fba57ce",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "e13d752093e353cb17bdfe0c23004b3a",
       "sourceName": "contracts/interfaces/ISignaturesValidator.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -495,28 +450,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ISignaturesValidator"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/ITemporarilyPausable.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "88475e5f7a227ca89d9048a807e6aab2",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "13c8f47a769a583a7b058e8000b91b5b",
       "sourceName": "contracts/interfaces/ITemporarilyPausable.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -543,28 +493,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ITemporarilyPausable"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IAuthorizer.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "f6af0a23d755e479434819570087d6c7",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "212b1baabc15c28755cfa2ba75378dfd",
       "sourceName": "contracts/interfaces/IAuthorizer.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -591,28 +536,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IAuthorizer"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IFlashLoanRecipient.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "d09b0f678e2b60a34eab64959d201ff2",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "697106ac5b243eb786a2afe2495146fa",
       "sourceName": "contracts/interfaces/IFlashLoanRecipient.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -639,11 +579,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -651,18 +586,18 @@
         "./ERC20/IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IFlashLoanRecipient"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IProtocolFeesCollector.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "6a960ccb00d44a031c5ef40dc836be2c",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "eff9232e28dd3fe4146bd0de5de783ca",
       "sourceName": "contracts/interfaces/IProtocolFeesCollector.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -689,11 +624,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -703,18 +633,18 @@
         "./IAuthorizer.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IProtocolFeesCollector"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockAssetTransfersHandler.sol": {
-      "lastModificationDate": 1636969356757,
-      "contentHash": "8fcfe65cd74f5b1dd795db44c87138b3",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "fcc4bae85f0dd943818d43bcfe653387",
       "sourceName": "contracts/test/vault/MockAssetTransfersHandler.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -741,11 +671,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -756,18 +681,18 @@
         "../../AssetTransfersHandler.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "MockAssetTransfersHandler"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/math/Math.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "b7aa207abdf75533e80f31163b1d6141",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "aabdca3d7e063f25127a950932e94675",
       "sourceName": "contracts/libraries/math/Math.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -794,11 +719,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -806,18 +726,18 @@
         "../helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Math"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/math/FixedPoint.sol": {
-      "lastModificationDate": 1636973453446,
-      "contentHash": "a956a5d33059393680d654255e573973",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "571bbbdf2cdc5a732d18ecee534ef32b",
       "sourceName": "contracts/libraries/math/FixedPoint.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -844,11 +764,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -856,18 +771,18 @@
         "./LogExpMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "FixedPoint"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/math/LogExpMath.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "c2b88d95f4f381f61b113259a34a5df8",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "d70085437f4aa51027edc00846a64423",
       "sourceName": "contracts/libraries/math/LogExpMath.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -894,11 +809,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -906,18 +816,18 @@
         "../helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "LogExpMath"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockFlashLoanRecipient.sol": {
-      "lastModificationDate": 1636973978968,
-      "contentHash": "8f8f69798ee2d66706db86629ad94140",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "53c4a25f2b79c1612ebaba789b25297c",
       "sourceName": "contracts/test/vault/MockFlashLoanRecipient.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -944,11 +854,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -961,16 +866,16 @@
         "../../interfaces/IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": []
     },
     "/home/achthar/requiem-dex/contracts/test/TestToken.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "e6e675880b5f89509b0f0b825d443041",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "ee093a4127f68b5ea4dc027519ef45bf",
       "sourceName": "contracts/test/TestToken.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -997,11 +902,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1011,18 +911,18 @@
         "../libraries/AccessControl.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "TestToken"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/ERC20Test.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "057114fe1ffe834004663996de3dda5f",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "fd17e47f47a76988f1c625fc7114a32b",
       "sourceName": "contracts/test/ERC20Test.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1049,11 +949,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1063,18 +958,18 @@
         "../libraries/SafeMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ERC20Test"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ERC20Burnable.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "56ac2951b6b728e798dc6986f90d4dd6",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "2a1557caadbdec2839f2afabe29eb898",
       "sourceName": "contracts/libraries/ERC20Burnable.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1101,11 +996,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1114,18 +1004,18 @@
         "./SafeMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ERC20Burnable"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/AccessControl.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "c791ebbd06f9aa9ea9579559e585e454",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "0948db2565b766e917bc4c53e53baa92",
       "sourceName": "contracts/libraries/AccessControl.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1152,11 +1042,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1165,18 +1050,18 @@
         "./EnumerableSet.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "AccessControl"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/SafeMath.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "6db279b52f880c4f0eb404c4e917ace4",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "1991569222f540b08ef6616e561b90cc",
       "sourceName": "contracts/libraries/SafeMath.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1203,11 +1088,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1215,18 +1095,18 @@
         "./helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "SafeMath"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ERC20.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "2e065d3229a103d165b30ce0b0a133a7",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "cd45872b276482eba4cbe3fe8266e742",
       "sourceName": "contracts/libraries/ERC20.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1253,11 +1133,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1267,18 +1142,18 @@
         "./SafeMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ERC20"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/EnumerableSet.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "ac0ef117c8dfb62a015b79d2d6e1a037",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "84a00b51104198e5a97c173ab26020f0",
       "sourceName": "contracts/libraries/EnumerableSet.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1305,11 +1180,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1317,18 +1187,18 @@
         "./helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "EnumerableSet"
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPoolNoAMFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "d9d34fd3ab42aa0c1bd4bc1b57ad5801",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "720661dcbcbf5d643cc40c3cf51381fa",
       "sourceName": "contracts/WeightedPoolNoAMFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1355,11 +1225,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1370,18 +1235,18 @@
         "./WeightedPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPoolNoAMFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/factories/BasePoolSplitCodeFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "691487dbe1bdede7697b48c4c8a20e35",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "f7f117a11745107c885f16fc6c0626e2",
       "sourceName": "contracts/libraries/factories/BasePoolSplitCodeFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1408,11 +1273,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1421,18 +1281,18 @@
         "../../interfaces/IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BasePoolSplitCodeFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/factories/FactoryWidePauseWindow.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "cd4c3682e0143bfeabe160aa1d37d87e",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "e9d10fa9dbb9181937c94e15a843cf63",
       "sourceName": "contracts/libraries/factories/FactoryWidePauseWindow.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1459,28 +1319,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "FactoryWidePauseWindow"
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "ac7b1a2cdb68703325e09186e5e09100",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "b6def9a0f151cb521623512daa34bc11",
       "sourceName": "contracts/WeightedPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1507,11 +1362,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1519,18 +1369,18 @@
         "./BaseWeightedPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/BaseSplitCodeFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "0183851a999ad63aed92e5094bd27fc8",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "56ff9993b10844ede0be0add9b2173e7",
       "sourceName": "contracts/libraries/helpers/BaseSplitCodeFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1557,11 +1407,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1569,18 +1414,18 @@
         "./CodeDeployer.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BaseSplitCodeFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/CodeDeployer.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "2ca0c4f8f3f69f69c56faac46562741e",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "3ee9397b1458a8c9e880c2043a0023cd",
       "sourceName": "contracts/libraries/helpers/CodeDeployer.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1607,28 +1452,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "CodeDeployer"
       ]
     },
     "/home/achthar/requiem-dex/contracts/BaseWeightedPool.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "e1047bb8ab8ed8fe1847505392c68294",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "30b16a60c7ed7232a05807276b359e77",
       "sourceName": "contracts/BaseWeightedPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1655,11 +1495,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1671,18 +1506,18 @@
         "./libraries/weighted/WeightedPoolUserDataHelpers.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BaseWeightedPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/InputHelpers.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "2e66da066fcb46e674ed5e2b7d927e8f",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "f8fc5efaadc910e97c63fb6a0b852fd8",
       "sourceName": "contracts/libraries/helpers/InputHelpers.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1709,11 +1544,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1722,18 +1552,18 @@
         "./RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "InputHelpers"
       ]
     },
     "/home/achthar/requiem-dex/contracts/BaseMinimalSwapInfoPool.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "bcc17eb78714ac2f7965b12f2b202308",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "091cc8504040f92ecd7a86454f62c1b8",
       "sourceName": "contracts/BaseMinimalSwapInfoPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1760,11 +1590,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1773,18 +1598,18 @@
         "./interfaces/IMinimalSwapInfoPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BaseMinimalSwapInfoPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/weighted/WeightedMath.sol": {
-      "lastModificationDate": 1636973120402,
-      "contentHash": "0b70efc439804cbb9c489dc71b93600b",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "db26fcc8b91ca01c9f667f14b1502f3b",
       "sourceName": "contracts/libraries/weighted/WeightedMath.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1811,11 +1636,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1825,18 +1645,18 @@
         "../helpers/InputHelpers.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedMath"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/weighted/WeightedPoolUserDataHelpers.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "9ec7d124e6c0a16e5767c9c4f48afbf4",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "432539a744a833a160414154114b9ba3",
       "sourceName": "contracts/libraries/weighted/WeightedPoolUserDataHelpers.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1863,11 +1683,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1876,18 +1691,18 @@
         "../../BaseWeightedPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPoolUserDataHelpers"
       ]
     },
     "/home/achthar/requiem-dex/contracts/BasePool.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "e6d1908b19cd95dfb2cc400d388b0af5",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d8af6f0856900b1a0d6a93fd0f333656",
       "sourceName": "contracts/BasePool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1914,11 +1729,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1934,18 +1744,18 @@
         "./BasePoolAuthorization.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BasePool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IMinimalSwapInfoPool.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "7ebe094c8d46e9001bfc3bdba7cd8cd6",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "33e366e0b32a390e8b5547c14d37cd7b",
       "sourceName": "contracts/interfaces/IMinimalSwapInfoPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1972,11 +1782,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -1984,18 +1789,18 @@
         "./IBasePool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IMinimalSwapInfoPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/TemporarilyPausable.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "fe0b24097a951add2714f269f790f121",
+      "lastModificationDate": 1636986044830,
+      "contentHash": "47c51989c82bd7f41d90b060e400c975",
       "sourceName": "contracts/libraries/helpers/TemporarilyPausable.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2022,11 +1827,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2035,18 +1835,18 @@
         "../../interfaces/ITemporarilyPausable.sol"
       ],
       "versionPragmas": [
-        "^0.8.8"
+        "^0.8.10"
       ],
       "artifacts": [
         "TemporarilyPausable"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/WordCodec.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "b992291fc0835d4171efb1e27a0b18a7",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "ef716f379ebbe61ef3d9f357cdbeaf30",
       "sourceName": "contracts/libraries/helpers/WordCodec.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2073,28 +1873,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WordCodec"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IBasePool.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "7de6014a66668a6b8a27105b0a236589",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "d822c6a362a53dd58173761989cb6831",
       "sourceName": "contracts/interfaces/IBasePool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2121,11 +1916,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2134,18 +1924,18 @@
         "./IPoolSwapStructs.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IBasePool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IAssetManager.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "e6b567abf1a814929bb4e08e56eeb551",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "3907ab5b747fa5d63dad60276b6b787a",
       "sourceName": "contracts/interfaces/IAssetManager.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2172,11 +1962,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2184,18 +1969,18 @@
         "./ERC20/IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IAssetManager"
       ]
     },
     "/home/achthar/requiem-dex/contracts/RequiemPoolToken.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "29591ce379ed462fd50defb21f119c23",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "8990c861d7a1a59fa76810926327b87d",
       "sourceName": "contracts/RequiemPoolToken.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2222,11 +2007,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2236,18 +2016,18 @@
         "./interfaces/IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "RequiemPoolToken"
       ]
     },
     "/home/achthar/requiem-dex/contracts/BasePoolAuthorization.sol": {
-      "lastModificationDate": 1636971461478,
-      "contentHash": "fead2896b259f8ed7b9ef77819bc6b5b",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "90b4ef43dc0e4e1cf4560b806d3dab97",
       "sourceName": "contracts/BasePoolAuthorization.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2274,11 +2054,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2287,18 +2062,18 @@
         "./interfaces/IAuthorizer.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BasePoolAuthorization"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IPoolSwapStructs.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "4dccb421e4e095f4b40778e2ba5221cc",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "390fc2c6dd1cf08bc912851949696fe4",
       "sourceName": "contracts/interfaces/IPoolSwapStructs.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2325,11 +2100,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2338,18 +2108,18 @@
         "./IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IPoolSwapStructs"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ERC20Permit.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "274018b7a2e73141a0a4aaf686e28d1d",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "dce722091961d6cf97a712e527d6aa57",
       "sourceName": "contracts/libraries/ERC20Permit.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2376,11 +2146,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2390,18 +2155,18 @@
         "./EIP712.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ERC20Permit"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/ERC20/IERC20Permit.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "9a37c8d4293a6dd74d7fc9603da4e6cc",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "5f4e0d44ad1dbae059c14fe92e5ec423",
       "sourceName": "contracts/interfaces/ERC20/IERC20Permit.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2428,28 +2193,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IERC20Permit"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/EIP712.sol": {
-      "lastModificationDate": 1636978891417,
-      "contentHash": "c799ca1036f41945dcbe31ca22c3977d",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "c0f204670ccbf4e43ccb67d56f2197ef",
       "sourceName": "contracts/libraries/EIP712.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2476,28 +2236,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "EIP712"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/Authentication.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "9ba5f429c25fa71016d968b938d2210a",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "91f832e9b94d84caebdc24846b04be0a",
       "sourceName": "contracts/libraries/helpers/Authentication.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2524,11 +2279,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2537,18 +2287,18 @@
         "./IAuthentication.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Authentication"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/IAuthentication.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "718e0477baf8340f73658cb159bd14ae",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "9f6ac3b82580f570c172e57f82b5a5af",
       "sourceName": "contracts/libraries/helpers/IAuthentication.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2575,28 +2325,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IAuthentication"
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPoolFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "86a2364086c996919635fac6e2df70bb",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "eb9ff49e963cf42538c640be75070c50",
       "sourceName": "contracts/WeightedPoolFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2623,11 +2368,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2638,18 +2378,18 @@
         "./WeightedPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPoolFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool2TokensFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "0574cdeebcdd2b4f8e6f20848b7a9742",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "fe958eefce14aaf3f6ead47646f232b1",
       "sourceName": "contracts/WeightedPool2TokensFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2676,11 +2416,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2691,18 +2426,18 @@
         "./WeightedPool2Tokens.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPool2TokensFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool2Tokens.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "6d7a1b0e53583a74259745451c424aa7",
+      "lastModificationDate": 1636985822202,
+      "contentHash": "81211e3b8b37fcc9839fbcc854284f35",
       "sourceName": "contracts/WeightedPool2Tokens.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2729,11 +2464,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2755,18 +2485,18 @@
         "./libraries/weighted/WeightedPool2TokensMiscData.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPool2Tokens"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/LogCompression.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "f95d499a911a712ee6480710b3c5c877",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "98a6da8e37de96398beb577d6b78e80e",
       "sourceName": "contracts/libraries/LogCompression.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2793,11 +2523,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2805,18 +2530,18 @@
         "./math/LogExpMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "LogCompression"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/oracle/PoolPriceOracle.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "76fc95dfddf1ea190d94cc475fff4cb3",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d8e877e02d1cc1d7d4319217f0e70cb4",
       "sourceName": "contracts/libraries/oracle/PoolPriceOracle.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2843,11 +2568,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2859,18 +2579,18 @@
         "./QueryProcessor.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "PoolPriceOracle"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/oracle/Buffer.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "9406a9fffa018860573e4d03aff83880",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "2a00a74f70e344342fe77c0ecfb1e74a",
       "sourceName": "contracts/libraries/oracle/Buffer.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2897,28 +2617,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Buffer"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/weighted/WeightedOracleMath.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "0f283b79da11a5a5c6ec8f5ffc5f8a6c",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "f571a7e071f5abb91aa515805b2a20a7",
       "sourceName": "contracts/libraries/weighted/WeightedOracleMath.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2945,11 +2660,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -2958,18 +2668,18 @@
         "../LogCompression.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedOracleMath"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/weighted/WeightedPool2TokensMiscData.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "e7033174cd02d96face97fa075b00b68",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "71375f3eeab203a45bcf0706ef8a41b2",
       "sourceName": "contracts/libraries/weighted/WeightedPool2TokensMiscData.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -2996,11 +2706,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3008,18 +2713,18 @@
         "../helpers/WordCodec.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightedPool2TokensMiscData"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/oracle/IPriceOracle.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "8a1c3408270f6b452338f88d99b2bdac",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "cf420522839d7d8b8e445050889e17ab",
       "sourceName": "contracts/interfaces/oracle/IPriceOracle.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3046,28 +2751,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IPriceOracle"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/oracle/IPoolPriceOracle.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "153638f3a315b99225a6764509c32e5e",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "e17fbaac16c15747d5cc93018255cb80",
       "sourceName": "contracts/interfaces/oracle/IPoolPriceOracle.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3094,28 +2794,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IPoolPriceOracle"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/oracle/Samples.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "704ad017bc9e603763f9dee7980ac44b",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "cc4fdb59716c9bc90efb226954d6f725",
       "sourceName": "contracts/libraries/oracle/Samples.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3142,11 +2837,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3155,18 +2845,18 @@
         "../../interfaces/oracle/IPriceOracle.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Samples"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/oracle/QueryProcessor.sol": {
-      "lastModificationDate": 1636981430401,
-      "contentHash": "14b21b01499e6460761c8489ece831f9",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "f48898c13a2f79be15f0fc70b4b599ea",
       "sourceName": "contracts/libraries/oracle/QueryProcessor.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3193,11 +2883,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3208,18 +2893,18 @@
         "./Samples.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "QueryProcessor"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/ManagedPool.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "37413825bdea45fd1a0aa4c5576adaac",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "bc7b5f7ecd74da884d1fc07de44c1745",
       "sourceName": "contracts/libraries/smart/ManagedPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3246,11 +2931,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3264,18 +2944,18 @@
         "./WeightCompression.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ManagedPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/EnumerableMap.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "bf6d7fb6d261c3dd89f6312986a5913a",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "c3d68980bdc3f25815610bb2c8632dc4",
       "sourceName": "contracts/libraries/EnumerableMap.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3302,11 +2982,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3315,18 +2990,18 @@
         "./helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "EnumerableMap"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ReentrancyGuard.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "552511310b975d08bd8260285d92b590",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "f59e9451672faee37e9ae935bdd7c6bc",
       "sourceName": "contracts/libraries/ReentrancyGuard.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3353,11 +3028,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3365,18 +3035,18 @@
         "./helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ReentrancyGuard"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/ERC20Helpers.sol": {
-      "lastModificationDate": 1636979588246,
-      "contentHash": "5284dc3a8a7255f58950b954967b91d3",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d4b25e5dace5669384206f21bf780d16",
       "sourceName": "contracts/libraries/helpers/ERC20Helpers.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3403,11 +3073,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3416,18 +3081,18 @@
         "../../interfaces/ERC20/IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ERC20Helpers"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/WeightCompression.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "846cf72487419eddf6e902c1ee8f5957",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "869500c6ca4b3fd7e099d21e2c7e68bb",
       "sourceName": "contracts/libraries/smart/WeightCompression.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3454,11 +3119,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3466,18 +3126,18 @@
         "../math/FixedPoint.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "WeightCompression"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/ManagedPoolFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "19fb6fa38a1e108585b720fd94a2a253",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "b2839e20bce44f25fb5ee9fc2dd4c5be",
       "sourceName": "contracts/libraries/smart/ManagedPoolFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3504,11 +3164,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3519,18 +3174,18 @@
         "./ManagedPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ManagedPoolFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/LiquidityBootstrappingPoolFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "5e293e8089acfd956c74d76af53aa8f4",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "f9aaa8858f9810a253019b35b179cb0b",
       "sourceName": "contracts/libraries/smart/LiquidityBootstrappingPoolFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3557,11 +3212,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3572,18 +3222,18 @@
         "./LiquidityBootstrappingPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "LiquidityBootstrappingPoolFactory"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/LiquidityBootstrappingPool.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "b9cce0ec4dd2cdc0a4deca709a4e0a89",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "55b0565f45f5ae85641192babd38b78c",
       "sourceName": "contracts/libraries/smart/LiquidityBootstrappingPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3610,11 +3260,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3626,18 +3271,18 @@
         "./WeightCompression.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "LiquidityBootstrappingPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockPool.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "db33f27f6e563ac435731040c65105d5",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "a3f10889e376b50b1d6ad58808e02656",
       "sourceName": "contracts/test/vault/MockPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3664,11 +3309,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3680,18 +3320,18 @@
         "../../interfaces/IMinimalSwapInfoPool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "MockPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IGeneralPool.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "973ed10b51581b80aad91b867e92cafe",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "5c7f21836237943ca42664ece19c0a42",
       "sourceName": "contracts/interfaces/IGeneralPool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3718,11 +3358,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3730,18 +3365,18 @@
         "./IBasePool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IGeneralPool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/Swaps.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "82a870949f1dcadabe3cd23996791675",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "030d0170ac4bd2bbb81bdee9876c4725",
       "sourceName": "contracts/Swaps.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3768,11 +3403,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3792,18 +3422,18 @@
         "./libraries/balances/BalanceAllocation.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Swaps"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/SafeCast.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "4de27bfe9a7f8bb02768cfe458c0dae7",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d23cf77a4a91c6e86f4cc6b3330136b4",
       "sourceName": "contracts/libraries/SafeCast.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3830,11 +3460,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3842,18 +3467,18 @@
         "./helpers/RequiemErrors.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "SafeCast"
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolBalances.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "2bd29f2f1c6f0f51f04c0e5215837e0e",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "ed455d226ccf739dcf2cf6074ca08b73",
       "sourceName": "contracts/PoolBalances.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3880,11 +3505,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3900,18 +3520,18 @@
         "./interfaces/IBasePool.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "PoolBalances"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/BalanceAllocation.sol": {
-      "lastModificationDate": 1636980511315,
-      "contentHash": "0784e5e16706bc3b89f03202fed64f0a",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "555bdd02de1f2a8200db6519b5fe0e4b",
       "sourceName": "contracts/libraries/balances/BalanceAllocation.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3938,11 +3558,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -3950,18 +3565,18 @@
         "../math/Math.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BalanceAllocation"
       ]
     },
     "/home/achthar/requiem-dex/contracts/Fees.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "8157acb76c7180d56c3243c19c7186c7",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "ab6031a687fdcfd31e30965b16809da3",
       "sourceName": "contracts/Fees.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -3988,11 +3603,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4007,18 +3617,18 @@
         "./interfaces/IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Fees"
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolTokens.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "1f75fa1fdff22cea6aa488939008c0e7",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "a45063e0ce3591ff3ba535c2c2533ee0",
       "sourceName": "contracts/PoolTokens.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4045,11 +3655,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4061,18 +3666,18 @@
         "./libraries/balances/BalanceAllocation.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "PoolTokens"
       ]
     },
     "/home/achthar/requiem-dex/contracts/UserBalance.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "1042b0b9bb10eadae8789e95b532c8c7",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "ce74f61ad4f733b8b2e9b0de9e4ed329",
       "sourceName": "contracts/UserBalance.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4099,11 +3704,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4118,18 +3718,18 @@
         "./VaultAuthorization.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "UserBalance"
       ]
     },
     "/home/achthar/requiem-dex/contracts/ProtocolFeesCollector.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "ae35b388e8c142180ade5bc30a153171",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "f0e0aec97f14f7a36f9339baf1971f19",
       "sourceName": "contracts/ProtocolFeesCollector.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4156,11 +3756,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4172,18 +3767,18 @@
         "./interfaces/IProtocolFeesCollector.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ProtocolFeesCollector"
       ]
     },
     "/home/achthar/requiem-dex/contracts/VaultAuthorization.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "d4633f0eac44b85596c1ce35fc98d9f3",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "80fab1df88980794054525ee4d1fd977",
       "sourceName": "contracts/VaultAuthorization.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4210,11 +3805,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4228,18 +3818,18 @@
         "./interfaces/IAuthorizer.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "VaultAuthorization"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/SignaturesValidator.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "2908d58b332e1a475fa7f629c76c64aa",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "4b3523413bc20394c5b0e0e6f0b565d9",
       "sourceName": "contracts/libraries/helpers/SignaturesValidator.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4266,11 +3856,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4280,18 +3865,18 @@
         "../EIP712.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "SignaturesValidator"
       ]
     },
     "/home/achthar/requiem-dex/contracts/AssetManagers.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "d3ebcf397234ca433f8240a920962d1a",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "f96adc2f9fff69b147c5af7b7bbfd7ae",
       "sourceName": "contracts/AssetManagers.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4318,11 +3903,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4339,18 +3919,18 @@
         "./libraries/balances/TwoTokenPoolsBalance.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "AssetManagers"
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolRegistry.sol": {
-      "lastModificationDate": 1636979795454,
-      "contentHash": "e5ce0765df7ca25ec6efd152a928baef",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "2ed45f0a89fb53fcaba4b1b6bc813909",
       "sourceName": "contracts/PoolRegistry.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4377,11 +3957,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4391,18 +3966,18 @@
         "./VaultAuthorization.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "PoolRegistry"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/GeneralPoolsBalance.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "ba8d36e8e494abec30bf09748b1114d1",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "22d0daaec8594036756a94f30658f2dd",
       "sourceName": "contracts/libraries/balances/GeneralPoolsBalance.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4429,11 +4004,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4444,18 +4014,18 @@
         "./BalanceAllocation.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "GeneralPoolsBalance"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/MinimalSwapInfoPoolsBalance.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "4d16dcb3626682b2843dd0dcf139f879",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "b8a9de539d6fd61d5921c39a2064bb49",
       "sourceName": "contracts/libraries/balances/MinimalSwapInfoPoolsBalance.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4482,11 +4052,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4498,18 +4063,18 @@
         "../../PoolRegistry.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "MinimalSwapInfoPoolsBalance"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/TwoTokenPoolsBalance.sol": {
-      "lastModificationDate": 1636979820382,
-      "contentHash": "795e974922bc87bfa2962dbc300d01ac",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "e1351f12e639549140e461d9dd1124c7",
       "sourceName": "contracts/libraries/balances/TwoTokenPoolsBalance.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4536,11 +4101,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4551,18 +4111,18 @@
         "../../PoolRegistry.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "TwoTokenPoolsBalance"
       ]
     },
     "/home/achthar/requiem-dex/contracts/Vault.sol": {
-      "lastModificationDate": 1636976656461,
-      "contentHash": "ed0e5b874d93e663cc89927f78e5075b",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "2c537cfbcc9c74e4937bb7331361c6a4",
       "sourceName": "contracts/Vault.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4589,11 +4149,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4604,18 +4159,18 @@
         "./Swaps.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Vault"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockInternalBalanceRelayer.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "9828c2f9aadd661f8f3f6afdfcd5a7cb",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "594703de9aeb13ffff21411198f27d58",
       "sourceName": "contracts/test/vault/MockInternalBalanceRelayer.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4642,11 +4197,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4656,74 +4206,18 @@
         "../../interfaces/IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "MockInternalBalanceRelayer"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/IVaultNonPausable.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "585f0cd17e637709127f08b3ba4bdbe2",
-      "sourceName": "contracts/interfaces/IVaultNonPausable.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "./ERC20/IERC20.sol",
-        "./ISignaturesValidator.sol",
-        "./IWETH.sol",
-        "./IAsset.sol",
-        "./IAuthorizer.sol",
-        "./IFlashLoanRecipient.sol",
-        "./IProtocolFeesCollector.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IVaultNonPausable"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/FlashLoans.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "fbda9f6133d8a08adb817457ee6473af",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "5ef6a031a89763dfc27d998257a61203",
       "sourceName": "contracts/FlashLoans.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4750,11 +4244,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4768,18 +4257,18 @@
         "./interfaces/IFlashLoanRecipient.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "FlashLoans"
       ]
     },
     "/home/achthar/requiem-dex/contracts/Authorizer.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "2f415ea7ff97a3688733ec304acbe030",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "6683017cdea693578a90e528bee87394",
       "sourceName": "contracts/Authorizer.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4806,11 +4295,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4820,18 +4304,18 @@
         "./libraries/helpers/InputHelpers.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Authorizer"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/BalanceAllocationMock.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "72cb39bc1c934babbce0ef178079b44f",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "7c2dccc63289611e996950474899d85c",
       "sourceName": "contracts/test/vault/BalanceAllocationMock.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4858,11 +4342,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4870,18 +4349,18 @@
         "../../libraries/balances/BalanceAllocation.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BalanceAllocationMock"
       ]
     },
     "/home/achthar/requiem-dex/contracts/mocks/MockERC20.sol": {
-      "lastModificationDate": 1636964568176,
-      "contentHash": "dbc6439b18d167cbbf4b1956765b44d0",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d7b2ed2cb09925b4e2a030fdbbcf0ab5",
       "sourceName": "contracts/mocks/MockERC20.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4908,11 +4387,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4920,18 +4394,18 @@
         "../libraries/ERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "MockERC20"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/FixedPoint.sol": {
-      "lastModificationDate": 1636973399062,
-      "contentHash": "48756cb54bf32d5c4fe480cc1f606e4f",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "bc74043f95c1b479e0f6eec36bc4cdb0",
       "sourceName": "contracts/libraries/FixedPoint.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -4958,11 +4432,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -4970,18 +4439,18 @@
         "./math/LogExpMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "FixedPoint"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/DeflatingERC20.sol": {
-      "lastModificationDate": 1636970930541,
-      "contentHash": "986501e11e7f6ef81f0c8678443362b7",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d8863a564e7292f3e64a929b274e05aa",
       "sourceName": "contracts/test/DeflatingERC20.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -5008,11 +4477,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -5020,18 +4484,18 @@
         "../libraries/SafeMath.sol"
       ],
       "versionPragmas": [
-        "=0.8.9"
+        "=0.8.10"
       ],
       "artifacts": [
         "DeflatingERC20"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/ISwapCreator.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "66aaf309cd6de6ddf24db8e8d4b8be12",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "a8fc6b72dc998de64eb46c81a6efe70e",
       "sourceName": "contracts/interfaces/ISwapCreator.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -5058,11 +4522,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -5070,118 +4529,18 @@
         "./ERC20/IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "ISwapCreator"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/ISwap.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "82de034b3dcbc46d43b743f03539013f",
-      "sourceName": "contracts/interfaces/ISwap.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "./ERC20/IERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.12"
-      ],
-      "artifacts": [
-        "ISwap"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IStableSwapFactory.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "74cb66c89006bcc621bba879bccb1e9e",
-      "sourceName": "contracts/interfaces/IStableSwapFactory.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "./ERC20/IERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.12"
-      ],
-      "artifacts": [
-        "IStableSwapFactory"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/interfaces/ERC20/IERC20Metadata.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "b0edf41abc1f32b3f21f2e18095e3150",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "2fe9e5b10290205b0e286c5da117401d",
       "sourceName": "contracts/interfaces/ERC20/IERC20Metadata.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -5208,11 +4567,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -5220,18 +4574,18 @@
         "./IERC20.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IERC20Metadata"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/factories/BasePoolFactory.sol": {
-      "lastModificationDate": 1636967584849,
-      "contentHash": "8f0674695dab09c241671c505a2983cc",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "85921f80d0f537f94d4d7327fb5374f8",
       "sourceName": "contracts/libraries/factories/BasePoolFactory.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -5258,11 +4612,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -5270,651 +4619,18 @@
         "../../interfaces/IVault.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "BasePoolFactory"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/IEpochController.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "31e7261fb3e16da4d63a3cdd0d3ee98f",
-      "sourceName": "contracts/interfaces/IEpochController.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.7.6"
-      ],
-      "artifacts": [
-        "IEpochController"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IIsPair.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "01a0d31547036113b0225c951e387e24",
-      "sourceName": "contracts/interfaces/IIsPair.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "IIsPair"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IOracle.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "72b78a7d0cfb3131f8d4ae43e3329daf",
-      "sourceName": "contracts/interfaces/IOracle.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.7.6"
-      ],
-      "artifacts": [
-        "IOracle"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemERC20.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "fe25825614556c98cfa71f139b34401c",
-      "sourceName": "contracts/interfaces/IRequiemERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "=0.8.9"
-      ],
-      "artifacts": [
-        "IRequiemERC20"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemWeightedPair.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "1fccf0338b7309a6958f95f3495567bd",
-      "sourceName": "contracts/interfaces/IRequiemWeightedPair.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IRequiemERC20.sol",
-        "./IRequiemSwapInterface.sol"
-      ],
-      "versionPragmas": [
-        "=0.8.9"
-      ],
-      "artifacts": [
-        "IRequiemWeightedPair"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemSwapInterface.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "a553229692da8d9dbb1dda3f140d78d2",
-      "sourceName": "contracts/interfaces/IRequiemSwapInterface.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IRequiemERC20.sol"
-      ],
-      "versionPragmas": [
-        "=0.8.9"
-      ],
-      "artifacts": [
-        "IRequiemSwapInterface"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemPair.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "6c3c4a4d49f8f672fc5eb68369509c9e",
-      "sourceName": "contracts/interfaces/IRequiemPair.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IRequiemERC20.sol"
-      ],
-      "versionPragmas": [
-        "=0.8.9"
-      ],
-      "artifacts": [
-        "IRequiemPair"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemFactory.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "49f0fa714ee1ea5e21306a95d5d30e8a",
-      "sourceName": "contracts/interfaces/IRequiemFactory.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "IRequiemFactory"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemFormula.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "10de435f3eee327fa33172a0da734686",
-      "sourceName": "contracts/interfaces/IRequiemFormula.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "IRequiemFormula"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemRouter.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "bed4fe219d4a816c2d6b75c67337ab2d",
-      "sourceName": "contracts/interfaces/IRequiemRouter.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.7.6"
-      ],
-      "artifacts": [
-        "IRequiemRouter"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/RouterEventEmitter.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "b407e8cdb426e59fff0945d9016c5075",
-      "sourceName": "contracts/test/RouterEventEmitter.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IRequiemRouter.sol"
-      ],
-      "versionPragmas": [
-        "=0.8.9"
-      ],
-      "artifacts": [
-        "RouterEventEmitter"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IUniswapV2Callee.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "629cb03a5999b645c79785e8113edc54",
-      "sourceName": "contracts/interfaces/IUniswapV2Callee.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "IUniswapV2Callee"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IUniswapV2Router.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "87bd8e90d4b7baaf97f2d0ddf2086fda",
-      "sourceName": "contracts/interfaces/IUniswapV2Router.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.2"
-      ],
-      "artifacts": [
-        "IUniswapV2Router"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePool.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "ea1a7ca6a2cc35b90d431fa8376809d3",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "b422d3237bdd76f28108b597236e0d3e",
       "sourceName": "contracts/interfaces/stakePool/IStakePool.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -5941,28 +4657,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IStakePool"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolController.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "d9b4ab486320bad1eb895017937763ee",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "77c3eb44ddfd36dfd3fd8c831eb4a5d0",
       "sourceName": "contracts/interfaces/stakePool/IStakePoolController.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -5989,28 +4700,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IStakePoolController"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolCreator.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "413a218e5ed193521eb21fd5a56509f9",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "46a536c22319a9605e0eba65b1bb3a36",
       "sourceName": "contracts/interfaces/stakePool/IStakePoolCreator.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6037,28 +4743,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IStakePoolCreator"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolEpochReward.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "50b9c7996cd7a40af59a94ce9504b2f6",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "720dc4cc7d863326c7823b1345a0907a",
       "sourceName": "contracts/interfaces/stakePool/IStakePoolEpochReward.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6085,17 +4786,12 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "IStakePoolEpochReward"
@@ -6106,7 +4802,7 @@
       "contentHash": "ae4355a7f7b02b201a5d157f0adfe919",
       "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardFund.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6133,11 +4829,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -6152,7 +4843,7 @@
       "contentHash": "24047d733317e3ba899586eb4929918e",
       "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6179,11 +4870,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -6198,7 +4884,7 @@
       "contentHash": "13f0267c4ba4a8f803787a64f30f8030",
       "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6225,11 +4911,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -6240,11 +4921,11 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/Babylonian.sol": {
-      "lastModificationDate": 1636980122063,
-      "contentHash": "c7ee5223291e9499f64e32773abbc6c3",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "66a5e66178e9e7ae76e799086500b2c5",
       "sourceName": "contracts/libraries/Babylonian.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6271,28 +4952,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.8.9"
+        ">=0.8.10"
       ],
       "artifacts": [
         "Babylonian"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/Context.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "9bcb449f79ab799ddc9f2685d6e6cf0b",
+      "lastModificationDate": 1636985228221,
+      "contentHash": "5605de36efb85957498a90301a9d001c",
       "sourceName": "contracts/libraries/Context.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6319,28 +4995,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "Context"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/TToken.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "0e862ee725f68bcaf7865871bfd789ec",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "d3f6846dcc0a4967d4b18b4449502291",
       "sourceName": "contracts/test/TToken.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6367,28 +5038,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "TToken"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/EthForceSender.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "6b8e0467b4883222011a4887ecf7d440",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "8e9cc2f8a0882cd52874f0d8fefa7e7f",
       "sourceName": "contracts/test/vault/EthForceSender.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6415,28 +5081,23 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "EthForceSender"
       ]
     },
     "/home/achthar/requiem-dex/contracts/RequiemVault.sol": {
-      "lastModificationDate": 1636979795450,
-      "contentHash": "e3e3603280a679f9759e60066fc5c46a",
+      "lastModificationDate": 1636985228217,
+      "contentHash": "07a7100ea4aae7aad3e344ef655d006d",
       "sourceName": "contracts/RequiemVault.sol",
       "solcConfig": {
-        "version": "0.8.9",
+        "version": "0.8.10",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -6463,11 +5124,6 @@
           },
           "metadata": {
             "useLiteralContent": true
-          },
-          "libraries": {
-            "": {
-              "__CACHE_BREAKER__": "0x00000000d41867734bbee4c6863d9255b2b06ac1"
-            }
           }
         }
       },
@@ -6481,10 +5137,59 @@
         "./interfaces/IFlashLoanRecipient.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.10"
       ],
       "artifacts": [
         "RequiemVault"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/VaultOriginal.sol": {
+      "lastModificationDate": 1636985395581,
+      "contentHash": "b5b0c5e13832f7cb33f4192e3814d2ef",
+      "sourceName": "contracts/VaultOriginal.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IWETH.sol",
+        "./interfaces/IAuthorizer.sol",
+        "./FlashLoans.sol",
+        "./VaultAuthorization.sol",
+        "./Swaps.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "VaultOriginal"
       ]
     }
   }

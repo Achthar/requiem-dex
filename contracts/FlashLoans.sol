@@ -16,7 +16,7 @@
 // implementation and terminology and interfaces are intentionally kept
 // similar
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.10;
 
 
 import "./libraries/helpers/RequiemErrors.sol";

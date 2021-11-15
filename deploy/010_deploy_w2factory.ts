@@ -55,7 +55,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		log: true,
 	});
 
-
+	console.log("--- get tokens ---")
 	const t1 = await get('T1');
 	const t2 = await get('T2');
 	const t3 = await get('T3');
@@ -66,7 +66,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	// await execute('T3', { from: user }, 'approve', router.address, ethers.constants.MaxInt256);
 	// await execute('T4', { from: user }, 'approve', router.address, ethers.constants.MaxInt256);
 
-
+	console.log("--- deploy factory ---")
 	const weighted2PoolFactory = await deploy("WeightedPool2TokensFactory", {
 		contract: "WeightedPool2TokensFactory",
 		skipIfAlreadyDeployed: true,
@@ -77,17 +77,19 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		log: true,
 	});
 
-	const weights = execute("WeightedPool2TokensFactory", { from: user },
-	"create",
-			"T1-T2", // string memory name,
-			"T12", // string memory symbol,
-			[t1.address, t2.address], // IERC20[] memory tokens,
-			[50, 50], // uint256[] memory weights,
-			1, // uint256 swapFeePercentage,
-			true, // bool oracleEnabled,
-			deployer, // address owner
-	);
+	console.log("--- create pool ---")
 
+	const weights = await execute("WeightedPool2TokensFactory", { from: deployer, log: true },
+		"create",
+		"T1-T2", // string memory name,
+		"T12", // string memory symbol,
+		[t1.address, t2.address], // IERC20[] memory tokens,
+		[50, 50], // uint256[] memory weights,
+		1e12, // uint256 swapFeePercentage,
+		true, // bool oracleEnabled,
+		deployer, // address owner
+	);
+	console.log("---- res: " + weights)
 };
 
 

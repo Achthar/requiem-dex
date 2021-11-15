@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma abicoder v2;
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.10;
 
 interface IStakePoolCreator {
     function version() external returns (uint);

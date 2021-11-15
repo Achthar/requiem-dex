@@ -12,8 +12,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+pragma solidity ^0.8.10;
+
 
 import "./interfaces/IWETH.sol";
 
@@ -35,7 +35,7 @@ import "./Swaps.sol";
  *
  *  - `AssetManagers`: Pool token Asset Manager registry, and Asset Manager interactions.
  *  - `Fees`: set and compute protocol fees.
- *  - `FlashLoans`: flash loan transfers and fees.
+ *  - `FlashLoans`: flash loan transfers and fees. - excluded here
  *  - `PoolBalances`: Pool joins and exits.
  *  - `PoolRegistry`: Pool registration, ID management, and basic queries.
  *  - `PoolTokens`: Pool token registration and registration, and balance queries.

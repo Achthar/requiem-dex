@@ -24,7 +24,7 @@ import "./IAuthorizer.sol";
 import "./IFlashLoanRecipient.sol";
 import "./IProtocolFeesCollector.sol";
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.10;
 
 /**
  * @dev Full external interface for the Vault core contract - no external or public methods exist in the contract that

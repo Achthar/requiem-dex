@@ -12,7 +12,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.10;
 
 import "./libraries/math/FixedPoint.sol";
 import "./libraries/helpers/InputHelpers.sol";
@@ -96,7 +96,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         // simpler management of permissions (such as being able to manage granting the 'set fee percentage' action in
         // any Pool created by the same factory), while still making action identifiers unique among different factories
         // if the selectors match, preventing accidental errors.
-        Authentication(bytes32(uint256(uint160(msg.sender)) << 96))
+        Authentication(bytes32(uint256(uint160(msg.sender)) << (12 * 8)))
         RequiemPoolToken(params.name, params.symbol, params.vault)
         BasePoolAuthorization(params.owner)
         TemporarilyPausable(params.pauseWindowDuration, params.bufferPeriodDuration)
