@@ -13,14 +13,13 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-
+pragma experimental ABIEncoderV2;
 
 import "./interfaces/IWETH.sol";
 
 import "./interfaces/IAuthorizer.sol";
 
 import "./VaultAuthorization.sol";
-import "./FlashLoans.sol";
 import "./Swaps.sol";
 
 /**
@@ -58,7 +57,7 @@ import "./Swaps.sol";
  * utilization of `internal` functions (particularly inside modifiers), usage of named return arguments, dedicated
  * storage access methods, dynamic revert reason generation, and usage of inline assembly, to name a few.
  */
-contract Vault is VaultAuthorization, FlashLoans, Swaps {
+contract Vault is VaultAuthorization, Swaps {
     constructor(
         IAuthorizer authorizer,
         IWETH weth,

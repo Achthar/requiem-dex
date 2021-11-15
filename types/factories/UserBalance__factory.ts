@@ -502,34 +502,6 @@ const _abi = [
   {
     inputs: [
       {
-        internalType: "contract IFlashLoanRecipient",
-        name: "recipient",
-        type: "address",
-      },
-      {
-        internalType: "contract IERC20[]",
-        name: "tokens",
-        type: "address[]",
-      },
-      {
-        internalType: "uint256[]",
-        name: "amounts",
-        type: "uint256[]",
-      },
-      {
-        internalType: "bytes",
-        name: "userData",
-        type: "bytes",
-      },
-    ],
-    name: "flashLoan",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
         internalType: "bytes4",
         name: "selector",
         type: "bytes4",

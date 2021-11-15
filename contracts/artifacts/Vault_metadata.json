@@ -1,0 +1,1624 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IAuthorizer",
+						"name": "authorizer",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IWETH",
+						"name": "weth",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pauseWindowDuration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bufferPeriodDuration",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IAuthorizer",
+						"name": "newAuthorizer",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizerChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ExternalBalanceTransfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IFlashLoanRecipient",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "feeAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "FlashLoan",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "int256",
+						"name": "delta",
+						"type": "int256"
+					}
+				],
+				"name": "InternalBalanceChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "paused",
+						"type": "bool"
+					}
+				],
+				"name": "PausedStateChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "liquidityProvider",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "int256[]",
+						"name": "deltas",
+						"type": "int256[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "protocolFeeAmounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "PoolBalanceChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "assetManager",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "int256",
+						"name": "cashDelta",
+						"type": "int256"
+					},
+					{
+						"indexed": false,
+						"internalType": "int256",
+						"name": "managedDelta",
+						"type": "int256"
+					}
+				],
+				"name": "PoolBalanceManaged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "poolAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum IVault.PoolSpecialization",
+						"name": "specialization",
+						"type": "uint8"
+					}
+				],
+				"name": "PoolRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "relayer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "RelayerApprovalChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					}
+				],
+				"name": "Swap",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"name": "TokensDeregistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "assetManagers",
+						"type": "address[]"
+					}
+				],
+				"name": "TokensRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "WETH",
+				"outputs": [
+					{
+						"internalType": "contract IWETH",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum IVault.SwapKind",
+						"name": "kind",
+						"type": "uint8"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "poolId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetInIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetOutIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IVault.BatchSwapStep[]",
+						"name": "swaps",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "contract IAsset[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "fromInternalBalance",
+								"type": "bool"
+							},
+							{
+								"internalType": "address payable",
+								"name": "recipient",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "toInternalBalance",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IVault.FundManagement",
+						"name": "funds",
+						"type": "tuple"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "limits",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "batchSwap",
+				"outputs": [
+					{
+						"internalType": "int256[]",
+						"name": "assetDeltas",
+						"type": "int256[]"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"name": "deregisterTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "contract IAsset[]",
+								"name": "assets",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "minAmountsOut",
+								"type": "uint256[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userData",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "toInternalBalance",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IVault.ExitPoolRequest",
+						"name": "request",
+						"type": "tuple"
+					}
+				],
+				"name": "exitPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "selector",
+						"type": "bytes4"
+					}
+				],
+				"name": "getActionId",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAuthorizer",
+				"outputs": [
+					{
+						"internalType": "contract IAuthorizer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDomainSeparator",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"name": "getInternalBalance",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "balances",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getNextNonce",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPausedState",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "paused",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pauseWindowEndTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bufferPeriodEndTime",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					}
+				],
+				"name": "getPool",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "enum IVault.PoolSpecialization",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getPoolTokenInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "cash",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "managed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastChangeBlock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "assetManager",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					}
+				],
+				"name": "getPoolTokens",
+				"outputs": [
+					{
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "balances",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastChangeBlock",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProtocolFeesCollector",
+				"outputs": [
+					{
+						"internalType": "contract IProtocolFeesCollector",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "relayer",
+						"type": "address"
+					}
+				],
+				"name": "hasApprovedRelayer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "contract IAsset[]",
+								"name": "assets",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "maxAmountsIn",
+								"type": "uint256[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userData",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "fromInternalBalance",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IVault.JoinPoolRequest",
+						"name": "request",
+						"type": "tuple"
+					}
+				],
+				"name": "joinPool",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IVault.PoolBalanceOpKind",
+								"name": "kind",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "poolId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "contract IERC20",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IVault.PoolBalanceOp[]",
+						"name": "ops",
+						"type": "tuple[]"
+					}
+				],
+				"name": "managePoolBalance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "enum IVault.UserBalanceOpKind",
+								"name": "kind",
+								"type": "uint8"
+							},
+							{
+								"internalType": "contract IAsset",
+								"name": "asset",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "recipient",
+								"type": "address"
+							}
+						],
+						"internalType": "struct IVault.UserBalanceOp[]",
+						"name": "ops",
+						"type": "tuple[]"
+					}
+				],
+				"name": "manageUserBalance",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum IVault.SwapKind",
+						"name": "kind",
+						"type": "uint8"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "poolId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetInIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "assetOutIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IVault.BatchSwapStep[]",
+						"name": "swaps",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "contract IAsset[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "fromInternalBalance",
+								"type": "bool"
+							},
+							{
+								"internalType": "address payable",
+								"name": "recipient",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "toInternalBalance",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IVault.FundManagement",
+						"name": "funds",
+						"type": "tuple"
+					}
+				],
+				"name": "queryBatchSwap",
+				"outputs": [
+					{
+						"internalType": "int256[]",
+						"name": "",
+						"type": "int256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum IVault.PoolSpecialization",
+						"name": "specialization",
+						"type": "uint8"
+					}
+				],
+				"name": "registerPool",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "contract IERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "assetManagers",
+						"type": "address[]"
+					}
+				],
+				"name": "registerTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IAuthorizer",
+						"name": "newAuthorizer",
+						"type": "address"
+					}
+				],
+				"name": "setAuthorizer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "paused",
+						"type": "bool"
+					}
+				],
+				"name": "setPaused",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "relayer",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setRelayerApproval",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "poolId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "enum IVault.SwapKind",
+								"name": "kind",
+								"type": "uint8"
+							},
+							{
+								"internalType": "contract IAsset",
+								"name": "assetIn",
+								"type": "address"
+							},
+							{
+								"internalType": "contract IAsset",
+								"name": "assetOut",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "userData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IVault.SingleSwap",
+						"name": "singleSwap",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "fromInternalBalance",
+								"type": "bool"
+							},
+							{
+								"internalType": "address payable",
+								"name": "recipient",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "toInternalBalance",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct IVault.FundManagement",
+						"name": "funds",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "swap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountCalculated",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"details": "The `Vault` is Balancer V2's core contract. A single instance of it exists for the entire network, and it is the entity used to interact with Pools by Liquidity Providers who join and exit them, Traders who swap, and Asset Managers who withdraw and deposit tokens. The `Vault`'s source code is split among a number of sub-contracts, with the goal of improving readability and making understanding the system easier. Most sub-contracts have been marked as `abstract` to explicitly indicate that only the full `Vault` is meant to be deployed. Roughly speaking, these are the contents of each sub-contract:  - `AssetManagers`: Pool token Asset Manager registry, and Asset Manager interactions.  - `Fees`: set and compute protocol fees.  - `FlashLoans`: flash loan transfers and fees. - excluded here  - `PoolBalances`: Pool joins and exits.  - `PoolRegistry`: Pool registration, ID management, and basic queries.  - `PoolTokens`: Pool token registration and registration, and balance queries.  - `Swaps`: Pool swaps.  - `UserBalance`: manage user balances (Internal Balance operations and external balance transfers)  - `VaultAuthorization`: access control, relayers and signature validation. Additionally, the different Pool specializations are handled by the `GeneralPoolsBalance`, `MinimalSwapInfoPoolsBalance` and `TwoTokenPoolsBalance` sub-contracts, which in turn make use of the `BalanceAllocation` library. The most important goal of the `Vault` is to make token swaps use as little gas as possible. This is reflected in a multitude of design decisions, from minor things like the format used to store Pool IDs, to major features such as the different Pool specialization settings. Finally, the large number of tasks carried out by the Vault means its bytecode is very large, close to exceeding the contract size limit imposed by EIP 170 (https://eips.ethereum.org/EIPS/eip-170). Manual tuning of the source code was required to improve code generation and bring the bytecode size below this limit. This includes extensive utilization of `internal` functions (particularly inside modifiers), usage of named return arguments, dedicated storage access methods, dynamic revert reason generation, and usage of inline assembly, to name a few.",
+			"kind": "dev",
+			"methods": {
+				"WETH()": {
+					"details": "Returns the Vault's WETH instance."
+				},
+				"batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)": {
+					"details": "Performs a series of swaps with one or multiple Pools. In each individual swap, the caller determines either the amount of tokens sent to or received from the Pool, depending on the `kind` value. Returns an array with the net Vault asset balance deltas. Positive amounts represent tokens (or ETH) sent to the Vault, and negative amounts represent tokens (or ETH) sent by the Vault. Each delta corresponds to the asset at the same index in the `assets` array. Swaps are executed sequentially, in the order specified by the `swaps` array. Each array element describes a Pool, the token to be sent to this Pool, the token to receive from it, and an amount that is either `amountIn` or `amountOut` depending on the swap kind. Multihop swaps can be executed by passing an `amount` value of zero for a swap. This will cause the amount in/out of the previous swap to be used as the amount in for the current one. In a 'given in' swap, 'tokenIn' must equal the previous swap's `tokenOut`. For a 'given out' swap, `tokenOut` must equal the previous swap's `tokenIn`. The `assets` array contains the addresses of all assets involved in the swaps. These are either token addresses, or the IAsset sentinel value for ETH (the zero address). Each entry in the `swaps` array specifies tokens in and out by referencing an index in `assets`. Note that Pools never interact with ETH directly: it will be wrapped to or unwrapped from WETH by the Vault. Internal Balance usage, sender, and recipient are determined by the `funds` struct. The `limits` array specifies the minimum or maximum amount of each token the vault is allowed to transfer. `batchSwap` can be used to make a single swap, like `swap` does, but doing so requires more gas than the equivalent `swap` call. Emits `Swap` events."
+				},
+				"deregisterTokens(bytes32,address[])": {
+					"details": "Deregisters `tokens` for the `poolId` Pool. Must be called by the Pool's contract. Only registered tokens (via `registerTokens`) can be deregistered. Additionally, they must have zero total balance. For Pools with the Two Token specialization, `tokens` must have a length of two, that is, both tokens must be deregistered in the same `deregisterTokens` call. A deregistered token can be re-registered later on, possibly with a different Asset Manager. Emits a `TokensDeregistered` event."
+				},
+				"exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))": {
+					"details": "Called by users to exit a Pool, which transfers tokens from the Pool's balance to `recipient`. This will trigger custom Pool behavior, which will typically ask for something in return from `sender` - often tokenized Pool shares. The amount of tokens that can be withdrawn is limited by the Pool's `cash` balance (see `getPoolTokenInfo`). If the caller is not `sender`, it must be an authorized relayer for them. The `tokens` and `minAmountsOut` arrays must have the same length, and each entry in these indicates the minimum token amount to receive for each token contract. The amounts to send are decided by the Pool and not the Vault: it just enforces these minimums. If exiting a Pool that holds WETH, it is possible to receive ETH directly: the Vault will do the unwrapping. To enable this mechanism, the IAsset sentinel value (the zero address) must be passed in the `assets` array instead of the WETH address. Note that it is not possible to combine ETH and WETH in the same exit. `assets` must have the same length and order as the array returned by `getPoolTokens`. This prevents issues when interacting with Pools that register and deregister tokens frequently. If receiving ETH however, the array must be sorted *before* replacing the WETH address with the ETH sentinel value (the zero address), which means the final `assets` array might not be sorted. Pools with no registered tokens cannot be exited. If `toInternalBalance` is true, the tokens will be deposited to `recipient`'s Internal Balance. Otherwise, an ERC20 transfer will be performed. Note that ETH cannot be deposited to Internal Balance: attempting to do so will trigger a revert. `minAmountsOut` is the minimum amount of tokens the user expects to get out of the Pool, for each token in the `tokens` array. This array must match the Pool's registered tokens. This causes the Vault to call the `IBasePool.onExitPool` hook on the Pool's contract, where Pools implement their own custom logic. This typically requires additional information from the user (such as the expected number of Pool shares to return). This can be encoded in the `userData` argument, which is ignored by the Vault and passed directly to the Pool's contract. Emits a `PoolBalanceChanged` event."
+				},
+				"getActionId(bytes4)": {
+					"details": "Returns the action identifier associated with the external function described by `selector`."
+				},
+				"getAuthorizer()": {
+					"details": "Returns the Vault's Authorizer."
+				},
+				"getDomainSeparator()": {
+					"details": "Returns the EIP712 domain separator."
+				},
+				"getInternalBalance(address,address[])": {
+					"details": "Returns `user`'s Internal Balance for a set of tokens."
+				},
+				"getNextNonce(address)": {
+					"details": "Returns the next nonce used by an address to sign messages."
+				},
+				"getPausedState()": {
+					"details": "Returns the current contract pause status, as well as the end times of the Pause Window and Buffer Period."
+				},
+				"getPool(bytes32)": {
+					"details": "Returns a Pool's contract address and specialization setting."
+				},
+				"getPoolTokenInfo(bytes32,address)": {
+					"details": "Returns detailed information for a Pool's registered token. `cash` is the number of tokens the Vault currently holds for the Pool. `managed` is the number of tokens withdrawn and held outside the Vault by the Pool's token Asset Manager. The Pool's total balance for `token` equals the sum of `cash` and `managed`. Internally, `cash` and `managed` are stored using 112 bits. No action can ever cause a Pool's token `cash`, `managed` or `total` balance to be greater than 2^112 - 1. `lastChangeBlock` is the number of the block in which `token`'s total balance was last modified (via either a join, exit, swap, or Asset Manager update). This value is useful to avoid so-called 'sandwich attacks', for example when developing price oracles. A change of zero (e.g. caused by a swap with amount zero) is considered a change for this purpose, and will update `lastChangeBlock`. `assetManager` is the Pool's token Asset Manager."
+				},
+				"getPoolTokens(bytes32)": {
+					"details": "Returns a Pool's registered tokens, the total balance for each, and the latest block when *any* of the tokens' `balances` changed. The order of the `tokens` array is the same order that will be used in `joinPool`, `exitPool`, as well as in all Pool hooks (where applicable). Calls to `registerTokens` and `deregisterTokens` may change this order. If a Pool only registers tokens once, and these are sorted in ascending order, they will be stored in the same order as passed to `registerTokens`. Total balances include both tokens held by the Vault and those withdrawn by the Pool's Asset Managers. These are the amounts used by joins, exits and swaps. For a detailed breakdown of token balances, use `getPoolTokenInfo` instead."
+				},
+				"getProtocolFeesCollector()": {
+					"details": "Returns the current protocol fee module."
+				},
+				"hasApprovedRelayer(address,address)": {
+					"details": "Returns true if `user` has approved `relayer` to act as a relayer for them."
+				},
+				"joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))": {
+					"details": "Called by users to join a Pool, which transfers tokens from `sender` into the Pool's balance. This will trigger custom Pool behavior, which will typically grant something in return to `recipient` - often tokenized Pool shares. If the caller is not `sender`, it must be an authorized relayer for them. The `assets` and `maxAmountsIn` arrays must have the same length, and each entry indicates the maximum amount to send for each asset. The amounts to send are decided by the Pool and not the Vault: it just enforces these maximums. If joining a Pool that holds WETH, it is possible to send ETH directly: the Vault will do the wrapping. To enable this mechanism, the IAsset sentinel value (the zero address) must be passed in the `assets` array instead of the WETH address. Note that it is not possible to combine ETH and WETH in the same join. Any excess ETH will be sent back to the caller (not the sender, which is important for relayers). `assets` must have the same length and order as the array returned by `getPoolTokens`. This prevents issues when interacting with Pools that register and deregister tokens frequently. If sending ETH however, the array must be sorted *before* replacing the WETH address with the ETH sentinel value (the zero address), which means the final `assets` array might not be sorted. Pools with no registered tokens cannot be joined. If `fromInternalBalance` is true, the caller's Internal Balance will be preferred: ERC20 transfers will only be made for the difference between the requested amount and Internal Balance (if any). Note that ETH cannot be withdrawn from Internal Balance: attempting to do so will trigger a revert. This causes the Vault to call the `IBasePool.onJoinPool` hook on the Pool's contract, where Pools implement their own custom logic. This typically requires additional information from the user (such as the expected number of Pool shares). This can be encoded in the `userData` argument, which is ignored by the Vault and passed directly to the Pool's contract, as is `recipient`. Emits a `PoolBalanceChanged` event."
+				},
+				"managePoolBalance((uint8,bytes32,address,uint256)[])": {
+					"details": "Performs a set of Pool balance operations, which may be either withdrawals, deposits or updates. Pool Balance management features batching, which means a single contract call can be used to perform multiple operations of different kinds, with different Pools and tokens, at once. For each operation, the caller must be registered as the Asset Manager for `token` in `poolId`."
+				},
+				"manageUserBalance((uint8,address,uint256,address,address)[])": {
+					"details": "Performs a set of user balance operations, which involve Internal Balance (deposit, withdraw or transfer) and plain ERC20 transfers using the Vault's allowance. This last feature is particularly useful for relayers, as it lets integrators reuse a user's Vault allowance. For each operation, if the caller is not `sender`, it must be an authorized relayer for them."
+				},
+				"queryBatchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool))": {
+					"details": "Simulates a call to `batchSwap`, returning an array of Vault asset deltas. Calls to `swap` cannot be simulated directly, but an equivalent `batchSwap` call can and will yield the exact same result. Each element in the array corresponds to the asset at the same index, and indicates the number of tokens (or ETH) the Vault would take from the sender (if positive) or send to the recipient (if negative). The arguments it receives are the same that an equivalent `batchSwap` call would receive. Unlike `batchSwap`, this function performs no checks on the sender or recipient field in the `funds` struct. This makes it suitable to be called by off-chain applications via eth_call without needing to hold tokens, approve them for the Vault, or even know a user's address. Note that this function is not 'view' (due to implementation details): the client code must explicitly execute eth_call instead of eth_sendTransaction."
+				},
+				"registerPool(uint8)": {
+					"details": "Registers the caller account as a Pool with a given specialization setting. Returns the Pool's ID, which is used in all Pool-related functions. Pools cannot be deregistered, nor can the Pool's specialization be changed. The caller is expected to be a smart contract that implements either `IGeneralPool` or `IMinimalSwapInfoPool`, depending on the chosen specialization setting. This contract is known as the Pool's contract. Note that the same contract may register itself as multiple Pools with unique Pool IDs, or in other words, multiple Pools may share the same contract. Emits a `PoolRegistered` event."
+				},
+				"registerTokens(bytes32,address[],address[])": {
+					"details": "Registers `tokens` for the `poolId` Pool. Must be called by the Pool's contract. Pools can only interact with tokens they have registered. Users join a Pool by transferring registered tokens, exit by receiving registered tokens, and can only swap registered tokens. Each token can only be registered once. For Pools with the Two Token specialization, `tokens` must have a length of two, that is, both tokens must be registered in the same `registerTokens` call, and they must be sorted in ascending order. The `tokens` and `assetManagers` arrays must have the same length, and each entry in these indicates the Asset Manager for the corresponding token. Asset Managers can manage a Pool's tokens via `managePoolBalance`, depositing and withdrawing them directly, and can even set their balance to arbitrary amounts. They are therefore expected to be highly secured smart contracts with sound design principles, and the decision to register an Asset Manager should not be made lightly. Pools can choose not to assign an Asset Manager to a given token by passing in the zero address. Once an Asset Manager is set, it cannot be changed except by deregistering the associated token and registering again with a different Asset Manager. Emits a `TokensRegistered` event."
+				},
+				"setAuthorizer(address)": {
+					"details": "Sets a new Authorizer for the Vault. The caller must be allowed by the current Authorizer to do this. Emits an `AuthorizerChanged` event."
+				},
+				"setPaused(bool)": {
+					"details": "Safety mechanism to pause most Vault operations in the event of an emergency - typically detection of an error in some part of the system. The Vault can only be paused during an initial time period, after which pausing is forever disabled. While the contract is paused, the following features are disabled: - depositing and transferring internal balance - transferring external balance (using the Vault's allowance) - swaps - joining Pools - Asset Manager interactions Internal Balance can still be withdrawn, and Pools exited."
+				},
+				"setRelayerApproval(address,address,bool)": {
+					"details": "Allows `relayer` to act as a relayer for `sender` if `approved` is true, and disallows it otherwise. Emits a `RelayerApprovalChanged` event."
+				},
+				"swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)": {
+					"details": "Performs a swap with a single Pool. If the swap is 'given in' (the number of tokens to send to the Pool is known), it returns the amount of tokens taken from the Pool, which must be greater than or equal to `limit`. If the swap is 'given out' (the number of tokens to take from the Pool is known), it returns the amount of tokens sent to the Pool, which must be less than or equal to `limit`. Internal Balance usage and the recipient are determined by the `funds` struct. Emits a `Swap` event."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Vault.sol": "Vault"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 400
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/AssetHelpers.sol": {
+			"keccak256": "0x894c767de58129e67217c4266a7b3144e0693c939d2da01e082daf959afab807",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2742bfcd8efebd2bae47aff00fcf878c2a08328e6e19ef00577831138cc1e159",
+				"dweb:/ipfs/QmZdN9HFmQdRiAZmE4hPFxoh4jkvW7CUQaFzh6Hn2x2Gds"
+			]
+		},
+		"contracts/AssetManagers.sol": {
+			"keccak256": "0x8bd71f9bf72df612ab90a7de7f906efcefef6d063d71fd5bee691550ae78db9d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://b4a9121e28a138deed30d9da4c6a60bf734378beb487f3cc485af89c9da033f0",
+				"dweb:/ipfs/QmejGdv25tEMACBEDa9pu3BCAVkmEFxb66pitxDRVU7YV3"
+			]
+		},
+		"contracts/AssetTransfersHandler.sol": {
+			"keccak256": "0x8b43d048c8644790b40f78dfd117b0e27a1fef3dca75837bd2e64e80ad95d3fd",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c5eb35c500da0a66ac829cb18cf81431ff6e30316bf4ab2fe2b16120bec98310",
+				"dweb:/ipfs/QmWzD9RUZwLmPb1S6VPbDCNs5ZHm4gPvEPBbkRAK7urEbB"
+			]
+		},
+		"contracts/Fees.sol": {
+			"keccak256": "0x4beb95d0308bc9b6b786de5ce59052cd4096f33b37800153439ba1882d31eb97",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://b629a476d308779992c71c2feba96b84dadc6ddc3b2b7df51d490322624a7111",
+				"dweb:/ipfs/QmYomTAfN9UPmJ6A6kbAk6nX8n6bWJNGHiqZYWTXP8JnCC"
+			]
+		},
+		"contracts/PoolBalances.sol": {
+			"keccak256": "0x9390ea2d959c6fea840387796ad6509f9f3f52a64f4d92a22ee6c91c479986c1",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://43ef96d00ceace20964b407a8795b637447be9bcdea96f9f80610109caa6f859",
+				"dweb:/ipfs/QmNNfABH33TT5J9NJUkbBCBtQBoEkLAvgk88VUWZCQmXd2"
+			]
+		},
+		"contracts/PoolRegistry.sol": {
+			"keccak256": "0xed41e8d7d67090bde8671d9000c37ad4a6152df07aced0aa084628e83370c68c",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://134f27927568394683566ded004c936a1e65d3973f25d9fe353539c3cf16c2f4",
+				"dweb:/ipfs/QmR9fZz4oazHjyBRSoDYMpybdxFaqj12JMMcVmu3poEVbi"
+			]
+		},
+		"contracts/PoolTokens.sol": {
+			"keccak256": "0x27ed19c2e54b282bbdb3f0b264c3c42363556ec2e8196463a5fc77c181eaf26b",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://949f1604106917aafda498bfdd927a8fc9e66feac04e905433e7cf808b83a2ed",
+				"dweb:/ipfs/QmWnc1jqn49o5o8zh5pjF3EnShgMYP5njxsWRj2e9ZgADd"
+			]
+		},
+		"contracts/ProtocolFeesCollector.sol": {
+			"keccak256": "0xc5ef6538d349306dbff52802d8b72b7793e385d7595009a19e39f01a53b3e60b",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://f5bc2743b956591b3401cfd99994a5de0db91d2a1c5b15fd3578eca7fb434c80",
+				"dweb:/ipfs/QmPB7a82joNAKErwVsWnqe5fVF2yjryaxDizDwUzFt63uK"
+			]
+		},
+		"contracts/Swaps.sol": {
+			"keccak256": "0xcd0aca5d04360929caf82068cb137d49eacb5df0791161be288fbe6bea43bf3f",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ef874c0bbc59e6377b2ca168f066d1337c7e60db9a1a0407b0c7e50c0330aa03",
+				"dweb:/ipfs/QmWWRpHwzgKtNCjfFjkjj7y3PUXP3FmPyGRbbE5LLdoB3C"
+			]
+		},
+		"contracts/UserBalance.sol": {
+			"keccak256": "0x9ed20e25ccb109d638206c68e33dfce26dd715a2f9f9ff8511b9fc48d119397d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://08ca7cb97fbf9ba39a4c3f908be38ff0e3c7bbbad65b404e4918c6c425bf9467",
+				"dweb:/ipfs/QmaBz3ckWForbHJphGr7TfWxqTgAU17r5P6bPwm49abWbU"
+			]
+		},
+		"contracts/Vault.sol": {
+			"keccak256": "0xd21db78c675f4748e098509eb33c17d537cc2ec0aae77b93a757ca9731c326c3",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://1c4644ae0db7558e3cf83f5ea824c5e1aa9dc94ba5771356ac2d777c0829977b",
+				"dweb:/ipfs/QmUc3VxHTxPqPhoT3bonqYiLUtK5nLK9dvdVi6J9UoZPqN"
+			]
+		},
+		"contracts/VaultAuthorization.sol": {
+			"keccak256": "0x86a5f0174a4b19c220df2f5f98dce996e0c19c4fa7283bb8ee80f1e9a1ae8278",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://991ede72e9f1af7018d57005c8ab7af0412a63655a314f3ac555d02e5bf5c5b0",
+				"dweb:/ipfs/QmaeJ1poUztVZjVsW28AeEwfKiuVq8oNVyYPyYjfcBxBwy"
+			]
+		},
+		"contracts/interfaces/ERC20/IERC20.sol": {
+			"keccak256": "0xf3fdfa43106b79c51c64abd1fc00a3c63c85bb456204b537d945cfc187ecda49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d020918c01039e77939463e130d3b04fac93a7b7f7b0d4fd7f0db3aa99c89dac",
+				"dweb:/ipfs/QmXFvfDMLG7o5wpxvdMqS31fvNCMBZpjX3TvUEGqPD7PY3"
+			]
+		},
+		"contracts/interfaces/IAsset.sol": {
+			"keccak256": "0x5a7df8d3cc6fa50f8be0f5c1b47596ec34c39724bacda423bc325e45eef8b6b2",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://9bab1f88b6479aba2f96590c821d5f3e8eb029e2deeb1f82b0a5767d9c65bbdf",
+				"dweb:/ipfs/QmYFv86kSpV2cavZN4c78MukqSbRgRqxuc3P5FQmgSArta"
+			]
+		},
+		"contracts/interfaces/IAuthorizer.sol": {
+			"keccak256": "0x8e716c628bc04864d1249640950488dfca7ee59713f07f1a848b24c12fc3cdcd",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://1fe4d6425d6ff34f26da607bf8694da43c4ad2250c802cbb04f2dc923f284424",
+				"dweb:/ipfs/QmQVcdWGvL7d2RCeLGdALCfzMW6BBaQTZ5ANSmQ1jZ2ZCh"
+			]
+		},
+		"contracts/interfaces/IBasePool.sol": {
+			"keccak256": "0x7ddcea24ab2dbb70951b8f1f2f1e06c21d754f965dd165ea4f2a163d0c2ac293",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://81d479b5be39cb24c29ed147cbadb01621204967f98ab7c8f6c3400d903ad74a",
+				"dweb:/ipfs/QmPB8ovZU1muLSqTCTNpP9thUjSE7D3rZpsVkMGsFH1u6x"
+			]
+		},
+		"contracts/interfaces/IFlashLoanRecipient.sol": {
+			"keccak256": "0x687582c3218d468aa3af5289e011b2fc283260025a768b303f18c2a961931a95",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://0973fe1cdecf0acf9b4f6cbbecdeaaa9536c552c8f6916175916517d65814d66",
+				"dweb:/ipfs/QmdvZDwn5dHV715SYtKpxjqJrHdLH5Kr6G6bpomDt8KPje"
+			]
+		},
+		"contracts/interfaces/IGeneralPool.sol": {
+			"keccak256": "0xf0ecb1292d70fc7f9b19e8bed7175720cbfa95ae034d861cd1096042e4847d3d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://61348c39a7881999e71971e1a366254548546c29aff90117d513ebe24711e89c",
+				"dweb:/ipfs/QmSUEKf6MvsCHtnakXiqufLZGwM7TZcXNFHDdeaL6mUZ8c"
+			]
+		},
+		"contracts/interfaces/IMinimalSwapInfoPool.sol": {
+			"keccak256": "0xf4d01e984cbb814996edc299efacb3c26c6bdc6819e03ed6f1cf34269035bfe2",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8a7a2c5bd412b500fa0dc4fb71dcbf054e8eddbab6c23da9f2bc3c3f15b2fe27",
+				"dweb:/ipfs/QmakSb4zWXAtBN1XFsJt1k78HtioXKdDEZyuLi6M47LFfz"
+			]
+		},
+		"contracts/interfaces/IPoolSwapStructs.sol": {
+			"keccak256": "0xc94802b650ec493ead94dfb582d20c606dcc1104082774b94993fe57a962b593",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://44e6f60c7ebfc043367bf3a487cfe1c8c12aeca4d8b36bb85ffb64dcef9823e4",
+				"dweb:/ipfs/QmbsVsVRcoZ1SgmVEgMojrtH1VsJVk3cDSiWovdTwMDyuy"
+			]
+		},
+		"contracts/interfaces/IProtocolFeesCollector.sol": {
+			"keccak256": "0xa712b92977fccb12b700c0010b4d29968c79905f05d9a8ad90d446defd183ea9",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://5d39d8b61be7ff07869de3a4a47ffb70715deff252daf6bb80866dfa305528a9",
+				"dweb:/ipfs/Qmafb4Z18qmpw2uLhQNzq2J9SACP584yrcmhJLmRa48w7n"
+			]
+		},
+		"contracts/interfaces/ISignaturesValidator.sol": {
+			"keccak256": "0xcdac031bd176ea369d37f507f291d7ca26c0fe70a5ba859e6c98e19fc7192064",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://6f37618b0ed5cdc243b85d9e74fc034ba042a4d18c5e2ce9bdab0a4db1f1ea98",
+				"dweb:/ipfs/QmVUkjqQqz3PjR81zg9fWDR1tGogHPgF5htL8bT4267jr6"
+			]
+		},
+		"contracts/interfaces/ITemporarilyPausable.sol": {
+			"keccak256": "0x241dc32b0d5b98b093a74eb801c1903ca1b886fbc67784787357b36ae9ad4a49",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://871bd3dcec4e709cda3266bab888c0019b83e10f6900c6873bb1ef6dd74e9a79",
+				"dweb:/ipfs/QmNNxWiR7LsjWZxKaPHvfGGZHAv8qT9NHpBhmXMs3C7nF1"
+			]
+		},
+		"contracts/interfaces/IVault.sol": {
+			"keccak256": "0xa59c498e32e29ed0ae0c37599d2b0a5e68b9ef81f6f297b482aa8ce5acece4b6",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://f8dba689c15de077a54c9b1c99bb45fa8cec1f7fceee2f2ba790dca233b533c4",
+				"dweb:/ipfs/QmNZCTrWrhiJXu5CF7SrmgTwGanGw5zzNuRHvgmmXTpy9Q"
+			]
+		},
+		"contracts/interfaces/IWETH.sol": {
+			"keccak256": "0xcde48f5c4cf68176c6ddb51dcc48dd4daa00ba90d12fdb79bc4cc3ed96e24e74",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://7b85e23ee646a241b86b7149ae98b0eb664e2eac43ad4b42f18192323111c055",
+				"dweb:/ipfs/QmaghWB37DYpfE2xcXuw8xH63VyHy5DmK4kLWDDd5cepwC"
+			]
+		},
+		"contracts/libraries/Address.sol": {
+			"keccak256": "0x75b6ddcc26b0d7006174cc9d7227c9a454aa7543023e5ea18e0c80f4f5c0fbad",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e31187b43d49df104505cae8ddf34b5f806def65ca219a2039b8ac81dcdd3a9c",
+				"dweb:/ipfs/QmYnRxGaWFh3dtQUwoLwC2oynwgtNYfL4D3xyVuZy1ar84"
+			]
+		},
+		"contracts/libraries/EIP712.sol": {
+			"keccak256": "0x6cdf050f10132dd5ac58886f10d99c4621a8af6af4c5812b608f33642d0b5f85",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b6094db5335161253a0fc3946eccf0322fd8cdbdc7e171609db241cd07f6e977",
+				"dweb:/ipfs/QmbipLsoQGVJfmaoXR3uKE9qimvWdb5iNkx19RKNmHhTg5"
+			]
+		},
+		"contracts/libraries/EnumerableMap.sol": {
+			"keccak256": "0xbcd7a952026897adf6102982ab9e54a008cb5ced008ddcf2249679b7d2731627",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9d3b0c283cab6d21e50bc6c432f2e0ffb68687695125e5672d1fa792ebf73bc6",
+				"dweb:/ipfs/QmWMmJ6QjFzpsVYLwQ6shBf45cyVMWpPZSLmbMh8SFdyww"
+			]
+		},
+		"contracts/libraries/EnumerableSet.sol": {
+			"keccak256": "0x4829515729181087f1bc5169bbb06247492c709572af8d9348f0e733907b8a77",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bdbb01e2d4d0b4e6580d4edce816988c7b14933e6e43a5f9dff036ecb8f99a46",
+				"dweb:/ipfs/QmRBjW7pBnBuDso4nhk41BkWtEzW2EX6CiDcR372u7neGX"
+			]
+		},
+		"contracts/libraries/ReentrancyGuard.sol": {
+			"keccak256": "0x73494fe90096bd4c367aed4cc5ac75bca143cda371480956781a5ebaf6cad6a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aa58167f63ffcad4dfd1f9fcaf40990f5bfe16f50cae490be6b26b0905ec31cd",
+				"dweb:/ipfs/Qmc9KkUnaW3nWFSDtwWKG2GjwkGhUQLm1CwyiHKefjpBJu"
+			]
+		},
+		"contracts/libraries/SafeCast.sol": {
+			"keccak256": "0x28a992a2ad2139e20b5dcea5a6decf1ac296891f7c508cbad4b3e12ac0859be4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ad415ce7a3c343e39ec3cda06eedb849ceb1b23fe440661169da3fe2c41f3e6",
+				"dweb:/ipfs/QmfVxiA7Zs62KELpKUW9VEEc8y5vspWQ3LvGnDk2aX36GD"
+			]
+		},
+		"contracts/libraries/SafeERC20.sol": {
+			"keccak256": "0xd595b8363bcb6d7b855479b47345d095471db8d689bd05a1949221a3e1912519",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c4d1dda7ce2f17d8f5e1dc5cc86bb2ef75fe9080f06b68512645607991d8ace",
+				"dweb:/ipfs/QmehohsRQLH8EsCnmjMFWsswCMSXZPNcvwvXrMmpRFi2xC"
+			]
+		},
+		"contracts/libraries/balances/BalanceAllocation.sol": {
+			"keccak256": "0xd3216b77c70841232e6c695d45ccc2573193ac48fa7195cd40fbf83fef5d86e3",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://17d75e0b29aa9e0c214291853dcd112d18051cb3ca4ef26f97b4aed91268f5ae",
+				"dweb:/ipfs/QmZDMceCWCsqAbkhhhYMBfkAysAs8Ln4bCdGvxxUGcfLtM"
+			]
+		},
+		"contracts/libraries/balances/GeneralPoolsBalance.sol": {
+			"keccak256": "0xc95f8b413bfe46fc79ee96d9a2dfad5040c191e1c619f65c4f852ec2a1a255d0",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://38769f6bcaad86e55cea9f06abb8cf423c8153648de1cee76ce175fdfa9fdea3",
+				"dweb:/ipfs/QmPfYMc7y93sARWobrT1XirkUBUf5nQjbhrk3Q7ucFbsKf"
+			]
+		},
+		"contracts/libraries/balances/MinimalSwapInfoPoolsBalance.sol": {
+			"keccak256": "0x7c2a972674974463da8392ea7eabd5addf28e54b3faddf3da8250a7b2fbe8790",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://85b7b39ca15be297919ffb0e159e1a58039057145db7fdd7e304019b74dffa81",
+				"dweb:/ipfs/Qmf6CKjBA6dXFpDB6Za8T5CXBWasSHewkeqhgUnfvZozKN"
+			]
+		},
+		"contracts/libraries/balances/TwoTokenPoolsBalance.sol": {
+			"keccak256": "0x1428e1feafcf7dbdb1eee7f6c873bf0accb6446978a7d4df21d2a96a2194964d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://950326437e62a0ca143f9d372b9d9fa5da0fb403e21102b3862f1fa785940055",
+				"dweb:/ipfs/QmTq46UxhuZepFKKP3KgUJ2rgdi78XEKjZ8shaG9XuanZh"
+			]
+		},
+		"contracts/libraries/helpers/Authentication.sol": {
+			"keccak256": "0x118cc34f16c4d4fc906d2f05a441b0f4cf87e9a8cfc0d34c1946fe5dbf02c1b6",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://1901ef224344c9f833d3812bd75b11b2ce0ecdc90a642f1f0a7aa6048e132a0c",
+				"dweb:/ipfs/QmXdQoHDcuknQzmki81QqVbkvcNyzRbBCHXBr6ZGViqDHH"
+			]
+		},
+		"contracts/libraries/helpers/IAuthentication.sol": {
+			"keccak256": "0xe914c3d9f199f74ea68240dbc8d3df3792d8a9c0f31829005746ec5eb0bb78d3",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://5459cbd8b3c21c101817b296dfe91b27356779d45475dc62813349e4a20b39c2",
+				"dweb:/ipfs/QmcdjX6t8yiQ3vwLAP9gdiRHeCMHc6SCBsCeK9JLTqwf2S"
+			]
+		},
+		"contracts/libraries/helpers/InputHelpers.sol": {
+			"keccak256": "0xdf16c1133d3990ffd55feabaa3d1869678b7b1025b0f11b3969ac6f8c101692f",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://6f833a3abde83849077ab7bdb3f942fc2a261ce089b877cae662375d086f2a77",
+				"dweb:/ipfs/QmRciVYBaiKB92egfhrxtwkhtTbj2EKNZBEjJUag6jJEpR"
+			]
+		},
+		"contracts/libraries/helpers/RequiemErrors.sol": {
+			"keccak256": "0x34b9c7c155c4fb6d212ca442b1b1d1a3fd07df51bda3c400ccf190bfd1a4fb1f",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://0933218d4531545c816601ff465d136d385edb8d26221864982abb3834ec1621",
+				"dweb:/ipfs/QmS1Hw5BpNjxB9KB5s1m5L65AzAvY27rxXxDdCwHBmiFL6"
+			]
+		},
+		"contracts/libraries/helpers/SignaturesValidator.sol": {
+			"keccak256": "0x2c3b99fa16639ccac0bba6355b28e96965b9f23e7db5a13b7b8c3e5d7f130c5c",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://72e6bb106bc6848c70d014b26f57c6f099e67934d4ae61f82abf53c0aa20daa0",
+				"dweb:/ipfs/Qma86GcBe2mwTo2QcPpuk22L9k2MpbFS16VPYsqLABi6BU"
+			]
+		},
+		"contracts/libraries/helpers/TemporarilyPausable.sol": {
+			"keccak256": "0xc5fca06b93e130b0e51f0091ff9806ebb56aba575592ee8d1f67e37f315b8e7e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2693528b0823fe0481a5f09fceb4a132fecbe28afa0be1623162dc28bee82320",
+				"dweb:/ipfs/QmT3tU5oGzgMsN4CZQqEgkc9HXDgZfFaaD6DaLXE88xSkB"
+			]
+		},
+		"contracts/libraries/math/FixedPoint.sol": {
+			"keccak256": "0xeb5a6f9de0c471f6255ff89029ee89be31b4b6b2bdf10239b235547f1985f350",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://15f75b713f16c106c1580f677595bb4d609bf94dda0d647ec5bbc87cadc9bda3",
+				"dweb:/ipfs/QmeUXekiKU1seHjREsrpYFoQrpcZGaK9kTG45VoZJDuqcW"
+			]
+		},
+		"contracts/libraries/math/LogExpMath.sol": {
+			"keccak256": "0x4c24ccfb5b0f3d80993f7089d8286b657e62e76d1af679f026f0d3aaaca2b01d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0a2e4fad3f421ecb20beb67484e6aeaedd7f6eea042a944b1cd3718f48b3cc6b",
+				"dweb:/ipfs/QmVx7dgL6aLtYFc1YmLXsE6aV9m9zmPZGxgU8KGq3HP7V2"
+			]
+		},
+		"contracts/libraries/math/Math.sol": {
+			"keccak256": "0xa142987ad4e217bfba6da6838ac57fee826c766ea1d953fe533854e9edd9ab49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4f44980e8d71a4278b5aa258f71f8e4a54775e499495c9a9f9113e96e9f4d6cc",
+				"dweb:/ipfs/QmSnWWVRYstwwkpxfFgEWWws1vN79CrbwiQhRp1Kr6jP47"
+			]
+		}
+	},
+	"version": 1
+}

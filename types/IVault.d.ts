@@ -26,7 +26,6 @@ interface IVaultInterface extends ethers.utils.Interface {
     "batchSwap(uint8,tuple[],address[],(address,bool,address,bool),int256[],uint256)": FunctionFragment;
     "deregisterTokens(bytes32,address[])": FunctionFragment;
     "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))": FunctionFragment;
-    "flashLoan(address,address[],uint256[],bytes)": FunctionFragment;
     "getAuthorizer()": FunctionFragment;
     "getDomainSeparator()": FunctionFragment;
     "getInternalBalance(address,address[])": FunctionFragment;
@@ -89,10 +88,6 @@ interface IVaultInterface extends ethers.utils.Interface {
         toInternalBalance: boolean;
       }
     ]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "flashLoan",
-    values: [string, string[], BigNumberish[], BytesLike]
   ): string;
   encodeFunctionData(
     functionFragment: "getAuthorizer",
@@ -234,7 +229,6 @@ interface IVaultInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "exitPool", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "flashLoan", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getAuthorizer",
     data: BytesLike
@@ -511,14 +505,6 @@ export class IVault extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    flashLoan(
-      recipient: string,
-      tokens: string[],
-      amounts: BigNumberish[],
-      userData: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
     getAuthorizer(overrides?: CallOverrides): Promise<[string]>;
 
     getDomainSeparator(overrides?: CallOverrides): Promise<[string]>;
@@ -723,14 +709,6 @@ export class IVault extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  flashLoan(
-    recipient: string,
-    tokens: string[],
-    amounts: BigNumberish[],
-    userData: BytesLike,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
   getAuthorizer(overrides?: CallOverrides): Promise<string>;
 
   getDomainSeparator(overrides?: CallOverrides): Promise<string>;
@@ -932,14 +910,6 @@ export class IVault extends BaseContract {
         userData: BytesLike;
         toInternalBalance: boolean;
       },
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    flashLoan(
-      recipient: string,
-      tokens: string[],
-      amounts: BigNumberish[],
-      userData: BytesLike,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -1403,14 +1373,6 @@ export class IVault extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    flashLoan(
-      recipient: string,
-      tokens: string[],
-      amounts: BigNumberish[],
-      userData: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
     getAuthorizer(overrides?: CallOverrides): Promise<BigNumber>;
 
     getDomainSeparator(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1589,14 +1551,6 @@ export class IVault extends BaseContract {
         userData: BytesLike;
         toInternalBalance: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    flashLoan(
-      recipient: string,
-      tokens: string[],
-      amounts: BigNumberish[],
-      userData: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

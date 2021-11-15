@@ -33,7 +33,6 @@ interface RequiemVaultInterface extends ethers.utils.Interface {
     "getInternalBalance(address,address[])": FunctionFragment;
     "getNextNonce(address)": FunctionFragment;
     "getPausedState()": FunctionFragment;
-    "getPausedStateVault()": FunctionFragment;
     "getPool(bytes32)": FunctionFragment;
     "getPoolTokenInfo(bytes32,address)": FunctionFragment;
     "getPoolTokens(bytes32)": FunctionFragment;
@@ -118,10 +117,6 @@ interface RequiemVaultInterface extends ethers.utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "getPausedState",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getPausedStateVault",
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "getPool", values: [BytesLike]): string;
@@ -269,10 +264,6 @@ interface RequiemVaultInterface extends ethers.utils.Interface {
     functionFragment: "getPausedState",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(
-    functionFragment: "getPausedStateVault",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "getPool", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getPoolTokenInfo",
@@ -328,7 +319,6 @@ interface RequiemVaultInterface extends ethers.utils.Interface {
     "FlashLoan(address,address,uint256,uint256)": EventFragment;
     "InternalBalanceChanged(address,address,int256)": EventFragment;
     "PausedStateChanged(bool)": EventFragment;
-    "PausedStateChangedVault(bool)": EventFragment;
     "PoolBalanceChanged(bytes32,address,address[],int256[],uint256[])": EventFragment;
     "PoolBalanceManaged(bytes32,address,address,int256,int256)": EventFragment;
     "PoolRegistered(bytes32,address,uint8)": EventFragment;
@@ -343,7 +333,6 @@ interface RequiemVaultInterface extends ethers.utils.Interface {
   getEvent(nameOrSignatureOrTopic: "FlashLoan"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "InternalBalanceChanged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PausedStateChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "PausedStateChangedVault"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PoolBalanceChanged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PoolBalanceManaged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PoolRegistered"): EventFragment;
@@ -384,10 +373,6 @@ export type InternalBalanceChangedEvent = TypedEvent<
 >;
 
 export type PausedStateChangedEvent = TypedEvent<
-  [boolean] & { paused: boolean }
->;
-
-export type PausedStateChangedVaultEvent = TypedEvent<
   [boolean] & { paused: boolean }
 >;
 
@@ -561,16 +546,6 @@ export class RequiemVault extends BaseContract {
     getNextNonce(user: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
     getPausedState(
-      overrides?: CallOverrides
-    ): Promise<
-      [boolean, BigNumber, BigNumber] & {
-        paused: boolean;
-        pauseWindowEndTime: BigNumber;
-        bufferPeriodEndTime: BigNumber;
-      }
-    >;
-
-    getPausedStateVault(
       overrides?: CallOverrides
     ): Promise<
       [boolean, BigNumber, BigNumber] & {
@@ -794,16 +769,6 @@ export class RequiemVault extends BaseContract {
     }
   >;
 
-  getPausedStateVault(
-    overrides?: CallOverrides
-  ): Promise<
-    [boolean, BigNumber, BigNumber] & {
-      paused: boolean;
-      pauseWindowEndTime: BigNumber;
-      bufferPeriodEndTime: BigNumber;
-    }
-  >;
-
   getPool(
     poolId: BytesLike,
     overrides?: CallOverrides
@@ -1012,16 +977,6 @@ export class RequiemVault extends BaseContract {
     getNextNonce(user: string, overrides?: CallOverrides): Promise<BigNumber>;
 
     getPausedState(
-      overrides?: CallOverrides
-    ): Promise<
-      [boolean, BigNumber, BigNumber] & {
-        paused: boolean;
-        pauseWindowEndTime: BigNumber;
-        bufferPeriodEndTime: BigNumber;
-      }
-    >;
-
-    getPausedStateVault(
       overrides?: CallOverrides
     ): Promise<
       [boolean, BigNumber, BigNumber] & {
@@ -1250,14 +1205,6 @@ export class RequiemVault extends BaseContract {
     ): TypedEventFilter<[boolean], { paused: boolean }>;
 
     PausedStateChanged(
-      paused?: null
-    ): TypedEventFilter<[boolean], { paused: boolean }>;
-
-    "PausedStateChangedVault(bool)"(
-      paused?: null
-    ): TypedEventFilter<[boolean], { paused: boolean }>;
-
-    PausedStateChangedVault(
       paused?: null
     ): TypedEventFilter<[boolean], { paused: boolean }>;
 
@@ -1504,8 +1451,6 @@ export class RequiemVault extends BaseContract {
 
     getPausedState(overrides?: CallOverrides): Promise<BigNumber>;
 
-    getPausedStateVault(overrides?: CallOverrides): Promise<BigNumber>;
-
     getPool(poolId: BytesLike, overrides?: CallOverrides): Promise<BigNumber>;
 
     getPoolTokenInfo(
@@ -1704,10 +1649,6 @@ export class RequiemVault extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     getPausedState(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    getPausedStateVault(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
 
     getPool(
       poolId: BytesLike,

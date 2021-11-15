@@ -121,7 +121,7 @@ abstract contract PoolRegistry is ReentrancyGuard, VaultAuthorization {
 
         serialized |= bytes32(uint256(nonce));
         serialized |= bytes32(uint256(specialization)) << (10 * 8);
-        serialized |= bytes32(uint256(uint160(pool)) << 96) << (12 * 8);
+        serialized |= bytes32(uint256(uint160(pool)) << 12 * 8) << (12 * 8);
 
         return serialized;
     }

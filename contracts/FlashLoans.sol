@@ -39,7 +39,7 @@ abstract contract FlashLoans is Fees, ReentrancyGuard, TemporarilyPausable {
         IERC20[] memory tokens,
         uint256[] memory amounts,
         bytes memory userData
-    ) external override nonReentrant whenNotPaused {
+    ) external nonReentrant whenNotPaused {
         InputHelpers.ensureInputLengthMatch(tokens.length, amounts.length);
 
         uint256[] memory feeAmounts = new uint256[](tokens.length);

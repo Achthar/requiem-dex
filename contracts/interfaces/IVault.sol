@@ -662,12 +662,12 @@ interface IVault is ISignaturesValidator, ITemporarilyPausable {
      *
      * Emits `FlashLoan` events.
      */
-    function flashLoan(
-        IFlashLoanRecipient recipient,
-        IERC20[] memory tokens,
-        uint256[] memory amounts,
-        bytes memory userData
-    ) external;
+    // function flashLoan(
+    //     IFlashLoanRecipient recipient,
+    //     IERC20[] memory tokens,
+    //     uint256[] memory amounts,
+    //     bytes memory userData
+    // ) external;
 
     /**
      * @dev Emitted for each individual flash loan performed by `flashLoan`.
