@@ -7761,6 +7761,50 @@
         "VaultAuthorizer"
       ]
     },
+    "/home/achthar/requiem-dex/contracts/libraries/helpers/ERC20Helpers.sol": {
+      "lastModificationDate": 1636928920305,
+      "contentHash": "dbe7595606de2e507db75e491ab59a96",
+      "sourceName": "contracts/libraries/helpers/ERC20Helpers.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IAsset.sol",
+        "../../interfaces/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": []
+    },
     "/home/achthar/requiem-dex/contracts/AssetHelpers.sol": {
       "lastModificationDate": 1636928920297,
       "contentHash": "c63a605b25690f4204b55dc0f8ce8d30",
@@ -7940,8 +7984,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/AssetTransfersHandler.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "90d2f43e1d1c2f075b0956c9c8192295",
+      "lastModificationDate": 1636973653100,
+      "contentHash": "606d358d172638cffe721f005749a79f",
       "sourceName": "contracts/AssetTransfersHandler.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -7975,7 +8019,6 @@
         }
       },
       "imports": [
-        "./libraries/math/Math.sol",
         "./libraries/helpers/RequiemErrors.sol",
         "./interfaces/ERC20/IERC20.sol",
         "./libraries/SafeERC20.sol",
@@ -7993,8 +8036,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/math/Math.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "6db410d00f8e3abcf7ca00cce1e95ab9",
+      "lastModificationDate": 1636969852369,
+      "contentHash": "05ca565923686f7f2adac2ba050596f4",
       "sourceName": "contracts/libraries/math/Math.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8027,7 +8070,9 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "../helpers/RequiemErrors.sol"
+      ],
       "versionPragmas": [
         "^0.8.9"
       ],
@@ -8079,8 +8124,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/SafeERC20.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "f2612c0a9478339b642cdf68fd13d67f",
+      "lastModificationDate": 1636964262944,
+      "contentHash": "6543b63019169c934f4347910ec9f739",
       "sourceName": "contracts/libraries/SafeERC20.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8114,8 +8159,8 @@
         }
       },
       "imports": [
-        "../interfaces/ERC20/IERC20.sol",
-        "./Address.sol"
+        "./helpers/RequiemErrors.sol",
+        "../interfaces/ERC20/IERC20.sol"
       ],
       "versionPragmas": [
         "^0.8.9"
@@ -8125,8 +8170,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/Address.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "1825675b467edb450aece222eed6055c",
+      "lastModificationDate": 1636964962151,
+      "contentHash": "d52fc77893f5e9ddbbb545a8b033e168",
       "sourceName": "contracts/libraries/Address.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8159,7 +8204,9 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "./helpers/RequiemErrors.sol"
+      ],
       "versionPragmas": [
         "^0.8.9"
       ],
@@ -8168,8 +8215,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IVault.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "8afa3799809271fb3cf95d086100afe4",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "f8e898c78fffab69ab9858b069855d22",
       "sourceName": "contracts/interfaces/IVault.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8204,8 +8251,8 @@
       },
       "imports": [
         "./ERC20/IERC20.sol",
-        "./ISignaturesValidatorVault.sol",
-        "./ITemporarilyPausableVault.sol",
+        "./ISignaturesValidator.sol",
+        "./ITemporarilyPausable.sol",
         "./IWETH.sol",
         "./IAsset.sol",
         "./IAuthorizer.sol",
@@ -8219,10 +8266,10 @@
         "IVault"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/ISignaturesValidatorVault.sol": {
+    "/home/achthar/requiem-dex/contracts/interfaces/ISignaturesValidator.sol": {
       "lastModificationDate": 1636928920301,
-      "contentHash": "0599cbe51d2e9f93559a71791a9c9364",
-      "sourceName": "contracts/interfaces/ISignaturesValidatorVault.sol",
+      "contentHash": "f49c94a207f865e36878381c7fba57ce",
+      "sourceName": "contracts/interfaces/ISignaturesValidator.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -8259,13 +8306,13 @@
         "^0.8.9"
       ],
       "artifacts": [
-        "ISignaturesValidatorVault"
+        "ISignaturesValidator"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/ITemporarilyPausableVault.sol": {
+    "/home/achthar/requiem-dex/contracts/interfaces/ITemporarilyPausable.sol": {
       "lastModificationDate": 1636928920301,
-      "contentHash": "7b05425b368ef6afa7a87f780d8a9539",
-      "sourceName": "contracts/interfaces/ITemporarilyPausableVault.sol",
+      "contentHash": "88475e5f7a227ca89d9048a807e6aab2",
+      "sourceName": "contracts/interfaces/ITemporarilyPausable.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -8302,7 +8349,7 @@
         "^0.8.9"
       ],
       "artifacts": [
-        "ITemporarilyPausableVault"
+        "ITemporarilyPausable"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IAuthorizer.sol": {
@@ -8394,8 +8441,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IProtocolFeesCollector.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "65670387e15dd64f7fd4ec568157da24",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "6a960ccb00d44a031c5ef40dc836be2c",
       "sourceName": "contracts/interfaces/IProtocolFeesCollector.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8441,8 +8488,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockAssetTransfersHandler.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "318abc87220b9a6d231992d428f07098",
+      "lastModificationDate": 1636969356757,
+      "contentHash": "8fcfe65cd74f5b1dd795db44c87138b3",
       "sourceName": "contracts/test/vault/MockAssetTransfersHandler.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8489,7 +8536,7 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/math/FixedPoint.sol": {
-      "lastModificationDate": 1636928920305,
+      "lastModificationDate": 1636973453446,
       "contentHash": "a956a5d33059393680d654255e573973",
       "sourceName": "contracts/libraries/math/FixedPoint.sol",
       "solcConfig": {
@@ -8534,8 +8581,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/math/LogExpMath.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "f0282a5cb901a068d6f564886ed1e992",
+      "lastModificationDate": 1636967711542,
+      "contentHash": "34b1406ddf4cbe9ccad06cbf652d1dcd",
       "sourceName": "contracts/libraries/math/LogExpMath.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8568,7 +8615,9 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "../helpers/RequiemErrors.sol"
+      ],
       "versionPragmas": [
         "^0.8.9"
       ],
@@ -8577,8 +8626,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockFlashLoanRecipient.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "cd6fbf46566cf83ebc4445d4d0ff98c5",
+      "lastModificationDate": 1636969404813,
+      "contentHash": "deec4c0462f6d17b042c8001a354ee3c",
       "sourceName": "contracts/test/vault/MockFlashLoanRecipient.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8674,8 +8723,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/ERC20Test.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "e7b06770c6bfbd095ac430886144eecd",
+      "lastModificationDate": 1636971025956,
+      "contentHash": "f6ce43465772c4cb19d1d84c491731d8",
       "sourceName": "contracts/test/ERC20Test.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8813,8 +8862,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/SafeMath.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "3dbdc005d54f81f521c8284681c6a556",
+      "lastModificationDate": 1636970728967,
+      "contentHash": "b357ee06641925fb595bbaecec02a2c9",
       "sourceName": "contracts/libraries/SafeMath.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8858,8 +8907,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ERC20.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "69dae3fa5cfb2cbed6f6b6f33ec01b2e",
+      "lastModificationDate": 1636970862125,
+      "contentHash": "9b1e6d2bf23910063dfb3dd240898fdb",
       "sourceName": "contracts/libraries/ERC20.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -8893,103 +8942,15 @@
         }
       },
       "imports": [
+        "./helpers/RequiemErrors.sol",
         "../interfaces/ERC20/IERC20.sol",
-        "../interfaces/ERC20/IERC20Metadata.sol",
-        "./Context.sol"
+        "./SafeMath.sol"
       ],
       "versionPragmas": [
         "^0.8.9"
       ],
       "artifacts": [
         "ERC20"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/ERC20/IERC20Metadata.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "b0edf41abc1f32b3f21f2e18095e3150",
-      "sourceName": "contracts/interfaces/ERC20/IERC20Metadata.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./IERC20.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IERC20Metadata"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/Context.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "9bcb449f79ab799ddc9f2685d6e6cf0b",
-      "sourceName": "contracts/libraries/Context.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "Context"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/EnumerableSet.sol": {
@@ -9038,8 +8999,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPoolNoAMFactory.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "28ba8fd00522685d6ab99ae32ec32135",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "d9d34fd3ab42aa0c1bd4bc1b57ad5801",
       "sourceName": "contracts/WeightedPoolNoAMFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9086,8 +9047,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/factories/BasePoolSplitCodeFactory.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "20e38aab28018bca303b227b63696035",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "691487dbe1bdede7697b48c4c8a20e35",
       "sourceName": "contracts/libraries/factories/BasePoolSplitCodeFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9132,8 +9093,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/factories/FactoryWidePauseWindow.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "6b37aa9530a8a4e1faa4ed0d055a32a7",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "cd4c3682e0143bfeabe160aa1d37d87e",
       "sourceName": "contracts/libraries/factories/FactoryWidePauseWindow.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9175,8 +9136,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "75a22527cbd2489acfcc05b0aad51b50",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "fceaed5683f0b2920d04b4a0e5f31857",
       "sourceName": "contracts/WeightedPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9220,8 +9181,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/BaseSplitCodeFactory.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "75c8d7c1901f186f732472a0899d2cc4",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "0183851a999ad63aed92e5094bd27fc8",
       "sourceName": "contracts/libraries/helpers/BaseSplitCodeFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9308,8 +9269,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/BaseWeightedPool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "b69f5ca928e43847d8d63ba0af027e84",
+      "lastModificationDate": 1636973439734,
+      "contentHash": "efacefebeff35bb2c373ae53ac398969",
       "sourceName": "contracts/BaseWeightedPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9357,8 +9318,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/InputHelpers.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "4d1015a278912e48de2beb1effe77576",
+      "lastModificationDate": 1636964751668,
+      "contentHash": "d5561f36d31a3bc161b7d81a7e44c2a6",
       "sourceName": "contracts/libraries/helpers/InputHelpers.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9392,7 +9353,8 @@
         }
       },
       "imports": [
-        "../../interfaces/ERC20/IERC20.sol"
+        "../../interfaces/ERC20/IERC20.sol",
+        "./RequiemErrors.sol"
       ],
       "versionPragmas": [
         "^0.8.9"
@@ -9402,8 +9364,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/BaseMinimalSwapInfoPool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "b5d27a473ce31b76cdb1098fbed91da1",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "bcc17eb78714ac2f7965b12f2b202308",
       "sourceName": "contracts/BaseMinimalSwapInfoPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9448,8 +9410,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/weighted/WeightedMath.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "7f7b171c7cd931f919be40b1b302b70a",
+      "lastModificationDate": 1636973120402,
+      "contentHash": "0b70efc439804cbb9c489dc71b93600b",
       "sourceName": "contracts/libraries/weighted/WeightedMath.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9541,8 +9503,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/BasePool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "a5435919505686f865302adfc55f1507",
+      "lastModificationDate": 1636971745127,
+      "contentHash": "64405dae68dbc807e86ea91d57501264",
       "sourceName": "contracts/BasePool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9576,7 +9538,6 @@
         }
       },
       "imports": [
-        "./libraries/math/Math.sol",
         "./libraries/math/FixedPoint.sol",
         "./libraries/helpers/InputHelpers.sol",
         "./libraries/helpers/TemporarilyPausable.sol",
@@ -9595,8 +9556,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IMinimalSwapInfoPool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "eeb306093c20056ee542b3a1a79af02c",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "7ebe094c8d46e9001bfc3bdba7cd8cd6",
       "sourceName": "contracts/interfaces/IMinimalSwapInfoPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9640,8 +9601,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/TemporarilyPausable.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "0e192576cf24f7dce0e5a5f927fb5b64",
+      "lastModificationDate": 1636964823030,
+      "contentHash": "867ba72085dca72a0375d473bd5513be",
       "sourceName": "contracts/libraries/helpers/TemporarilyPausable.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9675,10 +9636,11 @@
         }
       },
       "imports": [
+        "./RequiemErrors.sol",
         "../../interfaces/ITemporarilyPausable.sol"
       ],
       "versionPragmas": [
-        "^0.8.9"
+        "^0.8.8"
       ],
       "artifacts": [
         "TemporarilyPausable"
@@ -9728,8 +9690,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IBasePool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "41a8ee017c766b27da22815b3da2ef57",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "7de6014a66668a6b8a27105b0a236589",
       "sourceName": "contracts/interfaces/IBasePool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9774,8 +9736,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IAssetManager.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "ebf82825542f2b644aaf0b83a2fa47cb",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "e6b567abf1a814929bb4e08e56eeb551",
       "sourceName": "contracts/interfaces/IAssetManager.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9866,8 +9828,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/BasePoolAuthorization.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "9b5e47e4b5bc42959ec07867986eeabc",
+      "lastModificationDate": 1636971461478,
+      "contentHash": "fead2896b259f8ed7b9ef77819bc6b5b",
       "sourceName": "contracts/BasePoolAuthorization.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -9911,52 +9873,9 @@
         "BasePoolAuthorization"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/ITemporarilyPausable.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "88475e5f7a227ca89d9048a807e6aab2",
-      "sourceName": "contracts/interfaces/ITemporarilyPausable.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "ITemporarilyPausable"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/interfaces/IPoolSwapStructs.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "1ef3d0150e6d78ca94c9fdd49f32e0aa",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "4dccb421e4e095f4b40778e2ba5221cc",
       "sourceName": "contracts/interfaces/IPoolSwapStructs.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10001,8 +9920,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ERC20Permit.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "29cb2b39ccdcfed298199c0c994de430",
+      "lastModificationDate": 1636965062506,
+      "contentHash": "e212e0bd093020a203209fd5a408a4cd",
       "sourceName": "contracts/libraries/ERC20Permit.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10223,8 +10142,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPoolFactory.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "51b50b67e1dba573008cea492ce02449",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "86a2364086c996919635fac6e2df70bb",
       "sourceName": "contracts/WeightedPoolFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10271,8 +10190,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool2TokensFactory.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "e1acb7354fda602a6f50d0b3fdf2a4ff",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "0574cdeebcdd2b4f8e6f20848b7a9742",
       "sourceName": "contracts/WeightedPool2TokensFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10319,8 +10238,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool2Tokens.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "f4244d7e24f893ee29c927512ef4e01e",
+      "lastModificationDate": 1636970038123,
+      "contentHash": "86cdafd891fd97bb1e2905daf405c913",
       "sourceName": "contracts/WeightedPool2Tokens.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10423,8 +10342,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/oracle/PoolPriceOracle.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "1863b192b446d4c54dc7dc091bce19d1",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "76fc95dfddf1ea190d94cc475fff4cb3",
       "sourceName": "contracts/libraries/oracle/PoolPriceOracle.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10606,8 +10525,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/oracle/IPriceOracle.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "4b456b72749f032881deecf4c0048748",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "8a1c3408270f6b452338f88d99b2bdac",
       "sourceName": "contracts/interfaces/oracle/IPriceOracle.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10738,8 +10657,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/oracle/QueryProcessor.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "83918f80e62b6be3daadef508d4944a4",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "533b5adae801875dc372d1eea1c74c1d",
       "sourceName": "contracts/libraries/oracle/QueryProcessor.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10786,8 +10705,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/ManagedPool.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "4f8a39c19a2039be4d463256bacd69c2",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "0f1072c56042104c4455e14c8bf5e640",
       "sourceName": "contracts/libraries/smart/ManagedPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10837,7 +10756,7 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/EnumerableMap.sol": {
-      "lastModificationDate": 1636928920301,
+      "lastModificationDate": 1636966788181,
       "contentHash": "61895d71189e54a23179bc09715f470a",
       "sourceName": "contracts/libraries/EnumerableMap.sol",
       "solcConfig": {
@@ -10883,8 +10802,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/ReentrancyGuard.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "bc8fb979dd26e437418d67ae12706ec2",
+      "lastModificationDate": 1636966348538,
+      "contentHash": "63b92bc2641c143e0e186dfe2944df8f",
       "sourceName": "contracts/libraries/ReentrancyGuard.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -10917,57 +10836,15 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "./helpers/RequiemErrors.sol"
+      ],
       "versionPragmas": [
         "^0.8.9"
       ],
       "artifacts": [
         "ReentrancyGuard"
       ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/helpers/ERC20Helpers.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "dbe7595606de2e507db75e491ab59a96",
-      "sourceName": "contracts/libraries/helpers/ERC20Helpers.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../interfaces/IAsset.sol",
-        "../../interfaces/ERC20/IERC20.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": []
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/WeightCompression.sol": {
       "lastModificationDate": 1636928920301,
@@ -11015,8 +10892,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/ManagedPoolFactory.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "7b6b751a78dbe5706311e2c0c7813607",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "19fb6fa38a1e108585b720fd94a2a253",
       "sourceName": "contracts/libraries/smart/ManagedPoolFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11063,8 +10940,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/LiquidityBootstrappingPoolFactory.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "441c33b6acf51bc4e29d47d234bc6f3f",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "5e293e8089acfd956c74d76af53aa8f4",
       "sourceName": "contracts/libraries/smart/LiquidityBootstrappingPoolFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11111,8 +10988,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/smart/LiquidityBootstrappingPool.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "26d3ccc1730a437e2095f5429a4a0ba6",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "92d4fea60f78f6da8bf3fa0421b140fe",
       "sourceName": "contracts/libraries/smart/LiquidityBootstrappingPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11160,8 +11037,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/vault/MockPool.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "a6656d3780f6afa32b4d04efd0051641",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "db33f27f6e563ac435731040c65105d5",
       "sourceName": "contracts/test/vault/MockPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11209,8 +11086,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IGeneralPool.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "5b3a4d1df1224622f2d61bcf55706139",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "973ed10b51581b80aad91b867e92cafe",
       "sourceName": "contracts/interfaces/IGeneralPool.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11254,8 +11131,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/Swaps.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "dc061ca686957e2be16b806d086ce87f",
+      "lastModificationDate": 1636969270750,
+      "contentHash": "3bcda50f703766610505bc47445d89a1",
       "sourceName": "contracts/Swaps.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11289,7 +11166,6 @@
         }
       },
       "imports": [
-        "./libraries/math/Math.sol",
         "./libraries/helpers/RequiemErrors.sol",
         "./libraries/helpers/InputHelpers.sol",
         "./libraries//EnumerableMap.sol",
@@ -11357,8 +11233,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolBalances.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "c750302544aacccdeb15f1e9ee5e33e6",
+      "lastModificationDate": 1636967820521,
+      "contentHash": "d96afbe92bf7ecb6626d63499169b7e2",
       "sourceName": "contracts/PoolBalances.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11392,7 +11268,6 @@
         }
       },
       "imports": [
-        "./libraries/math/Math.sol",
         "./libraries/helpers/RequiemErrors.sol",
         "./libraries/helpers/InputHelpers.sol",
         "./interfaces/ERC20/IERC20.sol",
@@ -11411,8 +11286,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/BalanceAllocation.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "1bc96d71f877363f5425f1ef356caab7",
+      "lastModificationDate": 1636969107058,
+      "contentHash": "4b20f0981bef5fa38751b8485ddfd633",
       "sourceName": "contracts/libraries/balances/BalanceAllocation.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11456,8 +11331,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/Fees.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "35a0719c9f83727caebe3f97a81809dc",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "8157acb76c7180d56c3243c19c7186c7",
       "sourceName": "contracts/Fees.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11508,8 +11383,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolTokens.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "d392ecc33826c4ca9211481c6b1d64aa",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "aaa8e280cdb026d0dc074ef44d6883b0",
       "sourceName": "contracts/PoolTokens.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11557,8 +11432,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/UserBalance.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "e19d572be83ea36372daf4ca576aa852",
+      "lastModificationDate": 1636973715473,
+      "contentHash": "2747a2f3992999a21033cf76512e4b12",
       "sourceName": "contracts/UserBalance.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11593,11 +11468,11 @@
       },
       "imports": [
         "./libraries/helpers/RequiemErrors.sol",
-        "./libraries/math/Math.sol",
         "./interfaces/ERC20/IERC20.sol",
         "./libraries/ReentrancyGuard.sol",
         "./libraries/SafeCast.sol",
         "./libraries/SafeERC20.sol",
+        "./libraries/math/Math.sol",
         "./AssetTransfersHandler.sol",
         "./VaultAuthorization.sol"
       ],
@@ -11609,8 +11484,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/ProtocolFeesCollector.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "d42f932b60ae24f4aea804bca19fa9b9",
+      "lastModificationDate": 1636970221033,
+      "contentHash": "f3e507e5fb9227fd059edf699991b65a",
       "sourceName": "contracts/ProtocolFeesCollector.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11658,8 +11533,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/VaultAuthorization.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "41df7b755275abbf6f221a4628e8fc15",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "d4633f0eac44b85596c1ce35fc98d9f3",
       "sourceName": "contracts/VaultAuthorization.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11695,8 +11570,8 @@
       "imports": [
         "./libraries/helpers/RequiemErrors.sol",
         "./libraries/helpers/Authentication.sol",
-        "./libraries/helpers/TemporarilyPausableVault.sol",
-        "./libraries/helpers/SignaturesValidatorVault.sol",
+        "./libraries/helpers/TemporarilyPausable.sol",
+        "./libraries/helpers/SignaturesValidator.sol",
         "./libraries/ReentrancyGuard.sol",
         "./interfaces/IVault.sol",
         "./interfaces/IAuthorizer.sol"
@@ -11708,55 +11583,10 @@
         "VaultAuthorization"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/libraries/helpers/TemporarilyPausableVault.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "2930cb25395f19a821072cee193091b1",
-      "sourceName": "contracts/libraries/helpers/TemporarilyPausableVault.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../interfaces/ITemporarilyPausableVault.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "TemporarilyPausableVault"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/helpers/SignaturesValidatorVault.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "cc61262954eaba4cda785d17b767e65d",
-      "sourceName": "contracts/libraries/helpers/SignaturesValidatorVault.sol",
+    "/home/achthar/requiem-dex/contracts/libraries/helpers/SignaturesValidator.sol": {
+      "lastModificationDate": 1636964875923,
+      "contentHash": "3774831d8596de79e4a12bf9ce25d8e6",
+      "sourceName": "contracts/libraries/helpers/SignaturesValidator.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -11790,19 +11620,19 @@
       },
       "imports": [
         "./RequiemErrors.sol",
-        "../../interfaces/ISignaturesValidatorVault.sol",
+        "../../interfaces/ISignaturesValidator.sol",
         "../EIP712.sol"
       ],
       "versionPragmas": [
         "^0.8.9"
       ],
       "artifacts": [
-        "SignaturesValidatorVault"
+        "SignaturesValidator"
       ]
     },
     "/home/achthar/requiem-dex/contracts/AssetManagers.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "b2011d17ce48d06e2c793bda14f77952",
+      "lastModificationDate": 1636973586271,
+      "contentHash": "7742a1ac03a327735dadd4e06289058e",
       "sourceName": "contracts/AssetManagers.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11836,7 +11666,6 @@
         }
       },
       "imports": [
-        "./libraries/math/Math.sol",
         "./libraries/helpers/RequiemErrors.sol",
         "./libraries/helpers/InputHelpers.sol",
         "./interfaces/ERC20/IERC20.sol",
@@ -11856,8 +11685,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolRegistry.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "2ae639c0b0575005ded33275a508d9f4",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "2e2021ba80475027a2b7f99a381d8600",
       "sourceName": "contracts/PoolRegistry.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -11951,8 +11780,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/MinimalSwapInfoPoolsBalance.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "fe01e045ed9f0a8e2dabbea078c8d67b",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "558d068012fc02f28f069c05f592d6cc",
       "sourceName": "contracts/libraries/balances/MinimalSwapInfoPoolsBalance.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -12000,8 +11829,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/balances/TwoTokenPoolsBalance.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "888da9499014487207b2788039408818",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "4496bf4df5e431ad0519f420260e65da",
       "sourceName": "contracts/libraries/balances/TwoTokenPoolsBalance.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -12048,8 +11877,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/Vault.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "33802c2f1541df0dc6524f8bfb06356a",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "bd1bdb00d3e6b010631025ca4e11ce32",
       "sourceName": "contracts/Vault.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -12097,8 +11926,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/FlashLoans.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "4189bdf069b4b46d018ef6a43c9d6486",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "4ad9479300992992e8d980538d4dfcb9",
       "sourceName": "contracts/FlashLoans.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -12136,7 +11965,7 @@
         "./interfaces/ERC20/IERC20.sol",
         "./libraries/ReentrancyGuard.sol",
         "./libraries/SafeERC20.sol",
-        "./libraries/helpers/TemporarilyPausableFlashLoan.sol",
+        "./libraries/helpers/TemporarilyPausable.sol",
         "./Fees.sol",
         "./interfaces/IFlashLoanRecipient.sol"
       ],
@@ -12147,245 +11976,9 @@
         "FlashLoans"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/libraries/helpers/TemporarilyPausableFlashLoan.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "2e82c3238d8d51c9702ad3803da2f28a",
-      "sourceName": "contracts/libraries/helpers/TemporarilyPausableFlashLoan.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../interfaces/ITemporarilyPausableFlashLoan.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "TemporarilyPausableFlashLoan"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/ITemporarilyPausableFlashLoan.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "01d04ef2082cdc067e16b8fc0b2be0b7",
-      "sourceName": "contracts/interfaces/ITemporarilyPausableFlashLoan.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "ITemporarilyPausableFlashLoan"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/RequiemVault .sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "79cf055bda076bc1dd33b750d9738893",
-      "sourceName": "contracts/RequiemVault .sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IWETH.sol",
-        "./interfaces/IVaultAuthorizer.sol",
-        "./FlashLoans.sol",
-        "./Swaps.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "RequiemVault"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IVaultAuthorizer.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "f5f91fae40a075dbe1b9c1431e6b1820",
-      "sourceName": "contracts/interfaces/IVaultAuthorizer.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./ISignaturesValidatorVault.sol",
-        "../libraries/helpers/IAuthentication.sol",
-        "./ITemporarilyPausableVault.sol",
-        "./IAuthorizer.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IVaultAuthorizer"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/VaultAuthorizer.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "6e80bb766df2ad1d525bbfe27d1a3b6c",
-      "sourceName": "contracts/VaultAuthorizer.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./libraries/helpers/RequiemErrors.sol",
-        "./libraries/helpers/Authentication.sol",
-        "./libraries/helpers/TemporarilyPausableVault.sol",
-        "./libraries/helpers/SignaturesValidatorVault.sol",
-        "./libraries/ReentrancyGuard.sol",
-        "./interfaces/IVault.sol",
-        "./interfaces/IAuthorizer.sol",
-        "./interfaces/IVaultAuthorizer.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "VaultAuthorizer"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/interfaces/IVaultNonPausable.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "9d3c626d7b5f878c04b685c3d409f850",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "585f0cd17e637709127f08b3ba4bdbe2",
       "sourceName": "contracts/interfaces/IVaultNonPausable.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -12434,10 +12027,233 @@
         "IVaultNonPausable"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/ISignaturesValidator.sol": {
+    "/home/achthar/requiem-dex/contracts/test/vault/BalanceAllocationMock.sol": {
+      "lastModificationDate": 1636928920309,
+      "contentHash": "72cb39bc1c934babbce0ef178079b44f",
+      "sourceName": "contracts/test/vault/BalanceAllocationMock.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../libraries/balances/BalanceAllocation.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "BalanceAllocationMock"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/test/vault/MockInternalBalanceRelayer.sol": {
+      "lastModificationDate": 1636967584849,
+      "contentHash": "9828c2f9aadd661f8f3f6afdfcd5a7cb",
+      "sourceName": "contracts/test/vault/MockInternalBalanceRelayer.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/ERC20/IERC20.sol",
+        "../../libraries/helpers/InputHelpers.sol",
+        "../../interfaces/IVault.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "MockInternalBalanceRelayer"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/mocks/MockERC20.sol": {
+      "lastModificationDate": 1636964568176,
+      "contentHash": "dbc6439b18d167cbbf4b1956765b44d0",
+      "sourceName": "contracts/mocks/MockERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "MockERC20"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/test/DeflatingERC20.sol": {
+      "lastModificationDate": 1636970930541,
+      "contentHash": "986501e11e7f6ef81f0c8678443362b7",
+      "sourceName": "contracts/test/DeflatingERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.9"
+      ],
+      "artifacts": [
+        "DeflatingERC20"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardFund.sol": {
       "lastModificationDate": 1636928920301,
-      "contentHash": "f49c94a207f865e36878381c7fba57ce",
-      "sourceName": "contracts/interfaces/ISignaturesValidator.sol",
+      "contentHash": "ae4355a7f7b02b201a5d157f0adfe919",
+      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardFund.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "IStakePoolRewardFund"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePool.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "ea1a7ca6a2cc35b90d431fa8376809d3",
+      "sourceName": "contracts/interfaces/stakePool/IStakePool.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -12474,13 +12290,13 @@
         "^0.8.9"
       ],
       "artifacts": [
-        "ISignaturesValidator"
+        "IStakePool"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/RequiemZap.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "8a20bd9a7048107c67a9fc9f21c4724e",
-      "sourceName": "contracts/RequiemZap.sol",
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "13f0267c4ba4a8f803787a64f30f8030",
+      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -12512,24 +12328,223 @@
           }
         }
       },
-      "imports": [
-        "./libraries/ReentrancyGuard.sol",
-        "./libraries/SafeERC20.sol",
-        "./libraries/SafeMath.sol",
-        "./interfaces/IWETH.sol",
-        "./interfaces/IUniswapV2Router.sol",
-        "./interfaces/IRequiemRouterLite.sol",
-        "./interfaces/IRequiemFactory.sol",
-        "./interfaces/IRequiemPair.sol",
-        "./interfaces/IRequiemFormula.sol",
-        "./libraries/TransferHelper.sol",
-        "./libraries/Babylonian.sol"
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "IStakePoolRewardRebaser"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "24047d733317e3ba899586eb4929918e",
+      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "IStakePoolRewardMultiplier"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/IEpochController.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "31e7261fb3e16da4d63a3cdd0d3ee98f",
+      "sourceName": "contracts/interfaces/IEpochController.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.6"
       ],
+      "artifacts": [
+        "IEpochController"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolEpochReward.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "50b9c7996cd7a40af59a94ce9504b2f6",
+      "sourceName": "contracts/interfaces/stakePool/IStakePoolEpochReward.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
       "versionPragmas": [
         "^0.8.9"
       ],
       "artifacts": [
-        "RequiemZap"
+        "IStakePoolEpochReward"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolController.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "d9b4ab486320bad1eb895017937763ee",
+      "sourceName": "contracts/interfaces/stakePool/IStakePoolController.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "IStakePoolController"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolCreator.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "413a218e5ed193521eb21fd5a56509f9",
+      "sourceName": "contracts/interfaces/stakePool/IStakePoolCreator.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "IStakePoolCreator"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IUniswapV2Router.sol": {
@@ -12573,49 +12588,6 @@
       ],
       "artifacts": [
         "IUniswapV2Router"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemRouterLite.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "99b58301e797342c4a3be60197b4d61a",
-      "sourceName": "contracts/interfaces/IRequiemRouterLite.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.6.12"
-      ],
-      "artifacts": [
-        "IRequiemRouter"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IRequiemFactory.sol": {
@@ -12749,49 +12721,6 @@
         "IRequiemFormula"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/libraries/TransferHelper.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "0ed5f1b505345ec52167a21abf3791b7",
-      "sourceName": "contracts/libraries/TransferHelper.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "TransferHelper"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/libraries/Babylonian.sol": {
       "lastModificationDate": 1636928920301,
       "contentHash": "f6b8085d8418ac5f190495ebe2bac5c5",
@@ -12878,244 +12807,6 @@
         "IRequiemERC20"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/libraries/FixedPoint.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "b1f48d804156684e48833e347aef5722",
-      "sourceName": "contracts/libraries/FixedPoint.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./Babylonian.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "FixedPoint"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/UniswapV2OracleLibrary.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "eeb877fa45901d85029c4146427ead43",
-      "sourceName": "contracts/libraries/UniswapV2OracleLibrary.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IRequiemPair.sol",
-        "./FixedPoint.sol"
-      ],
-      "versionPragmas": [
-        ">=0.7.6"
-      ],
-      "artifacts": [
-        "UniswapV2OracleLibrary"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/RequiemRouterDev.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "16cb3e086632bde6b1c88c003779be6e",
-      "sourceName": "contracts/RequiemRouterDev.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IRequiemFactory.sol",
-        "./interfaces/IRequiemFormula.sol",
-        "./interfaces/IRequiemPair.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./interfaces/IRequiemRouterDev.sol",
-        "./libraries/SafeMath.sol",
-        "./interfaces/IWETH.sol"
-      ],
-      "versionPragmas": [
-        ">=0.8.9"
-      ],
-      "artifacts": [
-        "RequiemParaRouter"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IRequiemRouterDev.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "af45bd3e7ed22e3d947cdbe955f98aa1",
-      "sourceName": "contracts/interfaces/IRequiemRouterDev.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IRequiemParaRouter"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/RequiemRouter.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "edf968f0cee9326ba7e59511a29a1e28",
-      "sourceName": "contracts/RequiemRouter.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IRequiemFactory.sol",
-        "./interfaces/IRequiemFormula.sol",
-        "./interfaces/IRequiemPair.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./interfaces/IRequiemRouter.sol",
-        "./libraries/SafeMath.sol",
-        "./interfaces/IWETH.sol"
-      ],
-      "versionPragmas": [
-        ">=0.8.9"
-      ],
-      "artifacts": [
-        "RequiemRouter"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/interfaces/IRequiemRouter.sol": {
       "lastModificationDate": 1636928920301,
       "contentHash": "bed4fe219d4a816c2d6b75c67337ab2d",
@@ -13157,1204 +12848,6 @@
       ],
       "artifacts": [
         "IRequiemRouter"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/StakePoolRewardRebaserMock.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "8cdbd6c8880e03598c1c113aa778f71f",
-      "sourceName": "contracts/test/StakePoolRewardRebaserMock.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/stakePool/IStakePoolRewardRebaser.sol",
-        "../libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [],
-      "artifacts": [
-        "StakePoolRewardRebaserMock"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "13f0267c4ba4a8f803787a64f30f8030",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "IStakePoolRewardRebaser"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/StakePoolEpochReward.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "6dd9ef8cde1fefe4a587d33cb1a2ecfd",
-      "sourceName": "contracts/StakePoolEpochReward.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IEpochController.sol",
-        "./interfaces/stakePool/IStakePoolEpochReward.sol",
-        "./interfaces/stakePool/IStakePoolController.sol",
-        "./interfaces/stakePool/IStakePoolRewardRebaser.sol",
-        "./interfaces/stakePool/IStakePoolRewardMultiplier.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./libraries/SafeMath.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/stakePool/IStakePoolRewardFund.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "StakePoolEpochReward"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IEpochController.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "31e7261fb3e16da4d63a3cdd0d3ee98f",
-      "sourceName": "contracts/interfaces/IEpochController.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.7.6"
-      ],
-      "artifacts": [
-        "IEpochController"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolEpochReward.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "50b9c7996cd7a40af59a94ce9504b2f6",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolEpochReward.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IStakePoolEpochReward"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolController.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "d9b4ab486320bad1eb895017937763ee",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolController.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IStakePoolController"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "24047d733317e3ba899586eb4929918e",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "IStakePoolRewardMultiplier"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardFund.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "ae4355a7f7b02b201a5d157f0adfe919",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardFund.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "IStakePoolRewardFund"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/StakePoolEpochRewardCreator.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "a55bf7b0ea878cdc746cc7ae81d4356e",
-      "sourceName": "contracts/StakePoolEpochRewardCreator.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/stakePool/IStakePoolCreator.sol",
-        "./libraries/TransferHelper.sol",
-        "./TimeLock.sol",
-        "./StakePoolEpochReward.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "StakePoolEpochRewardCreator"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolCreator.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "413a218e5ed193521eb21fd5a56509f9",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolCreator.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IStakePoolCreator"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/TimeLock.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "0a93062c447210cee0b8170154f0bb5e",
-      "sourceName": "contracts/TimeLock.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.12"
-      ],
-      "artifacts": [
-        "TimeLock"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/StakePoolCreator.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "dd4936fb00239770f7de27dc8fddc06c",
-      "sourceName": "contracts/StakePoolCreator.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/stakePool/IStakePoolCreator.sol",
-        "./libraries/TransferHelper.sol",
-        "./TimeLock.sol",
-        "./StakePool.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "StakePoolCreator"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/StakePool.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "c715faf976f5e5336c74e1191083fb74",
-      "sourceName": "contracts/StakePool.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/stakePool/IStakePool.sol",
-        "./interfaces/stakePool/IStakePoolController.sol",
-        "./interfaces/stakePool/IStakePoolRewardRebaser.sol",
-        "./interfaces/stakePool/IStakePoolRewardMultiplier.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./libraries/SafeMath.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/stakePool/IStakePoolRewardFund.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "StakePool"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePool.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "ea1a7ca6a2cc35b90d431fa8376809d3",
-      "sourceName": "contracts/interfaces/stakePool/IStakePool.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "IStakePool"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/StakePoolRewardFund.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "5a803ebaacbf4bcb0a88c817f1a5d13a",
-      "sourceName": "contracts/StakePoolRewardFund.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/stakePool/IStakePoolRewardFund.sol",
-        "./interfaces/stakePool/IStakePool.sol",
-        "./interfaces/stakePool/IStakePoolRewardRebaser.sol",
-        "./interfaces/stakePool/IStakePoolRewardMultiplier.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./libraries/SafeMath.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/stakePool/IStakePool.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "StakePoolRewardFund"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/SimpleEpochController.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "b5732731a4d6c618654568fbddaacf11",
-      "sourceName": "contracts/test/SimpleEpochController.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IEpochController.sol",
-        "../interfaces/ERC20/IERC20.sol",
-        "../interfaces/stakePool/IStakePoolEpochReward.sol",
-        "../libraries/TransferHelper.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "SimpleEpochController"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/EpochControllerMock.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "76fd6191a4dfdfb8ecb5e0d173a48720",
-      "sourceName": "contracts/test/EpochControllerMock.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IEpochController.sol",
-        "../interfaces/ERC20/IERC20.sol",
-        "../interfaces/stakePool/IStakePoolEpochReward.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "EpochControllerMock"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/vault/MockInternalBalanceRelayer.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "172dca9323aab9c934e835767ca357ad",
-      "sourceName": "contracts/test/vault/MockInternalBalanceRelayer.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../interfaces/ERC20/IERC20.sol",
-        "../../libraries/helpers/InputHelpers.sol",
-        "../../interfaces/IVault.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "MockInternalBalanceRelayer"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/vault/BalanceAllocationMock.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "72cb39bc1c934babbce0ef178079b44f",
-      "sourceName": "contracts/test/vault/BalanceAllocationMock.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../../libraries/balances/BalanceAllocation.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "BalanceAllocationMock"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/helpers/SignaturesValidator.sol": {
-      "lastModificationDate": 1636928920305,
-      "contentHash": "3774831d8596de79e4a12bf9ce25d8e6",
-      "sourceName": "contracts/libraries/helpers/SignaturesValidator.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./RequiemErrors.sol",
-        "../../interfaces/ISignaturesValidator.sol",
-        "../EIP712.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "SignaturesValidator"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/mocks/MockERC20.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "b4080bb80f6f8cb9c4341b3b462c31cd",
-      "sourceName": "contracts/mocks/MockERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../libraries/ERC20.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "MockERC20"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/Authorizer.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "2f415ea7ff97a3688733ec304acbe030",
-      "sourceName": "contracts/Authorizer.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IAuthorizer.sol",
-        "./libraries/AccessControl.sol",
-        "./libraries/helpers/InputHelpers.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "Authorizer"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/StakePoolController.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "2afd82dd286086b4202ccf39b77c31cd",
-      "sourceName": "contracts/StakePoolController.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/stakePool/IStakePoolCreator.sol",
-        "./interfaces/stakePool/IStakePoolController.sol",
-        "./interfaces/IIsPair.sol",
-        "./interfaces/stakePool/IStakePool.sol",
-        "./libraries/TransferHelper.sol",
-        "./TimeLock.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./StakePoolRewardFund.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "StakePoolController"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/IIsPair.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "01a0d31547036113b0225c951e387e24",
-      "sourceName": "contracts/interfaces/IIsPair.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "IIsPair"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/FireBirdFactoryMock.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "9cc9c1cf54c6e265a5e56c792d568209",
-      "sourceName": "contracts/test/FireBirdFactoryMock.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IIsPair.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "RequiemMock"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/RequiemParaSwap.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "edf968f0cee9326ba7e59511a29a1e28",
-      "sourceName": "contracts/RequiemParaSwap.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IRequiemFactory.sol",
-        "./interfaces/IRequiemFormula.sol",
-        "./interfaces/IRequiemPair.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./interfaces/IRequiemRouter.sol",
-        "./libraries/SafeMath.sol",
-        "./interfaces/IWETH.sol"
-      ],
-      "versionPragmas": [
-        ">=0.8.9"
-      ],
-      "artifacts": [
-        "RequiemRouter"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/RouterEventEmitter.sol": {
@@ -14402,238 +12895,6 @@
         "RouterEventEmitter"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/RequiemFormula.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "57d121e0f154fe765002fc429471fb1c",
-      "sourceName": "contracts/RequiemFormula.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IRequiemFormula.sol",
-        "./interfaces/IRequiemPair.sol",
-        "./interfaces/IRequiemFactory.sol",
-        "./libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        ">=0.7.6"
-      ],
-      "artifacts": [
-        "RequiemFormula"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/RequiemPair.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "74f4974cf496e6f6d35002433e252344",
-      "sourceName": "contracts/RequiemPair.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IRequiemPair.sol",
-        "./interfaces/IRequiemFormula.sol",
-        "./RequiemERC20.sol",
-        "./libraries/Math.sol",
-        "./libraries/UQ112x112.sol",
-        "./interfaces/ERC20/IERC20.sol",
-        "./interfaces/IRequiemFactory.sol",
-        "./interfaces/IUniswapV2Callee.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "RequiemPair"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/RequiemERC20.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "dc29a6f9893c4aead74e0cbb44482187",
-      "sourceName": "contracts/RequiemERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IRequiemERC20.sol",
-        "./libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "RequiemERC20"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/Math.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "5dcea57073645f341da0164209a06c91",
-      "sourceName": "contracts/libraries/Math.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "Math"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/libraries/UQ112x112.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "b8c84d86e899f985289f5cfe4858f4a7",
-      "sourceName": "contracts/libraries/UQ112x112.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "UQ112x112"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/interfaces/IUniswapV2Callee.sol": {
       "lastModificationDate": 1636928920301,
       "contentHash": "629cb03a5999b645c79785e8113edc54",
@@ -14675,96 +12936,6 @@
       ],
       "artifacts": [
         "IUniswapV2Callee"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/UniswapV2ERC20Wrapper.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "d762b9d1f8d601e5c06f8b99ccfbe3ba",
-      "sourceName": "contracts/test/UniswapV2ERC20Wrapper.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../RequiemERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "RequiemERC20Wrapper"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/TestERC20.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "e677b21493f4565f35bdd9648a870acc",
-      "sourceName": "contracts/test/TestERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../RequiemERC20.sol"
-      ],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "TestERC20"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IRequiemWeightedPair.sol": {
@@ -14858,10 +13029,10 @@
         "IRequiemSwapInterface"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/RequiemFactory.sol": {
-      "lastModificationDate": 1636928920297,
-      "contentHash": "3795289b1be3782c0ac26a410adc86a2",
-      "sourceName": "contracts/RequiemFactory.sol",
+    "/home/achthar/requiem-dex/contracts/interfaces/IIsPair.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "01a0d31547036113b0225c951e387e24",
+      "sourceName": "contracts/interfaces/IIsPair.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -14893,21 +13064,18 @@
           }
         }
       },
-      "imports": [
-        "./interfaces/IRequiemFactory.sol",
-        "./RequiemPair.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
-        "^0.8.9"
+        ">=0.5.16"
       ],
       "artifacts": [
-        "RequiemFactory"
+        "IIsPair"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/ProtocolFeeRemover.sol": {
+    "/home/achthar/requiem-dex/contracts/Authorizer.sol": {
       "lastModificationDate": 1636928920297,
-      "contentHash": "464373c39da8fd713341481c253e8e5f",
-      "sourceName": "contracts/ProtocolFeeRemover.sol",
+      "contentHash": "2f415ea7ff97a3688733ec304acbe030",
+      "sourceName": "contracts/Authorizer.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -14940,15 +13108,15 @@
         }
       },
       "imports": [
-        "./interfaces/IRequiemPair.sol",
-        "./libraries/TransferHelper.sol",
-        "./interfaces/ERC20/IERC20.sol"
+        "./interfaces/IAuthorizer.sol",
+        "./libraries/AccessControl.sol",
+        "./libraries/helpers/InputHelpers.sol"
       ],
       "versionPragmas": [
         "^0.8.9"
       ],
       "artifacts": [
-        "ProtocolFeeRemover"
+        "Authorizer"
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/ISwapCreator.sol": {
@@ -15086,10 +13254,10 @@
         "IStableSwapFactory"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/test/StakePoolRewardMultiplierMock.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "e72e0c9ff064f9b19214b226428d8fb9",
-      "sourceName": "contracts/test/StakePoolRewardMultiplierMock.sol",
+    "/home/achthar/requiem-dex/contracts/interfaces/ERC20/IERC20Metadata.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "b0edf41abc1f32b3f21f2e18095e3150",
+      "sourceName": "contracts/interfaces/ERC20/IERC20Metadata.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -15122,62 +13290,63 @@
         }
       },
       "imports": [
-        "../interfaces/stakePool/IStakePoolRewardMultiplier.sol",
-        "../libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [],
-      "artifacts": [
-        "StakePoolRewardMultiplierMock"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/DeflatingERC20.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "259ebd0e702ac1fd6b108eea9ec4ff34",
-      "sourceName": "contracts/test/DeflatingERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [
-        "../libraries/SafeMath.sol"
+        "./IERC20.sol"
       ],
       "versionPragmas": [
-        "=0.8.9"
+        "^0.8.9"
       ],
       "artifacts": [
-        "DeflatingERC20"
+        "IERC20Metadata"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/libraries/FixedPoint.sol": {
+      "lastModificationDate": 1636973399062,
+      "contentHash": "48756cb54bf32d5c4fe480cc1f606e4f",
+      "sourceName": "contracts/libraries/FixedPoint.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "istanbul",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./math/LogExpMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "FixedPoint"
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/factories/BasePoolFactory.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "25d90f2b95c3175d8b2a695c07db0007",
+      "lastModificationDate": 1636967584849,
+      "contentHash": "8f0674695dab09c241671c505a2983cc",
       "sourceName": "contracts/libraries/factories/BasePoolFactory.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -15263,10 +13432,10 @@
         "IOracle"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/test/IOriginUniswapV2Factory.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "a310a4bc2cdfe1276ec37b5bd464ee7c",
-      "sourceName": "contracts/test/IOriginUniswapV2Factory.sol",
+    "/home/achthar/requiem-dex/contracts/libraries/Context.sol": {
+      "lastModificationDate": 1636928920301,
+      "contentHash": "9bcb449f79ab799ddc9f2685d6e6cf0b",
+      "sourceName": "contracts/libraries/Context.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -15300,96 +13469,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.5.0"
+        "^0.8.9"
       ],
       "artifacts": [
-        "IOriginUniswapV2Factory"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/IOriginUniswapV2Pair.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "5ada8ac13141acaec09a7f620455ea5d",
-      "sourceName": "contracts/test/IOriginUniswapV2Pair.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IOriginUniswapV2Pair"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/IUniswapV2ERC20.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "d2eecdb9acb6de8357d69a56e76aeebf",
-      "sourceName": "contracts/test/IUniswapV2ERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IUniswapV2ERC20"
+        "Context"
       ]
     },
     "/home/achthar/requiem-dex/contracts/test/TToken.sol": {
@@ -15476,49 +13559,6 @@
       ],
       "artifacts": [
         "EthForceSender"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/test/WETH9.sol": {
-      "lastModificationDate": 1636928920309,
-      "contentHash": "231c12074bba192c7a3f34c30b05df8e",
-      "sourceName": "contracts/test/WETH9.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.16"
-      ],
-      "artifacts": [
-        "WETH9"
       ]
     }
   }

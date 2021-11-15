@@ -120,7 +120,7 @@ const _abi = [
         type: "bool",
       },
     ],
-    name: "PausedStateChangedVault",
+    name: "PausedStateChanged",
     type: "event",
   },
   {
@@ -620,7 +620,7 @@ const _abi = [
   },
   {
     inputs: [],
-    name: "getPausedStateVault",
+    name: "getPausedState",
     outputs: [
       {
         internalType: "bool",

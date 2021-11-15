@@ -13,7 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "./libraries/helpers/RequiemErrors.sol";
 import "./libraries/ReentrancyGuard.sol";
@@ -30,7 +30,7 @@ abstract contract PoolTokens is ReentrancyGuard, PoolRegistry, AssetManagers {
         bytes32 poolId,
         IERC20[] memory tokens,
         address[] memory assetManagers
-    ) external override nonReentrant whenNotPausedVault onlyPool(poolId) {
+    ) external override nonReentrant whenNotPaused onlyPool(poolId) {
         InputHelpers.ensureInputLengthMatch(tokens.length, assetManagers.length);
 
         // Validates token addresses and assigns Asset Managers
@@ -55,7 +55,7 @@ abstract contract PoolTokens is ReentrancyGuard, PoolRegistry, AssetManagers {
         emit TokensRegistered(poolId, tokens, assetManagers);
     }
 
-    function deregisterTokens(bytes32 poolId, IERC20[] memory tokens) external override nonReentrant whenNotPausedVault onlyPool(poolId) {
+    function deregisterTokens(bytes32 poolId, IERC20[] memory tokens) external override nonReentrant whenNotPaused onlyPool(poolId) {
         PoolSpecialization specialization = _getPoolSpecialization(poolId);
         if (specialization == PoolSpecialization.TWO_TOKEN) {
             _require(tokens.length == 2, Errors.TOKENS_LENGTH_MUST_BE_2);

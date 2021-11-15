@@ -13,7 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 /**
  * @dev Interface for querying historical data from a Pool that can be used as a Price Oracle.

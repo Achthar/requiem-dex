@@ -13,9 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
 
-import "./libraries/math/Math.sol";
 import "./libraries/helpers/RequiemErrors.sol";
 import "./libraries/helpers/InputHelpers.sol";
 import "./interfaces/ERC20/IERC20.sol";
@@ -40,7 +38,7 @@ abstract contract AssetManagers is
     // Stores the Asset Manager for each token of each Pool.
     mapping(bytes32 => mapping(IERC20 => address)) internal _poolAssetManagers;
 
-    function managePoolBalance(PoolBalanceOp[] memory ops) external override nonReentrant whenNotPausedVault {
+    function managePoolBalance(PoolBalanceOp[] memory ops) external override nonReentrant whenNotPaused {
         // This variable could be declared inside the loop, but that causes the compiler to allocate memory on each
         // loop iteration, increasing gas costs.
         PoolBalanceOp memory op;

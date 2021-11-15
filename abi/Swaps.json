@@ -109,7 +109,7 @@
         "type": "bool"
       }
     ],
-    "name": "PausedStateChangedVault",
+    "name": "PausedStateChanged",
     "type": "event"
   },
   {
@@ -609,7 +609,7 @@
   },
   {
     "inputs": [],
-    "name": "getPausedStateVault",
+    "name": "getPausedState",
     "outputs": [
       {
         "internalType": "bool",

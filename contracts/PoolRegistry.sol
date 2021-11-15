@@ -13,7 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "./libraries/helpers/RequiemErrors.sol";
 import "./libraries/ReentrancyGuard.sol";
@@ -68,7 +68,7 @@ abstract contract PoolRegistry is ReentrancyGuard, VaultAuthorization {
         external
         override
         nonReentrant
-        whenNotPausedVault
+        whenNotPaused
         returns (bytes32)
     {
         // Each Pool is assigned a unique ID based on an incrementing nonce. This assumes there will never be more than

@@ -17,13 +17,13 @@
 // similar
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "./libraries/helpers/RequiemErrors.sol";
 import "./interfaces/ERC20/IERC20.sol";
 import "./libraries/ReentrancyGuard.sol";
 import "./libraries/SafeERC20.sol";
-import "./libraries/helpers/TemporarilyPausableFlashLoan.sol";
+import "./libraries/helpers/TemporarilyPausable.sol";
 import "./Fees.sol";
 import "./interfaces/IFlashLoanRecipient.sol";
 
@@ -31,7 +31,7 @@ import "./interfaces/IFlashLoanRecipient.sol";
  * @dev Handles Flash Loans through the Vault. Calls the `receiveFlashLoan` hook on the flash loan recipient
  * contract, which implements the `IFlashLoanRecipient` interface.
  */
-abstract contract FlashLoans is Fees, ReentrancyGuard, TemporarilyPausableFlashLoan {
+abstract contract FlashLoans is Fees, ReentrancyGuard, TemporarilyPausable {
     using SafeERC20 for IERC20;
 
     function flashLoan(
@@ -39,7 +39,7 @@ abstract contract FlashLoans is Fees, ReentrancyGuard, TemporarilyPausableFlashL
         IERC20[] memory tokens,
         uint256[] memory amounts,
         bytes memory userData
-    ) external override nonReentrant whenNotPausedFlashLoan {
+    ) external override nonReentrant whenNotPaused {
         InputHelpers.ensureInputLengthMatch(tokens.length, amounts.length);
 
         uint256[] memory feeAmounts = new uint256[](tokens.length);

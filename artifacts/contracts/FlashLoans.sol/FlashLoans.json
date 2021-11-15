@@ -113,20 +113,7 @@
           "type": "bool"
         }
       ],
-      "name": "PausedStateChangedFlashLoan",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "bool",
-          "name": "paused",
-          "type": "bool"
-        }
-      ],
-      "name": "PausedStateChangedVault",
+      "name": "PausedStateChanged",
       "type": "event"
     },
     {
@@ -607,30 +594,7 @@
     },
     {
       "inputs": [],
-      "name": "getPausedStateFlashLoan",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "paused",
-          "type": "bool"
-        },
-        {
-          "internalType": "uint256",
-          "name": "pauseWindowEndTime",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "bufferPeriodEndTime",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getPausedStateVault",
+      "name": "getPausedState",
       "outputs": [
         {
           "internalType": "bool",

@@ -13,7 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "../../libraries/math/Math.sol";
 import "../../libraries/math/FixedPoint.sol";
@@ -76,6 +76,6 @@ contract MockAssetTransfersHandler is AssetTransfersHandler {
     ) internal override returns (uint256 deducted) {
         uint256 currentBalance = _internalTokenBalance[account][token];
         deducted = capped ? Math.min(currentBalance, amount) : amount;
-        _internalTokenBalance[account][token] = currentBalance.sub(deducted);
+        _internalTokenBalance[account][token] = currentBalance - deducted;
     }
 }

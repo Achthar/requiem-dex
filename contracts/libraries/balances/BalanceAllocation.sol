@@ -45,8 +45,6 @@ import "../math/Math.sol";
 // Since we cannot define new types, we rely on bytes32 to represent these values instead, as it doesn't have any
 // associated arithmetic operations and therefore reduces the chance of misuse.
 library BalanceAllocation {
-    using Math for uint256;
-
     // The 'cash' portion of the balance is stored in the least significant 112 bits of a 256 bit word, while the
     // 'managed' part uses the following 112 bits. The most significant 32 bits are used to store the block
 
@@ -158,7 +156,7 @@ library BalanceAllocation {
      * Updates the last total balance change block, even if `amount` is zero.
      */
     function increaseCash(bytes32 balance, uint256 amount) internal view returns (bytes32) {
-        uint256 newCash = cash(balance).add(amount);
+        uint256 newCash = cash(balance) + amount;
         uint256 currentManaged = managed(balance);
         uint256 newLastChangeBlock = block.number;
 
@@ -172,7 +170,7 @@ library BalanceAllocation {
      * Updates the last total balance change block, even if `amount` is zero.
      */
     function decreaseCash(bytes32 balance, uint256 amount) internal view returns (bytes32) {
-        uint256 newCash = cash(balance).sub(amount);
+        uint256 newCash = cash(balance) - amount;
         uint256 currentManaged = managed(balance);
         uint256 newLastChangeBlock = block.number;
 
@@ -184,8 +182,8 @@ library BalanceAllocation {
      * from the Vault.
      */
     function cashToManaged(bytes32 balance, uint256 amount) internal pure returns (bytes32) {
-        uint256 newCash = cash(balance).sub(amount);
-        uint256 newManaged = managed(balance).add(amount);
+        uint256 newCash = cash(balance) - amount;
+        uint256 newManaged = managed(balance) + amount;
         uint256 currentLastChangeBlock = lastChangeBlock(balance);
 
         return toBalance(newCash, newManaged, currentLastChangeBlock);
@@ -196,8 +194,8 @@ library BalanceAllocation {
      * into the Vault.
      */
     function managedToCash(bytes32 balance, uint256 amount) internal pure returns (bytes32) {
-        uint256 newCash = cash(balance).add(amount);
-        uint256 newManaged = managed(balance).sub(amount);
+        uint256 newCash = cash(balance) + amount;
+        uint256 newManaged = managed(balance) - amount;
         uint256 currentLastChangeBlock = lastChangeBlock(balance);
 
         return toBalance(newCash, newManaged, currentLastChangeBlock);

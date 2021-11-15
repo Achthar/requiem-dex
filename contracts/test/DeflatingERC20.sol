@@ -34,14 +34,14 @@ contract DeflatingERC20 {
     }
 
     function _mint(address to, uint256 value) internal {
-        totalSupply = totalSupply.add(value);
-        balanceOf[to] = balanceOf[to].add(value);
+        totalSupply = totalSupply + value;
+        balanceOf[to] = balanceOf[to] + value;
         emit Transfer(address(0), to, value);
     }
 
     function _burn(address from, uint256 value) internal {
-        balanceOf[from] = balanceOf[from].sub(value);
-        totalSupply = totalSupply.sub(value);
+        balanceOf[from] = balanceOf[from] - value;
+        totalSupply = totalSupply - value;
         emit Transfer(from, address(0), value);
     }
 
@@ -61,9 +61,9 @@ contract DeflatingERC20 {
     ) private {
         uint256 burnAmount = value / 100;
         _burn(from, burnAmount);
-        uint256 transferAmount = value.sub(burnAmount);
-        balanceOf[from] = balanceOf[from].sub(transferAmount);
-        balanceOf[to] = balanceOf[to].add(transferAmount);
+        uint256 transferAmount = value - burnAmount;
+        balanceOf[from] = balanceOf[from] - transferAmount;
+        balanceOf[to] = balanceOf[to] + transferAmount;
         emit Transfer(from, to, transferAmount);
     }
 
@@ -83,7 +83,7 @@ contract DeflatingERC20 {
         uint256 value
     ) external returns (bool) {
         if (allowance[from][msg.sender] != type(uint256).max) {
-            allowance[from][msg.sender] = allowance[from][msg.sender].sub(value);
+            allowance[from][msg.sender] = allowance[from][msg.sender] - value;
         }
         _transfer(from, to, value);
         return true;

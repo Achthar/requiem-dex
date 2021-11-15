@@ -13,16 +13,13 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
 
-import "./libraries/math/Math.sol";
 import "./libraries/math/FixedPoint.sol";
 import "./libraries/helpers/InputHelpers.sol";
 import "./libraries/helpers/TemporarilyPausable.sol";
 import "./libraries/helpers/WordCodec.sol";
 import "./libraries/ERC20.sol";
 
-// import "./interfaces/IVault.sol";
 import "./interfaces/IBasePool.sol";
 
 import "./interfaces/IAssetManager.sol";
@@ -141,12 +138,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
         emit SwapFeePercentageChanged(swapFeePercentage);
     }
 
-    function setAssetManagerPoolConfig(IERC20 token, bytes memory poolConfig)
-        public
-        virtual
-        authenticate
-        whenNotPaused
-    {
+    function setAssetManagerPoolConfig(IERC20 token, bytes memory poolConfig) public virtual authenticate whenNotPaused {
         _setAssetManagerPoolConfig(token, poolConfig);
     }
 
@@ -162,9 +154,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
     }
 
     function _isOwnerOnlyAction(bytes32 actionId) internal view virtual override returns (bool) {
-        return
-            (actionId == getActionId(this.setSwapFeePercentage.selector)) ||
-            (actionId == getActionId(this.setAssetManagerPoolConfig.selector));
+        return (actionId == getActionId(this.setSwapFeePercentage.selector)) || (actionId == getActionId(this.setAssetManagerPoolConfig.selector));
     }
 
     function _getMiscData() internal view returns (bytes32) {
@@ -199,13 +189,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
         uint256[] memory scalingFactors = _scalingFactors();
 
         if (totalSupply() == 0) {
-            (uint256 bptAmountOut, uint256[] memory amountsIn) = _onInitializePool(
-                poolId,
-                sender,
-                recipient,
-                scalingFactors,
-                userData
-            );
+            (uint256 bptAmountOut, uint256[] memory amountsIn) = _onInitializePool(poolId, sender, recipient, scalingFactors, userData);
 
             // On initialization, we lock _getMinimumBpt() by minting it for the zero address. This BPT acts as a
             // minimum as it will never be burned, which reduces potential issues with rounding, and also prevents the
@@ -301,17 +285,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
     ) external returns (uint256 bptOut, uint256[] memory amountsIn) {
         InputHelpers.ensureInputLengthMatch(balances.length, _getTotalTokens());
 
-        _queryAction(
-            poolId,
-            sender,
-            recipient,
-            balances,
-            lastChangeBlock,
-            protocolSwapFeePercentage,
-            userData,
-            _onJoinPool,
-            _downscaleUpArray
-        );
+        _queryAction(poolId, sender, recipient, balances, lastChangeBlock, protocolSwapFeePercentage, userData, _onJoinPool, _downscaleUpArray);
 
         // The `return` opcode is executed directly inside `_queryAction`, so execution never reaches this statement,
         // and we don't need to return anything here - it just silences compiler warnings.
@@ -339,17 +313,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
     ) external returns (uint256 bptIn, uint256[] memory amountsOut) {
         InputHelpers.ensureInputLengthMatch(balances.length, _getTotalTokens());
 
-        _queryAction(
-            poolId,
-            sender,
-            recipient,
-            balances,
-            lastChangeBlock,
-            protocolSwapFeePercentage,
-            userData,
-            _onExitPool,
-            _downscaleDownArray
-        );
+        _queryAction(poolId, sender, recipient, balances, lastChangeBlock, protocolSwapFeePercentage, userData, _onExitPool, _downscaleDownArray);
 
         // The `return` opcode is executed directly inside `_queryAction`, so execution never reaches this statement,
         // and we don't need to return anything here - it just silences compiler warnings.
@@ -457,7 +421,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
      */
     function _addSwapFeeAmount(uint256 amount) internal view returns (uint256) {
         // This returns amount + fee amount, so we round up (favoring a higher fee amount).
-        return amount.divUp(FixedPoint.ONE.sub(getSwapFeePercentage()));
+        return amount.divUp(FixedPoint.ONE - getSwapFeePercentage());
     }
 
     /**
@@ -466,7 +430,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
     function _subtractSwapFeeAmount(uint256 amount) internal view returns (uint256) {
         // This returns amount - fee amount, so we round up (favoring a higher fee amount).
         uint256 feeAmount = amount.mulUp(getSwapFeePercentage());
-        return amount.sub(feeAmount);
+        return amount - feeAmount;
     }
 
     // Scaling
@@ -484,7 +448,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
         uint256 tokenDecimals = ERC20(address(token)).decimals();
 
         // Tokens with more than 18 decimals are not supported.
-        uint256 decimalsDifference = Math.sub(18, tokenDecimals);
+        uint256 decimalsDifference = 18 - tokenDecimals;
         return FixedPoint.ONE * 10**decimalsDifference;
     }
 
@@ -587,9 +551,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
         uint256 lastChangeBlock,
         uint256 protocolSwapFeePercentage,
         bytes memory userData,
-        function(bytes32, address, address, uint256[] memory, uint256, uint256, uint256[] memory, bytes memory)
-            internal
-            returns (uint256, uint256[] memory, uint256[] memory) _action,
+        function(bytes32, address, address, uint256[] memory, uint256, uint256, uint256[] memory, bytes memory) internal returns (uint256, uint256[] memory, uint256[] memory) _action,
         function(uint256[] memory, uint256[] memory) internal view _downscaleArray
     ) private {
         // This uses the same technique used by the Vault in queryBatchSwap. Refer to that function for a detailed
@@ -606,73 +568,64 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
             assembly {
                 // This call should always revert to decode the bpt and token amounts from the revert reason
                 switch success
-                    case 0 {
-                        // Note we are manually writing the memory slot 0. We can safely overwrite whatever is
-                        // stored there as we take full control of the execution and then immediately return.
+                case 0 {
+                    // Note we are manually writing the memory slot 0. We can safely overwrite whatever is
+                    // stored there as we take full control of the execution and then immediately return.
 
-                        // We copy the first 4 bytes to check if it matches with the expected signature, otherwise
-                        // there was another revert reason and we should forward it.
-                        returndatacopy(0, 0, 0x04)
-                        let error := and(mload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)
+                    // We copy the first 4 bytes to check if it matches with the expected signature, otherwise
+                    // there was another revert reason and we should forward it.
+                    returndatacopy(0, 0, 0x04)
+                    let error := and(mload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)
 
-                        // If the first 4 bytes don't match with the expected signature, we forward the revert reason.
-                        if eq(eq(error, 0x43adbafb00000000000000000000000000000000000000000000000000000000), 0) {
-                            returndatacopy(0, 0, returndatasize())
-                            revert(0, returndatasize())
-                        }
-
-                        // The returndata contains the signature, followed by the raw memory representation of the
-                        // `bptAmount` and `tokenAmounts` (array: length + data). We need to return an ABI-encoded
-                        // representation of these.
-                        // An ABI-encoded response will include one additional field to indicate the starting offset of
-                        // the `tokenAmounts` array. The `bptAmount` will be laid out in the first word of the
-                        // returndata.
-                        //
-                        // In returndata:
-                        // [ signature ][ bptAmount ][ tokenAmounts length ][ tokenAmounts values ]
-                        // [  4 bytes  ][  32 bytes ][       32 bytes      ][ (32 * length) bytes ]
-                        //
-                        // We now need to return (ABI-encoded values):
-                        // [ bptAmount ][ tokeAmounts offset ][ tokenAmounts length ][ tokenAmounts values ]
-                        // [  32 bytes ][       32 bytes     ][       32 bytes      ][ (32 * length) bytes ]
-
-                        // We copy 32 bytes for the `bptAmount` from returndata into memory.
-                        // Note that we skip the first 4 bytes for the error signature
-                        returndatacopy(0, 0x04, 32)
-
-                        // The offsets are 32-bytes long, so the array of `tokenAmounts` will start after
-                        // the initial 64 bytes.
-                        mstore(0x20, 64)
-
-                        // We now copy the raw memory array for the `tokenAmounts` from returndata into memory.
-                        // Since bpt amount and offset take up 64 bytes, we start copying at address 0x40. We also
-                        // skip the first 36 bytes from returndata, which correspond to the signature plus bpt amount.
-                        returndatacopy(0x40, 0x24, sub(returndatasize(), 36))
-
-                        // We finally return the ABI-encoded uint256 and the array, which has a total length equal to
-                        // the size of returndata, plus the 32 bytes of the offset but without the 4 bytes of the
-                        // error signature.
-                        return(0, add(returndatasize(), 28))
+                    // If the first 4 bytes don't match with the expected signature, we forward the revert reason.
+                    if eq(eq(error, 0x43adbafb00000000000000000000000000000000000000000000000000000000), 0) {
+                        returndatacopy(0, 0, returndatasize())
+                        revert(0, returndatasize())
                     }
-                    default {
-                        // This call should always revert, but we fail nonetheless if that didn't happen
-                        invalid()
-                    }
+
+                    // The returndata contains the signature, followed by the raw memory representation of the
+                    // `bptAmount` and `tokenAmounts` (array: length + data). We need to return an ABI-encoded
+                    // representation of these.
+                    // An ABI-encoded response will include one additional field to indicate the starting offset of
+                    // the `tokenAmounts` array. The `bptAmount` will be laid out in the first word of the
+                    // returndata.
+                    //
+                    // In returndata:
+                    // [ signature ][ bptAmount ][ tokenAmounts length ][ tokenAmounts values ]
+                    // [  4 bytes  ][  32 bytes ][       32 bytes      ][ (32 * length) bytes ]
+                    //
+                    // We now need to return (ABI-encoded values):
+                    // [ bptAmount ][ tokeAmounts offset ][ tokenAmounts length ][ tokenAmounts values ]
+                    // [  32 bytes ][       32 bytes     ][       32 bytes      ][ (32 * length) bytes ]
+
+                    // We copy 32 bytes for the `bptAmount` from returndata into memory.
+                    // Note that we skip the first 4 bytes for the error signature
+                    returndatacopy(0, 0x04, 32)
+
+                    // The offsets are 32-bytes long, so the array of `tokenAmounts` will start after
+                    // the initial 64 bytes.
+                    mstore(0x20, 64)
+
+                    // We now copy the raw memory array for the `tokenAmounts` from returndata into memory.
+                    // Since bpt amount and offset take up 64 bytes, we start copying at address 0x40. We also
+                    // skip the first 36 bytes from returndata, which correspond to the signature plus bpt amount.
+                    returndatacopy(0x40, 0x24, sub(returndatasize(), 36))
+
+                    // We finally return the ABI-encoded uint256 and the array, which has a total length equal to
+                    // the size of returndata, plus the 32 bytes of the offset but without the 4 bytes of the
+                    // error signature.
+                    return(0, add(returndatasize(), 28))
+                }
+                default {
+                    // This call should always revert, but we fail nonetheless if that didn't happen
+                    invalid()
+                }
             }
         } else {
             uint256[] memory scalingFactors = _scalingFactors();
             _upscaleArray(balances, scalingFactors);
 
-            (uint256 bptAmount, uint256[] memory tokenAmounts, ) = _action(
-                poolId,
-                sender,
-                recipient,
-                balances,
-                lastChangeBlock,
-                protocolSwapFeePercentage,
-                scalingFactors,
-                userData
-            );
+            (uint256 bptAmount, uint256[] memory tokenAmounts, ) = _action(poolId, sender, recipient, balances, lastChangeBlock, protocolSwapFeePercentage, scalingFactors, userData);
 
             _downscaleArray(tokenAmounts, scalingFactors);
 

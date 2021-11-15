@@ -117,7 +117,7 @@ const _abi = [
         type: "bool",
       },
     ],
-    name: "PausedStateChangedFlashLoan",
+    name: "PausedStateChanged",
     type: "event",
   },
   {
@@ -630,7 +630,7 @@ const _abi = [
   },
   {
     inputs: [],
-    name: "getPausedStateFlashLoan",
+    name: "getPausedState",
     outputs: [
       {
         internalType: "bool",

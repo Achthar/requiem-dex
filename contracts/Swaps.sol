@@ -13,9 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
 
-import "./libraries/math/Math.sol";
 import "./libraries/helpers/RequiemErrors.sol";
 import "./libraries/helpers/InputHelpers.sol";
 import "./libraries//EnumerableMap.sol";
@@ -58,15 +56,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         FundManagement memory funds,
         uint256 limit,
         uint256 deadline
-    )
-        external
-        payable
-        override
-        nonReentrant
-        whenNotPausedVault
-        authenticateFor(funds.sender)
-        returns (uint256 amountCalculated)
-    {
+    ) external payable override nonReentrant whenNotPaused authenticateFor(funds.sender) returns (uint256 amountCalculated) {
         // The deadline is timestamp-based: it should not be relied upon for sub-minute accuracy.
         // solhint-disable-next-line not-rely-on-time
         _require(block.timestamp <= deadline, Errors.SWAP_DEADLINE);
@@ -111,15 +101,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         FundManagement memory funds,
         int256[] memory limits,
         uint256 deadline
-    )
-        external
-        payable
-        override
-        nonReentrant
-        whenNotPausedVault
-        authenticateFor(funds.sender)
-        returns (int256[] memory assetDeltas)
-    {
+    ) external payable override nonReentrant whenNotPaused authenticateFor(funds.sender) returns (int256[] memory assetDeltas) {
         // The deadline is timestamp-based: it should not be relied upon for sub-minute accuracy.
         // solhint-disable-next-line not-rely-on-time
         _require(block.timestamp <= deadline, Errors.SWAP_DEADLINE);
@@ -142,7 +124,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
                 _receiveAsset(asset, toReceive, funds.sender, funds.fromInternalBalance);
 
                 if (_isETH(asset)) {
-                    wrappedEth = wrappedEth.add(toReceive);
+                    wrappedEth = wrappedEth + toReceive;
                 }
             } else if (delta < 0) {
                 uint256 toSend = uint256(-delta);
@@ -222,8 +204,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         for (uint256 i = 0; i < swaps.length; ++i) {
             batchSwapStep = swaps[i];
 
-            bool withinBounds = batchSwapStep.assetInIndex < assets.length &&
-                batchSwapStep.assetOutIndex < assets.length;
+            bool withinBounds = batchSwapStep.assetInIndex < assets.length && batchSwapStep.assetOutIndex < assets.length;
             _require(withinBounds, Errors.OUT_OF_BOUNDS);
 
             IERC20 tokenIn = _translateToIERC20(assets[batchSwapStep.assetInIndex]);
@@ -259,10 +240,8 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             previousTokenCalculated = _tokenCalculated(kind, tokenIn, tokenOut);
 
             // Accumulate Vault deltas across swaps
-            assetDeltas[batchSwapStep.assetInIndex] = assetDeltas[batchSwapStep.assetInIndex].add(amountIn.toInt256());
-            assetDeltas[batchSwapStep.assetOutIndex] = assetDeltas[batchSwapStep.assetOutIndex].sub(
-                amountOut.toInt256()
-            );
+            assetDeltas[batchSwapStep.assetInIndex] = assetDeltas[batchSwapStep.assetInIndex] + amountIn.toInt256();
+            assetDeltas[batchSwapStep.assetOutIndex] = assetDeltas[batchSwapStep.assetOutIndex] - amountOut.toInt256();
         }
     }
 
@@ -297,18 +276,11 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         emit Swap(request.poolId, request.tokenIn, request.tokenOut, amountIn, amountOut);
     }
 
-    function _processTwoTokenPoolSwapRequest(IPoolSwapStructs.SwapRequest memory request, IMinimalSwapInfoPool pool)
-        private
-        returns (uint256 amountCalculated)
-    {
+    function _processTwoTokenPoolSwapRequest(IPoolSwapStructs.SwapRequest memory request, IMinimalSwapInfoPool pool) private returns (uint256 amountCalculated) {
         // For gas efficiency reasons, this function uses low-level knowledge of how Two Token Pool balances are
         // stored internally, instead of using getters and setters for all operations.
 
-        (
-            bytes32 tokenABalance,
-            bytes32 tokenBBalance,
-            TwoTokenPoolBalances storage poolBalances
-        ) = _getTwoTokenPoolSharedBalances(request.poolId, request.tokenIn, request.tokenOut);
+        (bytes32 tokenABalance, bytes32 tokenBBalance, TwoTokenPoolBalances storage poolBalances) = _getTwoTokenPoolSharedBalances(request.poolId, request.tokenIn, request.tokenOut);
 
         // We have the two Pool balances, but we don't know which one is 'token in' or 'token out'.
         bytes32 tokenInBalance;
@@ -326,12 +298,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         }
 
         // Perform the swap request and compute the new balances for 'token in' and 'token out' after the swap
-        (tokenInBalance, tokenOutBalance, amountCalculated) = _callMinimalSwapInfoPoolOnSwapHook(
-            request,
-            pool,
-            tokenInBalance,
-            tokenOutBalance
-        );
+        (tokenInBalance, tokenOutBalance, amountCalculated) = _callMinimalSwapInfoPoolOnSwapHook(request, pool, tokenInBalance, tokenOutBalance);
 
         // We check the token ordering again to create the new shared cash packed struct
         poolBalances.sharedCash = request.tokenIn < request.tokenOut
@@ -339,20 +306,12 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             : BalanceAllocation.toSharedCash(tokenOutBalance, tokenInBalance); // in is B, out is A
     }
 
-    function _processMinimalSwapInfoPoolSwapRequest(
-        IPoolSwapStructs.SwapRequest memory request,
-        IMinimalSwapInfoPool pool
-    ) private returns (uint256 amountCalculated) {
+    function _processMinimalSwapInfoPoolSwapRequest(IPoolSwapStructs.SwapRequest memory request, IMinimalSwapInfoPool pool) private returns (uint256 amountCalculated) {
         bytes32 tokenInBalance = _getMinimalSwapInfoPoolBalance(request.poolId, request.tokenIn);
         bytes32 tokenOutBalance = _getMinimalSwapInfoPoolBalance(request.poolId, request.tokenOut);
 
         // Perform the swap request and compute the new balances for 'token in' and 'token out' after the swap
-        (tokenInBalance, tokenOutBalance, amountCalculated) = _callMinimalSwapInfoPoolOnSwapHook(
-            request,
-            pool,
-            tokenInBalance,
-            tokenOutBalance
-        );
+        (tokenInBalance, tokenOutBalance, amountCalculated) = _callMinimalSwapInfoPoolOnSwapHook(request, pool, tokenInBalance, tokenOutBalance);
 
         _minimalSwapInfoPoolsBalances[request.poolId][request.tokenIn] = tokenInBalance;
         _minimalSwapInfoPoolsBalances[request.poolId][request.tokenOut] = tokenOutBalance;
@@ -387,10 +346,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         newTokenOutBalance = tokenOutBalance.decreaseCash(amountOut);
     }
 
-    function _processGeneralPoolSwapRequest(IPoolSwapStructs.SwapRequest memory request, IGeneralPool pool)
-        private
-        returns (uint256 amountCalculated)
-    {
+    function _processGeneralPoolSwapRequest(IPoolSwapStructs.SwapRequest memory request, IGeneralPool pool) private returns (uint256 amountCalculated) {
         bytes32 tokenInBalance;
         bytes32 tokenOutBalance;
 
@@ -475,42 +431,42 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             assembly {
                 // This call should always revert to decode the actual asset deltas from the revert reason
                 switch success
-                    case 0 {
-                        // Note we are manually writing the memory slot 0. We can safely overwrite whatever is
-                        // stored there as we take full control of the execution and then immediately return.
+                case 0 {
+                    // Note we are manually writing the memory slot 0. We can safely overwrite whatever is
+                    // stored there as we take full control of the execution and then immediately return.
 
-                        // We copy the first 4 bytes to check if it matches with the expected signature, otherwise
-                        // there was another revert reason and we should forward it.
-                        returndatacopy(0, 0, 0x04)
-                        let error := and(mload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)
+                    // We copy the first 4 bytes to check if it matches with the expected signature, otherwise
+                    // there was another revert reason and we should forward it.
+                    returndatacopy(0, 0, 0x04)
+                    let error := and(mload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)
 
-                        // If the first 4 bytes don't match with the expected signature, we forward the revert reason.
-                        if eq(eq(error, 0xfa61cc1200000000000000000000000000000000000000000000000000000000), 0) {
-                            returndatacopy(0, 0, returndatasize())
-                            revert(0, returndatasize())
-                        }
-
-                        // The returndata contains the signature, followed by the raw memory representation of an array:
-                        // length + data. We need to return an ABI-encoded representation of this array.
-                        // An ABI-encoded array contains an additional field when compared to its raw memory
-                        // representation: an offset to the location of the length. The offset itself is 32 bytes long,
-                        // so the smallest value we  can use is 32 for the data to be located immediately after it.
-                        mstore(0, 32)
-
-                        // We now copy the raw memory array from returndata into memory. Since the offset takes up 32
-                        // bytes, we start copying at address 0x20. We also get rid of the error signature, which takes
-                        // the first four bytes of returndata.
-                        let size := sub(returndatasize(), 0x04)
-                        returndatacopy(0x20, 0x04, size)
-
-                        // We finally return the ABI-encoded array, which has a total length equal to that of the array
-                        // (returndata), plus the 32 bytes for the offset.
-                        return(0, add(size, 32))
+                    // If the first 4 bytes don't match with the expected signature, we forward the revert reason.
+                    if eq(eq(error, 0xfa61cc1200000000000000000000000000000000000000000000000000000000), 0) {
+                        returndatacopy(0, 0, returndatasize())
+                        revert(0, returndatasize())
                     }
-                    default {
-                        // This call should always revert, but we fail nonetheless if that didn't happen
-                        invalid()
-                    }
+
+                    // The returndata contains the signature, followed by the raw memory representation of an array:
+                    // length + data. We need to return an ABI-encoded representation of this array.
+                    // An ABI-encoded array contains an additional field when compared to its raw memory
+                    // representation: an offset to the location of the length. The offset itself is 32 bytes long,
+                    // so the smallest value we  can use is 32 for the data to be located immediately after it.
+                    mstore(0, 32)
+
+                    // We now copy the raw memory array from returndata into memory. Since the offset takes up 32
+                    // bytes, we start copying at address 0x20. We also get rid of the error signature, which takes
+                    // the first four bytes of returndata.
+                    let size := sub(returndatasize(), 0x04)
+                    returndatacopy(0x20, 0x04, size)
+
+                    // We finally return the ABI-encoded array, which has a total length equal to that of the array
+                    // (returndata), plus the 32 bytes for the offset.
+                    return(0, add(size, 32))
+                }
+                default {
+                    // This call should always revert, but we fail nonetheless if that didn't happen
+                    invalid()
+                }
             }
         } else {
             int256[] memory deltas = _swapWithPools(swaps, assets, funds, kind);

@@ -13,12 +13,12 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "./libraries/helpers/RequiemErrors.sol";
 import "./libraries/helpers/Authentication.sol";
-import "./libraries/helpers/TemporarilyPausableVault.sol";
-import "./libraries/helpers/SignaturesValidatorVault.sol";
+import "./libraries/helpers/TemporarilyPausable.sol";
+import "./libraries/helpers/SignaturesValidator.sol";
 import "./libraries/ReentrancyGuard.sol";
 
 import "./interfaces/IVault.sol";
@@ -33,8 +33,8 @@ abstract contract VaultAuthorization is
     IVault,
     ReentrancyGuard,
     Authentication,
-    SignaturesValidatorVault,
-    TemporarilyPausableVault
+    SignaturesValidator,
+    TemporarilyPausable
 {
     // Ideally, we'd store the type hashes as immutable state variables to avoid computing the hash at runtime, but
     // unfortunately immutable variables cannot be used in assembly, so we just keep the precomputed hashes instead.
@@ -75,7 +75,7 @@ abstract contract VaultAuthorization is
     constructor(IAuthorizer authorizer)
         // The Vault is a singleton, so it simply uses its own address to disambiguate action identifiers.
         Authentication(bytes32(uint256(uint160(address(this))) << 96))
-        SignaturesValidatorVault("Requiem V2 Vault")
+        SignaturesValidator("Requiem V2 Vault")
     {
         _setAuthorizer(authorizer);
     }
@@ -97,7 +97,7 @@ abstract contract VaultAuthorization is
         address sender,
         address relayer,
         bool approved
-    ) external override nonReentrant whenNotPausedVault authenticateFor(sender) {
+    ) external override nonReentrant whenNotPaused authenticateFor(sender) {
         _approvedRelayers[sender][relayer] = approved;
         emit RelayerApprovalChanged(relayer, sender, approved);
     }

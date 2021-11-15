@@ -12,8 +12,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.8;
 
+import "./RequiemErrors.sol";
 import "../../interfaces/ITemporarilyPausable.sol";
 
 /**
@@ -45,8 +46,8 @@ abstract contract TemporarilyPausable is ITemporarilyPausable {
     bool private _paused;
 
     constructor(uint256 pauseWindowDuration, uint256 bufferPeriodDuration) {
-        require(pauseWindowDuration <= _MAX_PAUSE_WINDOW_DURATION, "MAX_PAUSE_WINDOW_DURATION");
-        require(bufferPeriodDuration <= _MAX_BUFFER_PERIOD_DURATION, "MAX_BUFFER_PERIOD_DURATION");
+        _require(pauseWindowDuration <= _MAX_PAUSE_WINDOW_DURATION, Errors.MAX_PAUSE_WINDOW_DURATION);
+        _require(bufferPeriodDuration <= _MAX_BUFFER_PERIOD_DURATION, Errors.MAX_BUFFER_PERIOD_DURATION);
 
         uint256 pauseWindowEndTime = block.timestamp + pauseWindowDuration;
 
@@ -89,9 +90,9 @@ abstract contract TemporarilyPausable is ITemporarilyPausable {
      */
     function _setPaused(bool paused) internal {
         if (paused) {
-            require(block.timestamp < _getPauseWindowEndTime(), "PAUSE_WINDOW_EXPIRED");
+            _require(block.timestamp < _getPauseWindowEndTime(), Errors.PAUSE_WINDOW_EXPIRED);
         } else {
-            require(block.timestamp < _getBufferPeriodEndTime(), "BUFFER_PERIOD_EXPIRED");
+            _require(block.timestamp < _getBufferPeriodEndTime(), Errors.BUFFER_PERIOD_EXPIRED);
         }
 
         _paused = paused;
@@ -102,14 +103,14 @@ abstract contract TemporarilyPausable is ITemporarilyPausable {
      * @dev Reverts if the contract is paused.
      */
     function _ensureNotPaused() internal view {
-        require(_isNotPaused(), "PAUSED");
+        _require(_isNotPaused(), Errors.PAUSED);
     }
 
     /**
      * @dev Reverts if the contract is not paused.
      */
     function _ensurePaused() internal view {
-        require(!_isNotPaused(), "NOT_PAUSED");
+        _require(!_isNotPaused(), Errors.NOT_PAUSED);
     }
 
     /**

@@ -1,6 +1,12 @@
 // SPDX-License-Identifier: MIT
 
+// Based on the ReentrancyGuard library from OpenZeppelin Contracts, altered to reduce bytecode size.
+// Modifier code is inlined by the compiler, which causes its code to appear multiple times in the codebase. By using
+// private functions, we achieve the same end result with slightly higher runtime gas costs, but reduced bytecode size.
+
 pragma solidity ^0.8.9;
+
+import "./helpers/RequiemErrors.sol";
 
 /**
  * @dev Contract module that helps prevent reentrant calls to a function.
@@ -43,18 +49,24 @@ abstract contract ReentrancyGuard {
      * @dev Prevents a contract from calling itself, directly or indirectly.
      * Calling a `nonReentrant` function from another `nonReentrant`
      * function is not supported. It is possible to prevent this from happening
-     * by making the `nonReentrant` function external, and making it call a
+     * by making the `nonReentrant` function external, and make it call a
      * `private` function that does the actual work.
      */
     modifier nonReentrant() {
-        // On the first call to nonReentrant, _notEntered will be true
-        require(_status != _ENTERED, "ReentrancyGuard: reentrant call");
+        _enterNonReentrant();
+        _;
+        _exitNonReentrant();
+    }
+
+    function _enterNonReentrant() private {
+        // On the first call to nonReentrant, _status will be _NOT_ENTERED
+        _require(_status != _ENTERED, Errors.REENTRANCY);
 
         // Any calls to nonReentrant after this point will fail
         _status = _ENTERED;
+    }
 
-        _;
-
+    function _exitNonReentrant() private {
         // By storing the original value once again, a refund is triggered (see
         // https://eips.ethereum.org/EIPS/eip-2200)
         _status = _NOT_ENTERED;

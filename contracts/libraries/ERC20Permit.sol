@@ -20,7 +20,8 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
     mapping(address => uint256) private _nonces;
 
     // solhint-disable-next-line var-name-mixedcase
-    bytes32 private immutable _PERMIT_TYPEHASH = keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)");
+    bytes32 private immutable _PERMIT_TYPEHASH =
+        keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)");
 
     /**
      * @dev Initializes the {EIP712} domain separator using the `name` parameter, and setting `version` to `"1"`.
@@ -42,7 +43,7 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
         bytes32 s
     ) public virtual override {
         // solhint-disable-next-line not-rely-on-time
-        require(block.timestamp <= deadline, "EXPIRED_PERMIT");
+        _require(block.timestamp <= deadline, Errors.EXPIRED_PERMIT);
 
         uint256 nonce = _nonces[owner];
         bytes32 structHash = keccak256(abi.encode(_PERMIT_TYPEHASH, owner, spender, value, nonce, deadline));
@@ -50,7 +51,7 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712 {
         bytes32 hash = _hashTypedDataV4(structHash);
 
         address signer = ecrecover(hash, v, r, s);
-        require((signer != address(0)) && (signer == owner), "INVALID_SIGNATURE");
+        _require((signer != address(0)) && (signer == owner), Errors.INVALID_SIGNATURE);
 
         _nonces[owner] = nonce + 1;
         _approve(owner, spender, value);

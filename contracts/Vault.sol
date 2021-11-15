@@ -13,7 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "./interfaces/IWETH.sol";
 
@@ -64,12 +64,12 @@ contract Vault is VaultAuthorization, FlashLoans, Swaps {
         IWETH weth,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration
-    ) VaultAuthorization(authorizer) AssetHelpers(weth) TemporarilyPausableVault(pauseWindowDuration, bufferPeriodDuration) TemporarilyPausableFlashLoan(pauseWindowDuration, bufferPeriodDuration) {
+    ) VaultAuthorization(authorizer) AssetHelpers(weth) TemporarilyPausable(pauseWindowDuration, bufferPeriodDuration) {
         // solhint-disable-previous-line no-empty-blocks
     }
 
     function setPaused(bool paused) external override nonReentrant authenticate {
-        _setPausedVault(paused);
+        _setPaused(paused);
     }
 
     // solhint-disable-next-line func-name-mixedcase

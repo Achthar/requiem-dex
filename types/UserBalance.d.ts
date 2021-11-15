@@ -32,7 +32,7 @@ interface UserBalanceInterface extends ethers.utils.Interface {
     "getDomainSeparator()": FunctionFragment;
     "getInternalBalance(address,address[])": FunctionFragment;
     "getNextNonce(address)": FunctionFragment;
-    "getPausedStateVault()": FunctionFragment;
+    "getPausedState()": FunctionFragment;
     "getPool(bytes32)": FunctionFragment;
     "getPoolTokenInfo(bytes32,address)": FunctionFragment;
     "getPoolTokens(bytes32)": FunctionFragment;
@@ -116,7 +116,7 @@ interface UserBalanceInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "getPausedStateVault",
+    functionFragment: "getPausedState",
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "getPool", values: [BytesLike]): string;
@@ -261,7 +261,7 @@ interface UserBalanceInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getPausedStateVault",
+    functionFragment: "getPausedState",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "getPool", data: BytesLike): Result;
@@ -318,7 +318,7 @@ interface UserBalanceInterface extends ethers.utils.Interface {
     "ExternalBalanceTransfer(address,address,address,uint256)": EventFragment;
     "FlashLoan(address,address,uint256,uint256)": EventFragment;
     "InternalBalanceChanged(address,address,int256)": EventFragment;
-    "PausedStateChangedVault(bool)": EventFragment;
+    "PausedStateChanged(bool)": EventFragment;
     "PoolBalanceChanged(bytes32,address,address[],int256[],uint256[])": EventFragment;
     "PoolBalanceManaged(bytes32,address,address,int256,int256)": EventFragment;
     "PoolRegistered(bytes32,address,uint8)": EventFragment;
@@ -332,7 +332,7 @@ interface UserBalanceInterface extends ethers.utils.Interface {
   getEvent(nameOrSignatureOrTopic: "ExternalBalanceTransfer"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "FlashLoan"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "InternalBalanceChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "PausedStateChangedVault"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "PausedStateChanged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PoolBalanceChanged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PoolBalanceManaged"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "PoolRegistered"): EventFragment;
@@ -372,7 +372,7 @@ export type InternalBalanceChangedEvent = TypedEvent<
   }
 >;
 
-export type PausedStateChangedVaultEvent = TypedEvent<
+export type PausedStateChangedEvent = TypedEvent<
   [boolean] & { paused: boolean }
 >;
 
@@ -545,7 +545,7 @@ export class UserBalance extends BaseContract {
 
     getNextNonce(user: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    getPausedStateVault(
+    getPausedState(
       overrides?: CallOverrides
     ): Promise<
       [boolean, BigNumber, BigNumber] & {
@@ -759,7 +759,7 @@ export class UserBalance extends BaseContract {
 
   getNextNonce(user: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-  getPausedStateVault(
+  getPausedState(
     overrides?: CallOverrides
   ): Promise<
     [boolean, BigNumber, BigNumber] & {
@@ -976,7 +976,7 @@ export class UserBalance extends BaseContract {
 
     getNextNonce(user: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    getPausedStateVault(
+    getPausedState(
       overrides?: CallOverrides
     ): Promise<
       [boolean, BigNumber, BigNumber] & {
@@ -1200,11 +1200,11 @@ export class UserBalance extends BaseContract {
       { user: string; token: string; delta: BigNumber }
     >;
 
-    "PausedStateChangedVault(bool)"(
+    "PausedStateChanged(bool)"(
       paused?: null
     ): TypedEventFilter<[boolean], { paused: boolean }>;
 
-    PausedStateChangedVault(
+    PausedStateChanged(
       paused?: null
     ): TypedEventFilter<[boolean], { paused: boolean }>;
 
@@ -1449,7 +1449,7 @@ export class UserBalance extends BaseContract {
 
     getNextNonce(user: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    getPausedStateVault(overrides?: CallOverrides): Promise<BigNumber>;
+    getPausedState(overrides?: CallOverrides): Promise<BigNumber>;
 
     getPool(poolId: BytesLike, overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -1648,9 +1648,7 @@ export class UserBalance extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    getPausedStateVault(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    getPausedState(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getPool(
       poolId: BytesLike,

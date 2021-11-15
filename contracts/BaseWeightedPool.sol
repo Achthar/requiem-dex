@@ -13,7 +13,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
 
 import "./libraries/math/FixedPoint.sol";
 import "./libraries/helpers/InputHelpers.sol";
@@ -168,7 +167,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
 
         // Set the initial BPT to the value of the invariant times the number of tokens. This makes BPT supply more
         // consistent in Pools with similar compositions but different number of tokens.
-        uint256 bptAmountOut = Math.mul(invariantAfterJoin, _getTotalTokens());
+        uint256 bptAmountOut = invariantAfterJoin * _getTotalTokens();
 
         _lastInvariant = invariantAfterJoin;
 
@@ -495,6 +494,6 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
      */
     function getRate() public view returns (uint256) {
         // The initial BPT supply is equal to the invariant times the number of tokens.
-        return Math.mul(getInvariant(), _getTotalTokens()).divDown(totalSupply());
+        return (getInvariant() * _getTotalTokens()).divDown(totalSupply());
     }
 }

@@ -13,6 +13,7 @@ import 'hardhat-spdx-license-identifier';
 import '@typechain/hardhat';
 import 'hardhat-watcher';
 import 'solidity-coverage';
+import "hardhat-contract-sizer";
 // import {accounts} from './utils/networks';
 
 //import './tasks';

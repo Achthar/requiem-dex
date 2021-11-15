@@ -13,9 +13,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
 
-import "./libraries/math/Math.sol";
 import "./libraries/helpers/RequiemErrors.sol";
 import "./libraries/helpers/InputHelpers.sol";
 import "./interfaces/ERC20/IERC20.sol";
@@ -35,7 +33,6 @@ import "./interfaces/IBasePool.sol";
  * `managePoolBalance` handles all Asset Manager interactions.
  */
 abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance {
-    using Math for uint256;
     using SafeERC20 for IERC20;
     using BalanceAllocation for bytes32;
     using BalanceAllocation for bytes32[];
@@ -45,7 +42,7 @@ abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance
         address sender,
         address recipient,
         JoinPoolRequest memory request
-    ) external payable override whenNotPausedVault {
+    ) external payable override whenNotPaused {
         // This function doesn't have the nonReentrant modifier: it is applied to `_joinOrExit` instead.
 
         // Note that `recipient` is not actually payable in the context of a join - we cast it because we handle both
@@ -202,7 +199,7 @@ abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance
             _receiveAsset(asset, amountIn, sender, change.useInternalBalance);
 
             if (_isETH(asset)) {
-                wrappedEth = wrappedEth.add(amountIn);
+                wrappedEth = wrappedEth + amountIn;
             }
 
             uint256 feeAmount = dueProtocolFeeAmounts[i];
@@ -246,7 +243,7 @@ abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance
             _payFeeAmount(_translateToIERC20(asset), feeAmount);
 
             // Compute the new Pool balances. A Pool's token balance always decreases after an exit (potentially by 0).
-            finalBalances[i] = balances[i].decreaseCash(amountOut.add(feeAmount));
+            finalBalances[i] = balances[i].decreaseCash(amountOut + feeAmount);
         }
     }
 

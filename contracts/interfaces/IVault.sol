@@ -12,11 +12,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma experimental ABIEncoderV2;
+
 
 import "./ERC20/IERC20.sol";
-import "./ISignaturesValidatorVault.sol";
-import "./ITemporarilyPausableVault.sol";
+import "./ISignaturesValidator.sol";
+import "./ITemporarilyPausable.sol";
 import "./IWETH.sol";
 
 import "./IAsset.sol";
@@ -30,7 +30,7 @@ pragma solidity ^0.8.9;
  * @dev Full external interface for the Vault core contract - no external or public methods exist in the contract that
  * don't override one of these declarations.
  */
-interface IVault is ISignaturesValidatorVault, ITemporarilyPausableVault {
+interface IVault is ISignaturesValidator, ITemporarilyPausable {
     // Generalities about the Vault:
     //
     // - Whenever documentation refers to 'tokens', it strictly refers to ERC20-compliant token contracts. Tokens are

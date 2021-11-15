@@ -13,15 +13,14 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.8.9;
-pragma experimental ABIEncoderV2;
+
 
 import "./libraries/helpers/RequiemErrors.sol";
-import "./libraries/math/Math.sol";
 import "./interfaces/ERC20/IERC20.sol";
 import "./libraries/ReentrancyGuard.sol";
 import "./libraries/SafeCast.sol";
 import "./libraries/SafeERC20.sol";
-
+import "./libraries/math/Math.sol";
 import "./AssetTransfersHandler.sol";
 import "./VaultAuthorization.sol";
 
@@ -37,7 +36,6 @@ import "./VaultAuthorization.sol";
  * operations of different kinds, with different senders and recipients, at once.
  */
 abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAuthorization {
-    using Math for uint256;
     using SafeCast for uint256;
     using SafeERC20 for IERC20;
 
@@ -86,7 +84,7 @@ abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAu
                 // We cache the result of the pause check and skip it for other operations in this same transaction
                 // (if any).
                 if (!checkedNotPaused) {
-                    _ensureNotPausedVault();
+                    _ensureNotPaused();
                     checkedNotPaused = true;
                 }
 
@@ -95,7 +93,7 @@ abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAu
 
                     // Keep track of all ETH wrapped into WETH as part of a deposit.
                     if (_isETH(asset)) {
-                        ethWrapped = ethWrapped.add(amount);
+                        ethWrapped = ethWrapped + amount;
                     }
                 } else {
                     // Transfers don't support ETH.
@@ -169,7 +167,7 @@ abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAu
         uint256 amount
     ) internal override {
         uint256 currentBalance = _getInternalBalance(account, token);
-        uint256 newBalance = currentBalance.add(amount);
+        uint256 newBalance = currentBalance + amount;
         _setInternalBalance(account, token, newBalance, amount.toInt256());
     }
 
