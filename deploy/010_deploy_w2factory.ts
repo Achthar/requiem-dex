@@ -15,6 +15,12 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	console.log("---- " + deployer + " ----")
 	const wethAddress = '0xd00ae08403B9bbb9124bB305C09058E32C39A48c'//await getWeth(hre);
 
+	const weth = await ethers.getContractAt("IWETH", wethAddress);
+
+	// const wethContract = await weth.attach(
+	// 	wethAddress
+	//   );
+
 	const authorizer = await deploy("Authorizer", {
 		contract: "Authorizer",
 		skipIfAlreadyDeployed: true,
@@ -41,8 +47,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		skipIfAlreadyDeployed: true,
 		from: deployer,
 		args: [
-			authorizer.address,	// IAuthorizer authorizer,
-			wethAddress,	// IWETH weth,
+			authorizer,	// IAuthorizer authorizer,
+			weth,	// IWETH weth,
 			0,	// uint256 pauseWindowDuration,
 			0,	// uint256 bufferPeriodDuration
 		],

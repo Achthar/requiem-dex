@@ -71,13 +71,13 @@ contract ProtocolFeesCollector is IProtocolFeesCollector, Authentication, Reentr
     }
 
     function setSwapFeePercentage(uint256 newSwapFeePercentage) external override authenticate {
-        _require(newSwapFeePercentage <= _MAX_PROTOCOL_SWAP_FEE_PERCENTAGE, Errors.SWAP_FEE_PERCENTAGE_TOO_HIGH);
+        RequiemErrors._require(newSwapFeePercentage <= _MAX_PROTOCOL_SWAP_FEE_PERCENTAGE, Errors.SWAP_FEE_PERCENTAGE_TOO_HIGH);
         _swapFeePercentage = newSwapFeePercentage;
         emit SwapFeePercentageChanged(newSwapFeePercentage);
     }
 
     function setFlashLoanFeePercentage(uint256 newFlashLoanFeePercentage) external override authenticate {
-        _require(
+        RequiemErrors._require(
             newFlashLoanFeePercentage <= _MAX_PROTOCOL_FLASH_LOAN_FEE_PERCENTAGE,
             Errors.FLASH_LOAN_FEE_PERCENTAGE_TOO_HIGH
         );

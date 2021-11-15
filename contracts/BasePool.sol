@@ -88,8 +88,8 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
         BasePoolAuthorization(owner)
         TemporarilyPausable(pauseWindowDuration, bufferPeriodDuration)
     {
-        _require(tokens.length >= _MIN_TOKENS, Errors.MIN_TOKENS);
-        _require(tokens.length <= _getMaxTokens(), Errors.MAX_TOKENS);
+        RequiemErrors._require(tokens.length >= _MIN_TOKENS, Errors.MIN_TOKENS);
+        RequiemErrors._require(tokens.length <= _getMaxTokens(), Errors.MAX_TOKENS);
 
         // The Vault only requires the token list to be ordered for the Two Token Pools specialization. However,
         // to make the developer experience consistent, we are requiring this condition for all the native pools.
@@ -131,8 +131,8 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
     }
 
     function _setSwapFeePercentage(uint256 swapFeePercentage) private {
-        _require(swapFeePercentage >= _MIN_SWAP_FEE_PERCENTAGE, Errors.MIN_SWAP_FEE_PERCENTAGE);
-        _require(swapFeePercentage <= _MAX_SWAP_FEE_PERCENTAGE, Errors.MAX_SWAP_FEE_PERCENTAGE);
+        RequiemErrors._require(swapFeePercentage >= _MIN_SWAP_FEE_PERCENTAGE, Errors.MIN_SWAP_FEE_PERCENTAGE);
+        RequiemErrors._require(swapFeePercentage <= _MAX_SWAP_FEE_PERCENTAGE, Errors.MAX_SWAP_FEE_PERCENTAGE);
 
         _miscData = _miscData.insertUint64(swapFeePercentage, _SWAP_FEE_PERCENTAGE_OFFSET);
         emit SwapFeePercentageChanged(swapFeePercentage);
@@ -172,8 +172,8 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
     // Join / Exit Hooks
 
     modifier onlyVault(bytes32 poolId) {
-        _require(msg.sender == address(getVault()), Errors.CALLER_NOT_VAULT);
-        _require(poolId == getPoolId(), Errors.INVALID_POOL_ID);
+        RequiemErrors._require(msg.sender == address(getVault()), Errors.CALLER_NOT_VAULT);
+        RequiemErrors._require(poolId == getPoolId(), Errors.INVALID_POOL_ID);
         _;
     }
 
@@ -194,7 +194,7 @@ abstract contract BasePool is IBasePool, BasePoolAuthorization, RequiemPoolToken
             // On initialization, we lock _getMinimumBpt() by minting it for the zero address. This BPT acts as a
             // minimum as it will never be burned, which reduces potential issues with rounding, and also prevents the
             // Pool from ever being fully drained.
-            _require(bptAmountOut >= _getMinimumBpt(), Errors.MINIMUM_BPT);
+            RequiemErrors._require(bptAmountOut >= _getMinimumBpt(), Errors.MINIMUM_BPT);
             _mintPoolTokens(address(0), _getMinimumBpt());
             _mintPoolTokens(recipient, bptAmountOut - _getMinimumBpt());
 

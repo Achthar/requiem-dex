@@ -54,7 +54,7 @@ abstract contract MinimalSwapInfoPoolsBalance is PoolRegistry {
 
         for (uint256 i = 0; i < tokens.length; ++i) {
             bool added = poolTokens.add(address(tokens[i]));
-            _require(added, Errors.TOKEN_ALREADY_REGISTERED);
+            RequiemErrors._require(added, Errors.TOKEN_ALREADY_REGISTERED);
             // Note that we don't initialize the balance mapping: the default value of zero corresponds to an empty
             // balance.
         }
@@ -76,14 +76,14 @@ abstract contract MinimalSwapInfoPoolsBalance is PoolRegistry {
 
         for (uint256 i = 0; i < tokens.length; ++i) {
             IERC20 token = tokens[i];
-            _require(_minimalSwapInfoPoolsBalances[poolId][token].isZero(), Errors.NONZERO_TOKEN_BALANCE);
+            RequiemErrors._require(_minimalSwapInfoPoolsBalances[poolId][token].isZero(), Errors.NONZERO_TOKEN_BALANCE);
 
             // For consistency with other Pool specialization settings, we explicitly reset the balance (which may have
             // a non-zero last change block).
             delete _minimalSwapInfoPoolsBalances[poolId][token];
 
             bool removed = poolTokens.remove(address(token));
-            _require(removed, Errors.TOKEN_NOT_REGISTERED);
+            RequiemErrors._require(removed, Errors.TOKEN_NOT_REGISTERED);
         }
     }
 
@@ -213,7 +213,7 @@ abstract contract MinimalSwapInfoPoolsBalance is PoolRegistry {
             // The token might not be registered because the Pool itself is not registered. We check this to provide a
             // more accurate revert reason.
             _ensureRegisteredPool(poolId);
-            _revert(Errors.TOKEN_NOT_REGISTERED);
+            RequiemErrors._revert(Errors.TOKEN_NOT_REGISTERED);
         }
 
         return balance;

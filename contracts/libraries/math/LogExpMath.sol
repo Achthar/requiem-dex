@@ -105,14 +105,14 @@ library LogExpMath {
         // x^y = exp(y * ln(x)).
 
         // The ln function takes a signed value, so we need to make sure x fits in the signed 256 bit range.
-        _require(x < 2**255, Errors.X_OUT_OF_BOUNDS);
+        RequiemErrors._require(x < 2**255, Errors.X_OUT_OF_BOUNDS);
         int256 x_int256 = int256(x);
 
         // We will compute y * ln(x) in a single step. Depending on the value of x, we can either use ln or ln_36. In
         // both cases, we leave the division by ONE_18 (due to fixed point multiplication) to the end.
 
         // This prevents y * ln(x) from overflowing, and at the same time guarantees y fits in the signed 256 bit range.
-        _require(y < MILD_EXPONENT_BOUND, Errors.Y_OUT_OF_BOUNDS);
+        RequiemErrors._require(y < MILD_EXPONENT_BOUND, Errors.Y_OUT_OF_BOUNDS);
         int256 y_int256 = int256(y);
 
         int256 logx_times_y;
@@ -130,7 +130,7 @@ library LogExpMath {
         logx_times_y /= ONE_18;
 
         // Finally, we compute exp(y * ln(x)) to arrive at x^y
-        _require(
+        RequiemErrors._require(
             MIN_NATURAL_EXPONENT <= logx_times_y && logx_times_y <= MAX_NATURAL_EXPONENT,
             Errors.PRODUCT_OUT_OF_BOUNDS
         );
@@ -144,7 +144,7 @@ library LogExpMath {
      * Reverts if `x` is smaller than MIN_NATURAL_EXPONENT, or larger than `MAX_NATURAL_EXPONENT`.
      */
     function exp(int256 x) internal pure returns (int256) {
-        _require(x >= MIN_NATURAL_EXPONENT && x <= MAX_NATURAL_EXPONENT, Errors.INVALID_EXPONENT);
+        RequiemErrors._require(x >= MIN_NATURAL_EXPONENT && x <= MAX_NATURAL_EXPONENT, Errors.INVALID_EXPONENT);
 
         if (x < 0) {
             // We only handle positive exponents: e^(-x) is computed as 1 / e^x. We can safely make x positive since it
@@ -312,7 +312,7 @@ library LogExpMath {
      */
     function ln(int256 a) internal pure returns (int256) {
         // The real natural logarithm is not defined for negative numbers or zero.
-        _require(a > 0, Errors.OUT_OF_BOUNDS);
+        RequiemErrors._require(a > 0, Errors.OUT_OF_BOUNDS);
         if (LN_36_LOWER_BOUND < a && a < LN_36_UPPER_BOUND) {
             return _ln_36(a) / ONE_18;
         } else {

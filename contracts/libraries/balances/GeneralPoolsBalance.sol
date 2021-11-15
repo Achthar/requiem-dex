@@ -55,7 +55,7 @@ abstract contract GeneralPoolsBalance {
             // EnumerableMaps require an explicit initial value when creating a key-value pair: we use zero, the same
             // value that is found in uninitialized storage, which corresponds to an empty balance.
             bool added = poolBalances.set(tokens[i], 0);
-            _require(added, Errors.TOKEN_ALREADY_REGISTERED);
+            RequiemErrors._require(added, Errors.TOKEN_ALREADY_REGISTERED);
         }
     }
 
@@ -76,7 +76,7 @@ abstract contract GeneralPoolsBalance {
         for (uint256 i = 0; i < tokens.length; ++i) {
             IERC20 token = tokens[i];
             bytes32 currentBalance = _getGeneralPoolBalance(poolBalances, token);
-            _require(currentBalance.isZero(), Errors.NONZERO_TOKEN_BALANCE);
+            RequiemErrors._require(currentBalance.isZero(), Errors.NONZERO_TOKEN_BALANCE);
 
             // We don't need to check remove's return value, since _getGeneralPoolBalance already checks that the token
             // was registered.

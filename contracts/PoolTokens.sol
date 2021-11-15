@@ -36,14 +36,14 @@ abstract contract PoolTokens is ReentrancyGuard, PoolRegistry, AssetManagers {
         // Validates token addresses and assigns Asset Managers
         for (uint256 i = 0; i < tokens.length; ++i) {
             IERC20 token = tokens[i];
-            _require(token != IERC20(address(0)), Errors.INVALID_TOKEN);
+            RequiemErrors._require(token != IERC20(address(0)), Errors.INVALID_TOKEN);
 
             _poolAssetManagers[poolId][token] = assetManagers[i];
         }
 
         PoolSpecialization specialization = _getPoolSpecialization(poolId);
         if (specialization == PoolSpecialization.TWO_TOKEN) {
-            _require(tokens.length == 2, Errors.TOKENS_LENGTH_MUST_BE_2);
+            RequiemErrors._require(tokens.length == 2, Errors.TOKENS_LENGTH_MUST_BE_2);
             _registerTwoTokenPoolTokens(poolId, tokens[0], tokens[1]);
         } else if (specialization == PoolSpecialization.MINIMAL_SWAP_INFO) {
             _registerMinimalSwapInfoPoolTokens(poolId, tokens);
@@ -58,7 +58,7 @@ abstract contract PoolTokens is ReentrancyGuard, PoolRegistry, AssetManagers {
     function deregisterTokens(bytes32 poolId, IERC20[] memory tokens) external override nonReentrant whenNotPaused onlyPool(poolId) {
         PoolSpecialization specialization = _getPoolSpecialization(poolId);
         if (specialization == PoolSpecialization.TWO_TOKEN) {
-            _require(tokens.length == 2, Errors.TOKENS_LENGTH_MUST_BE_2);
+            RequiemErrors._require(tokens.length == 2, Errors.TOKENS_LENGTH_MUST_BE_2);
             _deregisterTwoTokenPoolTokens(poolId, tokens[0], tokens[1]);
         } else if (specialization == PoolSpecialization.MINIMAL_SWAP_INFO) {
             _deregisterMinimalSwapInfoPoolTokens(poolId, tokens);

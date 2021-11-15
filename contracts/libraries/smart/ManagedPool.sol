@@ -124,7 +124,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
 
         _setMiscData(_getMiscData().insertUint7(totalTokens, _TOTAL_TOKENS_OFFSET));
         // Double check it fits in 7 bits
-        _require(_getTotalTokens() == totalTokens, Errors.MAX_TOKENS);
+        RequiemErrors._require(_getTotalTokens() == totalTokens, Errors.MAX_TOKENS);
 
         uint256 currentTime = block.timestamp;
         _startGradualWeightChange(currentTime, currentTime, params.normalizedWeights, params.normalizedWeights, params.tokens);
@@ -138,7 +138,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
         _setSwapEnabled(params.swapEnabledOnStart);
 
         // This must be inlined in the constructor as we're setting an immutable variable.
-        _require(params.managementSwapFeePercentage <= _MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE, Errors.MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE);
+        RequiemErrors._require(params.managementSwapFeePercentage <= _MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE, Errors.MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE);
         _managementSwapFeePercentage = params.managementSwapFeePercentage;
 
         emit ManagementFeePercentageChanged(params.managementSwapFeePercentage);
@@ -212,7 +212,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
         uint256 currentTime = block.timestamp;
         startTime = Math.max(currentTime, startTime);
 
-        _require(startTime <= endTime, Errors.GRADUAL_UPDATE_TIME_TRAVEL);
+        RequiemErrors._require(startTime <= endTime, Errors.GRADUAL_UPDATE_TIME_TRAVEL);
 
         (IERC20[] memory tokens, , ) = getVault().getPoolTokens(getPoolId());
 
@@ -240,7 +240,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
             getPoolId(),
             address(this),
             payable(recipient),
-            IVault.ExitPoolRequest({assets: _asIAsset(tokens), minAmountsOut: collectedFees, userData: abi.encode(BaseWeightedPool.ExitKind.MANAGEMENT_FEE_TOKENS_OUT), toInternalBalance: false})
+            IVault.ExitPoolRequest({assets: ERC20Helpers._asIAsset(tokens), minAmountsOut: collectedFees, userData: abi.encode(BaseWeightedPool.ExitKind.MANAGEMENT_FEE_TOKENS_OUT), toInternalBalance: false})
         );
 
         // Technically collectedFees is the minimum amount, not the actual amount. However, since no fees will be
@@ -319,7 +319,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
         uint256 currentBalanceTokenIn,
         uint256 currentBalanceTokenOut
     ) internal view override returns (uint256) {
-        _require(getSwapEnabled(), Errors.SWAPS_DISABLED);
+        RequiemErrors._require(getSwapEnabled(), Errors.SWAPS_DISABLED);
 
         return super._onSwapGivenIn(swapRequest, currentBalanceTokenIn, currentBalanceTokenOut);
     }
@@ -329,7 +329,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
         uint256 currentBalanceTokenIn,
         uint256 currentBalanceTokenOut
     ) internal view override returns (uint256) {
-        _require(getSwapEnabled(), Errors.SWAPS_DISABLED);
+        RequiemErrors._require(getSwapEnabled(), Errors.SWAPS_DISABLED);
 
         return super._onSwapGivenOut(swapRequest, currentBalanceTokenIn, currentBalanceTokenOut);
     }
@@ -351,7 +351,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
     // Additionally, we also check that only non-swap join and exit kinds are allowed while swaps are disabled.
 
     function getLastInvariant() public pure override returns (uint256) {
-        _revert(Errors.UNHANDLED_BY_MANAGED_POOL);
+        RequiemErrors._revert(Errors.UNHANDLED_BY_MANAGED_POOL);
     }
 
     function _onJoinPool(
@@ -378,7 +378,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
 
         // If swaps are disabled, the only join kind that is allowed is the proportional one, as all others involve
         // implicit swaps and alter token prices.
-        _require(getSwapEnabled() || userData.joinKind() == JoinKind.ALL_TOKENS_IN_FOR_EXACT_BPT_OUT, Errors.INVALID_JOIN_EXIT_KIND_WHILE_SWAPS_DISABLED);
+        RequiemErrors._require(getSwapEnabled() || userData.joinKind() == JoinKind.ALL_TOKENS_IN_FOR_EXACT_BPT_OUT, Errors.INVALID_JOIN_EXIT_KIND_WHILE_SWAPS_DISABLED);
 
         (bptAmountOut, amountsIn) = _doJoin(balances, _getNormalizedWeights(), scalingFactors, userData);
         dueProtocolFeeAmounts = new uint256[](_getTotalTokens());
@@ -412,7 +412,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
         // implicit swaps and alter token prices) and management fee collection (as there's no point in restricting
         // that).
         ExitKind kind = userData.exitKind();
-        _require(getSwapEnabled() || kind == ExitKind.EXACT_BPT_IN_FOR_TOKENS_OUT || kind == ExitKind.MANAGEMENT_FEE_TOKENS_OUT, Errors.INVALID_JOIN_EXIT_KIND_WHILE_SWAPS_DISABLED);
+        RequiemErrors._require(getSwapEnabled() || kind == ExitKind.EXACT_BPT_IN_FOR_TOKENS_OUT || kind == ExitKind.MANAGEMENT_FEE_TOKENS_OUT, Errors.INVALID_JOIN_EXIT_KIND_WHILE_SWAPS_DISABLED);
 
         (bptAmountIn, amountsOut) = _doManagedPoolExit(sender, balances, _getNormalizedWeights(), scalingFactors, userData);
         dueProtocolFeeAmounts = new uint256[](_getTotalTokens());
@@ -439,7 +439,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
 
         // This exit function can only be called by the Pool itself - the authorization logic that governs when that
         // call can be made resides in withdrawCollectedManagementFees.
-        _require(sender == address(this), Errors.UNAUTHORIZED_EXIT);
+        RequiemErrors._require(sender == address(this), Errors.UNAUTHORIZED_EXIT);
 
         // Since what we're doing is sending out collected management fees, we don't require any BPT in exchange: we
         // simply send those funds over.
@@ -502,7 +502,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
 
         for (uint256 i = 0; i < endWeights.length; i++) {
             uint256 endWeight = endWeights[i];
-            _require(endWeight >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
+            RequiemErrors._require(endWeight >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
 
             IERC20 token = tokens[i];
 
@@ -517,7 +517,7 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
             normalizedSum = normalizedSum.add(endWeight);
         }
         // Ensure that the normalized weights sum to ONE
-        _require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
+        RequiemErrors._require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
 
         _setMiscData(_getMiscData().insertUint32(startTime, _START_TIME_OFFSET).insertUint32(endTime, _END_TIME_OFFSET));
 
@@ -585,6 +585,6 @@ contract ManagedPool is BaseWeightedPool, ReentrancyGuard {
         tokenData = _tokenState[token];
 
         // A valid token can't be zero (must have non-zero weights)
-        _require(tokenData != 0, Errors.INVALID_TOKEN);
+        RequiemErrors._require(tokenData != 0, Errors.INVALID_TOKEN);
     }
 }

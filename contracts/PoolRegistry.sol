@@ -53,7 +53,7 @@ abstract contract PoolRegistry is ReentrancyGuard, VaultAuthorization {
      * @dev Reverts unless `poolId` corresponds to a registered Pool.
      */
     function _ensureRegisteredPool(bytes32 poolId) internal view {
-        _require(_isPoolRegistered[poolId], Errors.INVALID_POOL_ID);
+        RequiemErrors._require(_isPoolRegistered[poolId], Errors.INVALID_POOL_ID);
     }
 
     /**
@@ -61,7 +61,7 @@ abstract contract PoolRegistry is ReentrancyGuard, VaultAuthorization {
      */
     function _ensurePoolIsSender(bytes32 poolId) private view {
         _ensureRegisteredPool(poolId);
-        _require(msg.sender == _getPoolAddress(poolId), Errors.CALLER_NOT_POOL);
+        RequiemErrors._require(msg.sender == _getPoolAddress(poolId), Errors.CALLER_NOT_POOL);
     }
 
     function registerPool(PoolSpecialization specialization)
@@ -76,7 +76,7 @@ abstract contract PoolRegistry is ReentrancyGuard, VaultAuthorization {
 
         bytes32 poolId = _toPoolId(msg.sender, specialization, uint80(_nextPoolNonce));
 
-        _require(!_isPoolRegistered[poolId], Errors.INVALID_POOL_ID); // Should never happen as Pool IDs are unique.
+        RequiemErrors._require(!_isPoolRegistered[poolId], Errors.INVALID_POOL_ID); // Should never happen as Pool IDs are unique.
         _isPoolRegistered[poolId] = true;
 
         _nextPoolNonce += 1;
@@ -152,7 +152,7 @@ abstract contract PoolRegistry is ReentrancyGuard, VaultAuthorization {
 
         // There are three Pool specialization settings: general, minimal swap info and two tokens, which correspond to
         // values 0, 1 and 2.
-        _require(value < 3, Errors.INVALID_POOL_ID);
+        RequiemErrors._require(value < 3, Errors.INVALID_POOL_ID);
 
         // Because we have checked that `value` is within the enum range, we can use assembly to skip the runtime check.
         // solhint-disable-next-line no-inline-assembly

@@ -51,14 +51,14 @@ abstract contract AssetTransfersHandler is AssetHelpers {
         }
 
         if (_isETH(asset)) {
-            _require(!fromInternalBalance, Errors.INVALID_ETH_INTERNAL_BALANCE);
+            RequiemErrors._require(!fromInternalBalance, Errors.INVALID_ETH_INTERNAL_BALANCE);
 
             // The ETH amount to receive is deposited into the WETH contract, which will in turn mint WETH for
             // the Vault at a 1:1 ratio.
 
             // A check for this condition is also introduced by the compiler, but this one provides a revert reason.
             // Note we're checking for the Vault's total balance, *not* ETH sent in this transaction.
-            _require(address(this).balance >= amount, Errors.INSUFFICIENT_ETH);
+            RequiemErrors._require(address(this).balance >= amount, Errors.INSUFFICIENT_ETH);
             _WETH().deposit{ value: amount }();
         } else {
             IERC20 token = _asIERC20(asset);
@@ -97,7 +97,7 @@ abstract contract AssetTransfersHandler is AssetHelpers {
         if (_isETH(asset)) {
             // Sending ETH is not as involved as receiving it: the only special behavior is it cannot be
             // deposited to Internal Balance.
-            _require(!toInternalBalance, Errors.INVALID_ETH_INTERNAL_BALANCE);
+            RequiemErrors._require(!toInternalBalance, Errors.INVALID_ETH_INTERNAL_BALANCE);
 
             // First, the Vault withdraws deposited ETH from the WETH contract, by burning the same amount of WETH
             // from the Vault. This receipt will be handled by the Vault's `receive`.
@@ -125,7 +125,7 @@ abstract contract AssetTransfersHandler is AssetHelpers {
      * returned ETH.
      */
     function _handleRemainingEth(uint256 amountUsed) internal {
-        _require(msg.value >= amountUsed, Errors.INSUFFICIENT_ETH);
+        RequiemErrors._require(msg.value >= amountUsed, Errors.INSUFFICIENT_ETH);
 
         uint256 excess = msg.value - amountUsed;
         if (excess > 0) {
@@ -144,7 +144,7 @@ abstract contract AssetTransfersHandler is AssetHelpers {
      * prevent user error.
      */
     receive() external payable {
-        _require(msg.sender == address(_WETH()), Errors.ETH_TRANSFER);
+        RequiemErrors._require(msg.sender == address(_WETH()), Errors.ETH_TRANSFER);
     }
 
     // This contract uses virtual internal functions instead of inheriting from the modules that implement them (in

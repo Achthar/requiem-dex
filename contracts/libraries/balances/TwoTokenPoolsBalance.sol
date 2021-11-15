@@ -82,13 +82,13 @@ abstract contract TwoTokenPoolsBalance is PoolRegistry {
     ) internal {
         // Not technically true since we didn't register yet, but this is consistent with the error messages of other
         // specialization settings.
-        _require(tokenX != tokenY, Errors.TOKEN_ALREADY_REGISTERED);
+        RequiemErrors._require(tokenX != tokenY, Errors.TOKEN_ALREADY_REGISTERED);
 
-        _require(tokenX < tokenY, Errors.UNSORTED_TOKENS);
+        RequiemErrors._require(tokenX < tokenY, Errors.UNSORTED_TOKENS);
 
         // A Two Token Pool with no registered tokens is identified by having zero addresses for tokens A and B.
         TwoTokenPoolTokens storage poolTokens = _twoTokenPoolTokens[poolId];
-        _require(poolTokens.tokenA == IERC20(address(0)) && poolTokens.tokenB == IERC20(address(0)), Errors.TOKENS_ALREADY_SET);
+        RequiemErrors._require(poolTokens.tokenA == IERC20(address(0)) && poolTokens.tokenB == IERC20(address(0)), Errors.TOKENS_ALREADY_SET);
 
         // Since tokenX < tokenY, tokenX is A and tokenY is B
         poolTokens.tokenA = tokenX;
@@ -119,7 +119,7 @@ abstract contract TwoTokenPoolsBalance is PoolRegistry {
             TwoTokenPoolBalances storage poolBalances
         ) = _getTwoTokenPoolSharedBalances(poolId, tokenX, tokenY);
 
-        _require(balanceA.isZero() && balanceB.isZero(), Errors.NONZERO_TOKEN_BALANCE);
+        RequiemErrors._require(balanceA.isZero() && balanceB.isZero(), Errors.NONZERO_TOKEN_BALANCE);
 
         delete _twoTokenPoolTokens[poolId];
 
@@ -313,7 +313,7 @@ abstract contract TwoTokenPoolsBalance is PoolRegistry {
         } else if (token == tokenB) {
             return balanceB;
         } else {
-            _revert(Errors.TOKEN_NOT_REGISTERED);
+            RequiemErrors._revert(Errors.TOKEN_NOT_REGISTERED);
         }
     }
 
@@ -365,7 +365,7 @@ abstract contract TwoTokenPoolsBalance is PoolRegistry {
             // The tokens might not be registered because the Pool itself is not registered. We check this to provide a
             // more accurate revert reason.
             _ensureRegisteredPool(poolId);
-            _revert(Errors.TOKEN_NOT_REGISTERED);
+            RequiemErrors._revert(Errors.TOKEN_NOT_REGISTERED);
         }
 
         balanceA = BalanceAllocation.fromSharedToBalanceA(sharedCash, sharedManaged);

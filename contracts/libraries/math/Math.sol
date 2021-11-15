@@ -25,12 +25,12 @@ library Math {
     }
 
     function divDown(uint256 a, uint256 b) internal pure returns (uint256) {
-        _require(b != 0, Errors.ZERO_DIVISION);
+        RequiemErrors._require(b != 0, Errors.ZERO_DIVISION);
         return a / b;
     }
 
     function divUp(uint256 a, uint256 b) internal pure returns (uint256) {
-        _require(b != 0, Errors.ZERO_DIVISION);
+        RequiemErrors._require(b != 0, Errors.ZERO_DIVISION);
 
         if (a == 0) {
             return 0;

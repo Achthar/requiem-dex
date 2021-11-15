@@ -133,7 +133,7 @@ contract WeightedPool is BaseWeightedPool {
         uint256 maxNormalizedWeight = 0;
         for (uint8 i = 0; i < numTokens; i++) {
             uint256 normalizedWeight = normalizedWeights[i];
-            _require(normalizedWeight >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
+            RequiemErrors._require(normalizedWeight >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
 
             normalizedSum = normalizedSum.add(normalizedWeight);
             if (normalizedWeight > maxNormalizedWeight) {
@@ -142,7 +142,7 @@ contract WeightedPool is BaseWeightedPool {
             }
         }
         // Ensure that the normalized weights sum to ONE
-        _require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
+        RequiemErrors._require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
 
         _maxWeightTokenIndex = maxWeightTokenIndex;
 
@@ -234,7 +234,7 @@ contract WeightedPool is BaseWeightedPool {
         else if (token == _token18) { return _normalizedWeight18; }
         else if (token == _token19) { return _normalizedWeight19; }
         else {
-            _revert(Errors.INVALID_TOKEN);
+            RequiemErrors._revert(Errors.INVALID_TOKEN);
         }
     }
 
@@ -314,7 +314,7 @@ contract WeightedPool is BaseWeightedPool {
         else if (token == _token18) { return _scalingFactor18; }
         else if (token == _token19) { return _scalingFactor19; }
         else {
-            _revert(Errors.INVALID_TOKEN);
+            RequiemErrors._revert(Errors.INVALID_TOKEN);
         }
     }
 

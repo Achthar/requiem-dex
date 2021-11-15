@@ -58,11 +58,11 @@ library Address {
      * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      */
     function sendValue(address payable recipient, uint256 amount) internal {
-        _require(address(this).balance >= amount, Errors.ADDRESS_INSUFFICIENT_BALANCE);
+        RequiemErrors._require(address(this).balance >= amount, Errors.ADDRESS_INSUFFICIENT_BALANCE);
 
         // solhint-disable-next-line avoid-low-level-calls, avoid-call-value
         (bool success, ) = recipient.call{ value: amount }("");
-        _require(success, Errors.ADDRESS_CANNOT_SEND_VALUE);
+        RequiemErrors._require(success, Errors.ADDRESS_CANNOT_SEND_VALUE);
     }
 
     /**
@@ -117,7 +117,7 @@ library Address {
                     revert(add(32, returndata), returndata_size)
                 }
             } else {
-                _revert(Errors.LOW_LEVEL_CALL_FAILED);
+                RequiemErrors._revert(Errors.LOW_LEVEL_CALL_FAILED);
             }
         }
     }

@@ -51,8 +51,8 @@ abstract contract AssetManagers is
             _ensureRegisteredPool(poolId);
 
             IERC20 token = op.token;
-            _require(_isTokenRegistered(poolId, token), Errors.TOKEN_NOT_REGISTERED);
-            _require(_poolAssetManagers[poolId][token] == msg.sender, Errors.SENDER_NOT_ASSET_MANAGER);
+            RequiemErrors._require(_isTokenRegistered(poolId, token), Errors.TOKEN_NOT_REGISTERED);
+            RequiemErrors._require(_poolAssetManagers[poolId][token] == msg.sender, Errors.SENDER_NOT_ASSET_MANAGER);
 
             PoolBalanceOpKind kind = op.kind;
             uint256 amount = op.amount;

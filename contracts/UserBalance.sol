@@ -97,7 +97,7 @@ abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAu
                     }
                 } else {
                     // Transfers don't support ETH.
-                    _require(!_isETH(asset), Errors.CANNOT_USE_ETH_SENTINEL);
+                    RequiemErrors._require(!_isETH(asset), Errors.CANNOT_USE_ETH_SENTINEL);
                     IERC20 token = _asIERC20(asset);
 
                     if (kind == UserBalanceOpKind.TRANSFER_INTERNAL) {
@@ -183,7 +183,7 @@ abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAu
         bool allowPartial
     ) internal override returns (uint256 deducted) {
         uint256 currentBalance = _getInternalBalance(account, token);
-        _require(allowPartial || (currentBalance >= amount), Errors.INSUFFICIENT_INTERNAL_BALANCE);
+        RequiemErrors._require(allowPartial || (currentBalance >= amount), Errors.INSUFFICIENT_INTERNAL_BALANCE);
 
         deducted = Math.min(currentBalance, amount);
         // By construction, `deducted` is lower or equal to `currentBalance`, so we don't need to use checked
@@ -245,7 +245,7 @@ abstract contract UserBalance is ReentrancyGuard, AssetTransfersHandler, VaultAu
                 checkedCallerIsRelayer = true;
             }
 
-            _require(_hasApprovedRelayer(sender, msg.sender), Errors.USER_DOESNT_ALLOW_RELAYER);
+            RequiemErrors._require(_hasApprovedRelayer(sender, msg.sender), Errors.USER_DOESNT_ALLOW_RELAYER);
         }
 
         return (op.kind, op.asset, op.amount, sender, op.recipient, checkedCallerIsRelayer);

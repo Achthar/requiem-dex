@@ -215,8 +215,8 @@ contract ERC20 is IERC20 {
         address recipient,
         uint256 amount
     ) internal virtual {
-        _require(sender != address(0), Errors.ERC20_TRANSFER_FROM_ZERO_ADDRESS);
-        _require(recipient != address(0), Errors.ERC20_TRANSFER_TO_ZERO_ADDRESS);
+        RequiemErrors._require(sender != address(0), Errors.ERC20_TRANSFER_FROM_ZERO_ADDRESS);
+        RequiemErrors._require(recipient != address(0), Errors.ERC20_TRANSFER_TO_ZERO_ADDRESS);
 
         _beforeTokenTransfer(sender, recipient, amount);
 
@@ -254,7 +254,7 @@ contract ERC20 is IERC20 {
      * - `account` must have at least `amount` tokens.
      */
     function _burn(address account, uint256 amount) internal virtual {
-        _require(account != address(0), Errors.ERC20_BURN_FROM_ZERO_ADDRESS);
+        RequiemErrors._require(account != address(0), Errors.ERC20_BURN_FROM_ZERO_ADDRESS);
 
         _beforeTokenTransfer(account, address(0), amount);
 

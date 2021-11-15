@@ -188,7 +188,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         uint256 currentTime = block.timestamp;
         startTime = Math.max(currentTime, startTime);
 
-        _require(startTime <= endTime, Errors.GRADUAL_UPDATE_TIME_TRAVEL);
+        RequiemErrors._require(startTime <= endTime, Errors.GRADUAL_UPDATE_TIME_TRAVEL);
 
         _startGradualWeightChange(startTime, endTime, _getNormalizedWeights(), endWeights);
     }
@@ -206,7 +206,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         else if (token == _token2) { i = 2; }
         else if (token == _token3) { i = 3; }
         else {
-            _revert(Errors.INVALID_TOKEN);
+            RequiemErrors._revert(Errors.INVALID_TOKEN);
         }
 
         return _getNormalizedWeightByIndex(i, _poolState);
@@ -271,7 +271,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         bytes memory userData
     ) internal override returns (uint256, uint256[] memory) {
         // Only the owner can initialize the pool
-        _require(sender == getOwner(), Errors.CALLER_IS_NOT_LBP_OWNER);
+        RequiemErrors._require(sender == getOwner(), Errors.CALLER_IS_NOT_LBP_OWNER);
 
         return super._onInitializePool(poolId, sender, recipient, scalingFactors, userData);
     }
@@ -295,7 +295,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         )
     {
         // Only the owner can add liquidity; block public LPs
-        _require(sender == getOwner(), Errors.CALLER_IS_NOT_LBP_OWNER);
+        RequiemErrors._require(sender == getOwner(), Errors.CALLER_IS_NOT_LBP_OWNER);
 
         return
             super._onJoinPool(
@@ -317,7 +317,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         uint256 currentBalanceTokenIn,
         uint256 currentBalanceTokenOut
     ) internal view override returns (uint256) {
-        _require(getSwapEnabled(), Errors.SWAPS_DISABLED);
+        RequiemErrors._require(getSwapEnabled(), Errors.SWAPS_DISABLED);
 
         return super._onSwapGivenIn(swapRequest, currentBalanceTokenIn, currentBalanceTokenOut);
     }
@@ -327,7 +327,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         uint256 currentBalanceTokenIn,
         uint256 currentBalanceTokenOut
     ) internal view override returns (uint256) {
-        _require(getSwapEnabled(), Errors.SWAPS_DISABLED);
+        RequiemErrors._require(getSwapEnabled(), Errors.SWAPS_DISABLED);
 
         return super._onSwapGivenOut(swapRequest, currentBalanceTokenIn, currentBalanceTokenOut);
     }
@@ -382,7 +382,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         uint256 normalizedSum = 0;
         for (uint256 i = 0; i < endWeights.length; i++) {
             uint256 endWeight = endWeights[i];
-            _require(endWeight >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
+            RequiemErrors._require(endWeight >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
 
             newPoolState = newPoolState
                 .insertUint31(startWeights[i].compress31(), _START_WEIGHT_OFFSET + i * 31)
@@ -391,7 +391,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
             normalizedSum = normalizedSum.add(endWeight);
         }
         // Ensure that the normalized weights sum to ONE
-        _require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
+        RequiemErrors._require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
 
         _poolState = newPoolState.insertUint32(startTime, _START_TIME_OFFSET).insertUint32(endTime, _END_TIME_OFFSET);
 
@@ -435,7 +435,7 @@ contract LiquidityBootstrappingPool is BaseWeightedPool, ReentrancyGuard {
         else if (token == _token2) { return _scalingFactor2; }
         else if (token == _token3) { return _scalingFactor3; }
         else {
-            _revert(Errors.INVALID_TOKEN);
+            RequiemErrors._revert(Errors.INVALID_TOKEN);
         }
     }
 

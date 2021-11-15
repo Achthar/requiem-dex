@@ -70,8 +70,8 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
     event SwapFeePercentageChanged(uint256 swapFeePercentage);
 
     modifier onlyVault(bytes32 poolId) {
-        _require(msg.sender == address(getVault()), Errors.CALLER_NOT_VAULT);
-        _require(poolId == getPoolId(), Errors.INVALID_POOL_ID);
+        RequiemErrors._require(msg.sender == address(getVault()), Errors.CALLER_NOT_VAULT);
+        RequiemErrors._require(poolId == getPoolId(), Errors.INVALID_POOL_ID);
         _;
     }
 
@@ -122,12 +122,12 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         _scalingFactor1 = _computeScalingFactor(params.token1);
 
         // Ensure each normalized weight is above them minimum and find the token index of the maximum weight
-        _require(params.normalizedWeight0 >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
-        _require(params.normalizedWeight1 >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
+        RequiemErrors._require(params.normalizedWeight0 >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
+        RequiemErrors._require(params.normalizedWeight1 >= WeightedMath._MIN_WEIGHT, Errors.MIN_WEIGHT);
 
         // Ensure that the normalized weights sum to ONE
         uint256 normalizedSum = params.normalizedWeight0.add(params.normalizedWeight1);
-        _require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
+        RequiemErrors._require(normalizedSum == FixedPoint.ONE, Errors.NORMALIZED_WEIGHT_INVARIANT);
 
         _normalizedWeight0 = params.normalizedWeight0;
         _normalizedWeight1 = params.normalizedWeight1;
@@ -171,8 +171,8 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
     }
 
     function _setSwapFeePercentage(uint256 swapFeePercentage) private {
-        _require(swapFeePercentage >= _MIN_SWAP_FEE_PERCENTAGE, Errors.MIN_SWAP_FEE_PERCENTAGE);
-        _require(swapFeePercentage <= _MAX_SWAP_FEE_PERCENTAGE, Errors.MAX_SWAP_FEE_PERCENTAGE);
+        RequiemErrors._require(swapFeePercentage >= _MIN_SWAP_FEE_PERCENTAGE, Errors.MIN_SWAP_FEE_PERCENTAGE);
+        RequiemErrors._require(swapFeePercentage <= _MAX_SWAP_FEE_PERCENTAGE, Errors.MAX_SWAP_FEE_PERCENTAGE);
 
         _miscData = _miscData.setSwapFeePercentage(swapFeePercentage);
         emit SwapFeePercentageChanged(swapFeePercentage);
@@ -328,7 +328,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
             // On initialization, we lock _MINIMUM_BPT by minting it for the zero address. This BPT acts as a minimum
             // as it will never be burned, which reduces potential issues with rounding, and also prevents the Pool from
             // ever being fully drained.
-            _require(bptAmountOut >= _MINIMUM_BPT, Errors.MINIMUM_BPT);
+            RequiemErrors._require(bptAmountOut >= _MINIMUM_BPT, Errors.MINIMUM_BPT);
             _mintPoolTokens(address(0), _MINIMUM_BPT);
             _mintPoolTokens(recipient, bptAmountOut - _MINIMUM_BPT);
 
@@ -380,7 +380,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         bytes memory userData
     ) private returns (uint256, uint256[] memory) {
         BaseWeightedPool.JoinKind kind = userData.joinKind();
-        _require(kind == BaseWeightedPool.JoinKind.INIT, Errors.UNINITIALIZED);
+        RequiemErrors._require(kind == BaseWeightedPool.JoinKind.INIT, Errors.UNINITIALIZED);
 
         uint256[] memory amountsIn = userData.initialAmountsIn();
         InputHelpers.ensureInputLengthMatch(amountsIn.length, 2);
@@ -467,7 +467,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         } else if (kind == BaseWeightedPool.JoinKind.ALL_TOKENS_IN_FOR_EXACT_BPT_OUT) {
             return _joinAllTokensInForExactBPTOut(balances, userData);
         } else {
-            _revert(Errors.UNHANDLED_JOIN_KIND);
+            RequiemErrors._revert(Errors.UNHANDLED_JOIN_KIND);
         }
     }
 
@@ -483,7 +483,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
 
         (uint256 bptAmountOut, ) = WeightedMath._calcBptOutGivenExactTokensIn(balances, normalizedWeights, amountsIn, totalSupply(), getSwapFeePercentage());
 
-        _require(bptAmountOut >= minBPTAmountOut, Errors.BPT_OUT_MIN_AMOUNT);
+        RequiemErrors._require(bptAmountOut >= minBPTAmountOut, Errors.BPT_OUT_MIN_AMOUNT);
 
         return (bptAmountOut, amountsIn);
     }
@@ -496,7 +496,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         (uint256 bptAmountOut, uint256 tokenIndex) = userData.tokenInForExactBptOut();
         // Note that there is no maximum amountIn parameter: this is handled by `IVault.joinPool`.
 
-        _require(tokenIndex < 2, Errors.OUT_OF_BOUNDS);
+        RequiemErrors._require(tokenIndex < 2, Errors.OUT_OF_BOUNDS);
 
         uint256[] memory amountsIn = new uint256[](2);
         (amountsIn[tokenIndex], ) = WeightedMath._calcTokenInGivenExactBptOut(balances[tokenIndex], normalizedWeights[tokenIndex], bptAmountOut, totalSupply(), getSwapFeePercentage());
@@ -633,7 +633,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         } else if (kind == BaseWeightedPool.ExitKind.BPT_IN_FOR_EXACT_TOKENS_OUT) {
             return _exitBPTInForExactTokensOut(balances, normalizedWeights, userData);
         } else {
-            _revert(Errors.UNHANDLED_EXIT_KIND);
+            RequiemErrors._revert(Errors.UNHANDLED_EXIT_KIND);
         }
     }
 
@@ -647,7 +647,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         (uint256 bptAmountIn, uint256 tokenIndex) = userData.exactBptInForTokenOut();
         // Note that there is no minimum amountOut parameter: this is handled by `IVault.exitPool`.
 
-        _require(tokenIndex < 2, Errors.OUT_OF_BOUNDS);
+        RequiemErrors._require(tokenIndex < 2, Errors.OUT_OF_BOUNDS);
 
         // We exit in a single token, so we initialize amountsOut with zeros
         uint256[] memory amountsOut = new uint256[](2);
@@ -683,7 +683,7 @@ contract WeightedPool2Tokens is IMinimalSwapInfoPool, BasePoolAuthorization, Req
         _upscaleArray(amountsOut);
 
         (uint256 bptAmountIn, ) = WeightedMath._calcBptInGivenExactTokensOut(balances, normalizedWeights, amountsOut, totalSupply(), getSwapFeePercentage());
-        _require(bptAmountIn <= maxBPTAmountIn, Errors.BPT_IN_MAX_AMOUNT);
+        RequiemErrors._require(bptAmountIn <= maxBPTAmountIn, Errors.BPT_IN_MAX_AMOUNT);
 
         return (bptAmountIn, amountsOut);
     }

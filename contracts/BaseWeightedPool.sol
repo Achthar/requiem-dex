@@ -155,7 +155,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         // initialization in this case.
 
         JoinKind kind = userData.joinKind();
-        _require(kind == JoinKind.INIT, Errors.UNINITIALIZED);
+        RequiemErrors._require(kind == JoinKind.INIT, Errors.UNINITIALIZED);
 
         uint256[] memory amountsIn = userData.initialAmountsIn();
         InputHelpers.ensureInputLengthMatch(_getTotalTokens(), amountsIn.length);
@@ -233,7 +233,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         } else if (kind == JoinKind.ALL_TOKENS_IN_FOR_EXACT_BPT_OUT) {
             return _joinAllTokensInForExactBPTOut(balances, userData);
         } else {
-            _revert(Errors.UNHANDLED_JOIN_KIND);
+            RequiemErrors._revert(Errors.UNHANDLED_JOIN_KIND);
         }
     }
 
@@ -253,7 +253,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         // Note that swapFees is already upscaled
         _processSwapFeeAmounts(swapFees);
 
-        _require(bptAmountOut >= minBPTAmountOut, Errors.BPT_OUT_MIN_AMOUNT);
+        RequiemErrors._require(bptAmountOut >= minBPTAmountOut, Errors.BPT_OUT_MIN_AMOUNT);
 
         return (bptAmountOut, amountsIn);
     }
@@ -266,7 +266,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         (uint256 bptAmountOut, uint256 tokenIndex) = userData.tokenInForExactBptOut();
         // Note that there is no maximum amountIn parameter: this is handled by `IVault.joinPool`.
 
-        _require(tokenIndex < _getTotalTokens(), Errors.OUT_OF_BOUNDS);
+        RequiemErrors._require(tokenIndex < _getTotalTokens(), Errors.OUT_OF_BOUNDS);
 
         (uint256 amountIn, uint256 swapFee) = WeightedMath._calcTokenInGivenExactBptOut(balances[tokenIndex], normalizedWeights[tokenIndex], bptAmountOut, totalSupply(), getSwapFeePercentage());
 
@@ -355,7 +355,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         } else if (kind == ExitKind.BPT_IN_FOR_EXACT_TOKENS_OUT) {
             return _exitBPTInForExactTokensOut(balances, normalizedWeights, scalingFactors, userData);
         } else {
-            _revert(Errors.UNHANDLED_EXIT_KIND);
+            RequiemErrors._revert(Errors.UNHANDLED_EXIT_KIND);
         }
     }
 
@@ -369,7 +369,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         (uint256 bptAmountIn, uint256 tokenIndex) = userData.exactBptInForTokenOut();
         // Note that there is no minimum amountOut parameter: this is handled by `IVault.exitPool`.
 
-        _require(tokenIndex < _getTotalTokens(), Errors.OUT_OF_BOUNDS);
+        RequiemErrors._require(tokenIndex < _getTotalTokens(), Errors.OUT_OF_BOUNDS);
 
         (uint256 amountOut, uint256 swapFee) = WeightedMath._calcTokenOutGivenExactBptIn(balances[tokenIndex], normalizedWeights[tokenIndex], bptAmountIn, totalSupply(), getSwapFeePercentage());
 
@@ -411,7 +411,7 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         _upscaleArray(amountsOut, scalingFactors);
 
         (uint256 bptAmountIn, uint256[] memory swapFees) = WeightedMath._calcBptInGivenExactTokensOut(balances, normalizedWeights, amountsOut, totalSupply(), getSwapFeePercentage());
-        _require(bptAmountIn <= maxBPTAmountIn, Errors.BPT_IN_MAX_AMOUNT);
+        RequiemErrors._require(bptAmountIn <= maxBPTAmountIn, Errors.BPT_IN_MAX_AMOUNT);
 
         // This is an exceptional situation in which the fee is charged on a token out instead of a token in.
         // Note that swapFee is already upscaled.

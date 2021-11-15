@@ -52,13 +52,13 @@ abstract contract FlashLoans is Fees, ReentrancyGuard, TemporarilyPausable {
             IERC20 token = tokens[i];
             uint256 amount = amounts[i];
 
-            _require(token > previousToken, token == IERC20(address(0)) ? Errors.ZERO_TOKEN : Errors.UNSORTED_TOKENS);
+            RequiemErrors._require(token > previousToken, token == IERC20(address(0)) ? Errors.ZERO_TOKEN : Errors.UNSORTED_TOKENS);
             previousToken = token;
 
             preLoanBalances[i] = token.balanceOf(address(this));
             feeAmounts[i] = _calculateFlashLoanFeeAmount(amount);
 
-            _require(preLoanBalances[i] >= amount, Errors.INSUFFICIENT_FLASH_LOAN_BALANCE);
+            RequiemErrors._require(preLoanBalances[i] >= amount, Errors.INSUFFICIENT_FLASH_LOAN_BALANCE);
             token.safeTransfer(address(recipient), amount);
         }
 
@@ -71,11 +71,11 @@ abstract contract FlashLoans is Fees, ReentrancyGuard, TemporarilyPausable {
             // Checking for loan repayment first (without accounting for fees) makes for simpler debugging, and results
             // in more accurate revert reasons if the flash loan protocol fee percentage is zero.
             uint256 postLoanBalance = token.balanceOf(address(this));
-            _require(postLoanBalance >= preLoanBalance, Errors.INVALID_POST_LOAN_BALANCE);
+            RequiemErrors._require(postLoanBalance >= preLoanBalance, Errors.INVALID_POST_LOAN_BALANCE);
 
             // No need for checked arithmetic since we know the loan was fully repaid.
             uint256 receivedFeeAmount = postLoanBalance - preLoanBalance;
-            _require(receivedFeeAmount >= feeAmounts[i], Errors.INSUFFICIENT_FLASH_LOAN_FEE_AMOUNT);
+            RequiemErrors._require(receivedFeeAmount >= feeAmounts[i], Errors.INSUFFICIENT_FLASH_LOAN_FEE_AMOUNT);
 
             _payFeeAmount(token, receivedFeeAmount);
             emit FlashLoan(recipient, token, amounts[i], receivedFeeAmount);

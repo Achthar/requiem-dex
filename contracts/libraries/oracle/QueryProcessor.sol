@@ -40,7 +40,7 @@ library QueryProcessor {
         mapping(uint256 => bytes32) storage samples,
         IPriceOracle.Variable variable,
         uint256 index
-    ) external view returns (uint256) {
+    ) internal view returns (uint256) {
         bytes32 sample = samples[index];
         require(sample.timestamp() > 0, "ORACLE_NOT_INITIALIZED");
 
@@ -55,7 +55,7 @@ library QueryProcessor {
         mapping(uint256 => bytes32) storage samples,
         IPriceOracle.OracleAverageQuery memory query,
         uint256 latestIndex
-    ) external view returns (uint256) {
+    ) internal view returns (uint256) {
         require(query.secs != 0, "ORACLE_BAD_SECS");
 
         int256 beginAccumulator = getPastAccumulator(samples, query.variable, latestIndex, query.ago + query.secs);
@@ -85,7 +85,7 @@ library QueryProcessor {
         IPriceOracle.Variable variable,
         uint256 latestIndex,
         uint256 ago
-    ) public view returns (int256) {
+    ) internal view returns (int256) {
         // solhint-disable not-rely-on-time
         // `ago` must not be before the epoch.
         require(block.timestamp >= ago, "ORACLE_INVALID_SECONDS_QUERY");
@@ -169,7 +169,7 @@ library QueryProcessor {
         uint256 lookUpDate,
         uint256 offset,
         uint256 length
-    ) public view returns (bytes32 prev, bytes32 next) {
+    ) internal view returns (bytes32 prev, bytes32 next) {
         // We're going to perform a binary search in the circular buffer, which requires it to be sorted. To achieve
         // this, we offset all buffer accesses by `offset`, making the first element the oldest one.
 

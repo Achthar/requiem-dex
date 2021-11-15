@@ -192,7 +192,7 @@ abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance
         finalBalances = new bytes32[](balances.length);
         for (uint256 i = 0; i < change.assets.length; ++i) {
             uint256 amountIn = amountsIn[i];
-            _require(amountIn <= change.limits[i], Errors.JOIN_ABOVE_MAX);
+            RequiemErrors._require(amountIn <= change.limits[i], Errors.JOIN_ABOVE_MAX);
 
             // Receive assets from the sender - possibly from Internal Balance.
             IAsset asset = change.assets[i];
@@ -233,7 +233,7 @@ abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance
         finalBalances = new bytes32[](balances.length);
         for (uint256 i = 0; i < change.assets.length; ++i) {
             uint256 amountOut = amountsOut[i];
-            _require(amountOut >= change.limits[i], Errors.EXIT_BELOW_MIN);
+            RequiemErrors._require(amountOut >= change.limits[i], Errors.EXIT_BELOW_MIN);
 
             // Send tokens to the recipient - possibly to Internal Balance
             IAsset asset = change.assets[i];
@@ -256,10 +256,10 @@ abstract contract PoolBalances is Fees, ReentrancyGuard, PoolTokens, UserBalance
     function _validateTokensAndGetBalances(bytes32 poolId, IERC20[] memory expectedTokens) private view returns (bytes32[] memory) {
         (IERC20[] memory actualTokens, bytes32[] memory balances) = _getPoolTokens(poolId);
         InputHelpers.ensureInputLengthMatch(actualTokens.length, expectedTokens.length);
-        _require(actualTokens.length > 0, Errors.POOL_NO_TOKENS);
+        RequiemErrors._require(actualTokens.length > 0, Errors.POOL_NO_TOKENS);
 
         for (uint256 i = 0; i < actualTokens.length; ++i) {
-            _require(actualTokens[i] == expectedTokens[i], Errors.TOKENS_MISMATCH);
+            RequiemErrors._require(actualTokens[i] == expectedTokens[i], Errors.TOKENS_MISMATCH);
         }
 
         return balances;

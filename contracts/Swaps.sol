@@ -59,15 +59,15 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
     ) external payable override nonReentrant whenNotPaused authenticateFor(funds.sender) returns (uint256 amountCalculated) {
         // The deadline is timestamp-based: it should not be relied upon for sub-minute accuracy.
         // solhint-disable-next-line not-rely-on-time
-        _require(block.timestamp <= deadline, Errors.SWAP_DEADLINE);
+        RequiemErrors._require(block.timestamp <= deadline, Errors.SWAP_DEADLINE);
 
         // This revert reason is for consistency with `batchSwap`: an equivalent `swap` performed using that function
         // would result in this error.
-        _require(singleSwap.amount > 0, Errors.UNKNOWN_AMOUNT_IN_FIRST_SWAP);
+        RequiemErrors._require(singleSwap.amount > 0, Errors.UNKNOWN_AMOUNT_IN_FIRST_SWAP);
 
         IERC20 tokenIn = _translateToIERC20(singleSwap.assetIn);
         IERC20 tokenOut = _translateToIERC20(singleSwap.assetOut);
-        _require(tokenIn != tokenOut, Errors.CANNOT_SWAP_SAME_TOKEN);
+        RequiemErrors._require(tokenIn != tokenOut, Errors.CANNOT_SWAP_SAME_TOKEN);
 
         // Initializing each struct field one-by-one uses less gas than setting all at once.
         IPoolSwapStructs.SwapRequest memory poolRequest;
@@ -85,7 +85,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         uint256 amountOut;
 
         (amountCalculated, amountIn, amountOut) = _swapWithPool(poolRequest);
-        _require(singleSwap.kind == SwapKind.GIVEN_IN ? amountOut >= limit : amountIn <= limit, Errors.SWAP_LIMIT);
+        RequiemErrors._require(singleSwap.kind == SwapKind.GIVEN_IN ? amountOut >= limit : amountIn <= limit, Errors.SWAP_LIMIT);
 
         _receiveAsset(singleSwap.assetIn, amountIn, funds.sender, funds.fromInternalBalance);
         _sendAsset(singleSwap.assetOut, amountOut, funds.recipient, funds.toInternalBalance);
@@ -104,7 +104,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
     ) external payable override nonReentrant whenNotPaused authenticateFor(funds.sender) returns (int256[] memory assetDeltas) {
         // The deadline is timestamp-based: it should not be relied upon for sub-minute accuracy.
         // solhint-disable-next-line not-rely-on-time
-        _require(block.timestamp <= deadline, Errors.SWAP_DEADLINE);
+        RequiemErrors._require(block.timestamp <= deadline, Errors.SWAP_DEADLINE);
 
         InputHelpers.ensureInputLengthMatch(assets.length, limits.length);
 
@@ -117,7 +117,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
         for (uint256 i = 0; i < assets.length; ++i) {
             IAsset asset = assets[i];
             int256 delta = assetDeltas[i];
-            _require(delta <= limits[i], Errors.SWAP_LIMIT);
+            RequiemErrors._require(delta <= limits[i], Errors.SWAP_LIMIT);
 
             if (delta > 0) {
                 uint256 toReceive = uint256(delta);
@@ -205,20 +205,20 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             batchSwapStep = swaps[i];
 
             bool withinBounds = batchSwapStep.assetInIndex < assets.length && batchSwapStep.assetOutIndex < assets.length;
-            _require(withinBounds, Errors.OUT_OF_BOUNDS);
+            RequiemErrors._require(withinBounds, Errors.OUT_OF_BOUNDS);
 
             IERC20 tokenIn = _translateToIERC20(assets[batchSwapStep.assetInIndex]);
             IERC20 tokenOut = _translateToIERC20(assets[batchSwapStep.assetOutIndex]);
-            _require(tokenIn != tokenOut, Errors.CANNOT_SWAP_SAME_TOKEN);
+            RequiemErrors._require(tokenIn != tokenOut, Errors.CANNOT_SWAP_SAME_TOKEN);
 
             // Sentinel value for multihop logic
             if (batchSwapStep.amount == 0) {
                 // When the amount given is zero, we use the calculated amount for the previous swap, as long as the
                 // current swap's given token is the previous calculated token. This makes it possible to swap a
                 // given amount of token A for token B, and then use the resulting token B amount to swap for token C.
-                _require(i > 0, Errors.UNKNOWN_AMOUNT_IN_FIRST_SWAP);
+                RequiemErrors._require(i > 0, Errors.UNKNOWN_AMOUNT_IN_FIRST_SWAP);
                 bool usingPreviousToken = previousTokenCalculated == _tokenGiven(kind, tokenIn, tokenOut);
-                _require(usingPreviousToken, Errors.MALCONSTRUCTED_MULTIHOP_SWAP);
+                RequiemErrors._require(usingPreviousToken, Errors.MALCONSTRUCTED_MULTIHOP_SWAP);
                 batchSwapStep.amount = previousAmountCalculated;
             }
 
@@ -359,7 +359,7 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             // The tokens might not be registered because the Pool itself is not registered. We check this to provide a
             // more accurate revert reason.
             _ensureRegisteredPool(request.poolId);
-            _revert(Errors.TOKEN_NOT_REGISTERED);
+            RequiemErrors._revert(Errors.TOKEN_NOT_REGISTERED);
         }
 
         // EnumerableMap stores indices *plus one* to use the zero index as a sentinel value - because these are valid,
