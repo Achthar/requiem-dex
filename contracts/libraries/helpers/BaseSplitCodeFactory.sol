@@ -14,7 +14,6 @@
 
 pragma solidity ^0.8.10;
 
-
 import "./CodeDeployer.sol";
 
 /**
@@ -204,8 +203,12 @@ abstract contract BaseSplitCodeFactory {
             src += 32;
         }
 
+        uint256 mask;
         // Copy remaining bytes
-        uint256 mask = 256**(32 - len) - 1;
+        unchecked {
+            mask = 256**(32 - len) - 1;
+        }
+
         assembly {
             let srcpart := and(mload(src), not(mask))
             let destpart := and(mload(dest), mask)

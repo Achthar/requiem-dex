@@ -44,10 +44,10 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   await execute('T2', { from: deployer, log: true }, 'mint', deployer, parseUnits('10000000', 6) );
   await execute('T3', { from: deployer, log: true }, 'mint', deployer, parseUnits('10000000', 18) );
   await execute('T4', { from: deployer, log: true }, 'mint', deployer, parseUnits('10000000', 18) );
-  await execute('T1', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 6) );
-  await execute('T2', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 6) );
-  await execute('T3', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 18) );
-  await execute('T4', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 18) );
+  // await execute('T1', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 6) );
+  // await execute('T2', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 6) );
+  // await execute('T3', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 18) );
+  // await execute('T4', { from: deployer, log: true }, 'mint', user, parseUnits('10000000', 18) );
 };
 
 export default func;

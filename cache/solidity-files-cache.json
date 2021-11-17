@@ -12,7 +12,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -59,7 +59,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -102,7 +102,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -147,7 +147,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -190,7 +190,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -242,7 +242,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -286,7 +286,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -332,7 +332,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -367,7 +367,7 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/interfaces/IVault.sol": {
-      "lastModificationDate": 1636985228221,
+      "lastModificationDate": 1637054480806,
       "contentHash": "81b974e7bdd68674a1ba86c40cc2d159",
       "sourceName": "contracts/interfaces/IVault.sol",
       "solcConfig": {
@@ -377,7 +377,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -429,7 +429,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -472,7 +472,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -515,7 +515,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -558,7 +558,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -603,7 +603,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -650,7 +650,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -698,7 +698,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -743,7 +743,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -788,7 +788,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -833,7 +833,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -881,7 +881,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -928,7 +928,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -975,7 +975,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1021,7 +1021,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1067,7 +1067,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1112,7 +1112,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1159,7 +1159,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1204,7 +1204,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1252,7 +1252,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1298,7 +1298,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1341,7 +1341,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1376,8 +1376,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/libraries/helpers/BaseSplitCodeFactory.sol": {
-      "lastModificationDate": 1636985228217,
-      "contentHash": "56ff9993b10844ede0be0add9b2173e7",
+      "lastModificationDate": 1637107068333,
+      "contentHash": "eb3efb8e9d75981069e30d63c681260d",
       "sourceName": "contracts/libraries/helpers/BaseSplitCodeFactory.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -1386,7 +1386,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1431,7 +1431,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1474,7 +1474,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1523,7 +1523,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1569,7 +1569,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1615,7 +1615,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1662,7 +1662,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1708,7 +1708,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1761,7 +1761,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1806,7 +1806,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1852,7 +1852,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1895,7 +1895,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1941,7 +1941,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -1976,7 +1976,7 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/RequiemPoolToken.sol": {
-      "lastModificationDate": 1636985228217,
+      "lastModificationDate": 1637011822966,
       "contentHash": "8990c861d7a1a59fa76810926327b87d",
       "sourceName": "contracts/RequiemPoolToken.sol",
       "solcConfig": {
@@ -1986,7 +1986,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2033,7 +2033,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2079,7 +2079,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2125,7 +2125,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2172,7 +2172,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2215,7 +2215,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2258,7 +2258,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2304,7 +2304,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2337,7 +2337,7 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPoolFactory.sol": {
-      "lastModificationDate": 1636985228217,
+      "lastModificationDate": 1637011817962,
       "contentHash": "eb9ff49e963cf42538c640be75070c50",
       "sourceName": "contracts/WeightedPoolFactory.sol",
       "solcConfig": {
@@ -2347,7 +2347,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2395,7 +2395,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2433,7 +2433,7 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/WeightedPool2Tokens.sol": {
-      "lastModificationDate": 1636985822202,
+      "lastModificationDate": 1637011006969,
       "contentHash": "81211e3b8b37fcc9839fbcc854284f35",
       "sourceName": "contracts/WeightedPool2Tokens.sol",
       "solcConfig": {
@@ -2443,7 +2443,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2502,7 +2502,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2547,7 +2547,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2596,7 +2596,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2639,7 +2639,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2685,7 +2685,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2730,7 +2730,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2773,7 +2773,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2816,7 +2816,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2862,7 +2862,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2910,7 +2910,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -2961,7 +2961,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3007,7 +3007,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3052,7 +3052,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3098,7 +3098,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3143,7 +3143,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3191,7 +3191,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3239,7 +3239,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3288,7 +3288,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3337,7 +3337,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3382,7 +3382,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3439,7 +3439,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3484,7 +3484,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3537,7 +3537,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3582,7 +3582,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3634,7 +3634,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3683,7 +3683,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3735,7 +3735,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3784,7 +3784,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3835,7 +3835,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3882,7 +3882,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3926,8 +3926,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/PoolRegistry.sol": {
-      "lastModificationDate": 1636985228221,
-      "contentHash": "2ed45f0a89fb53fcaba4b1b6bc813909",
+      "lastModificationDate": 1637106538173,
+      "contentHash": "6a4c095fbed6423ee4c37442a1c1c053",
       "sourceName": "contracts/PoolRegistry.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -3936,7 +3936,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -3983,7 +3983,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4031,7 +4031,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4080,7 +4080,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4118,8 +4118,8 @@
       ]
     },
     "/home/achthar/requiem-dex/contracts/Vault.sol": {
-      "lastModificationDate": 1636985228217,
-      "contentHash": "2c537cfbcc9c74e4937bb7331361c6a4",
+      "lastModificationDate": 1637011784762,
+      "contentHash": "b34e7398ba866cb57656a6765ac3bc15",
       "sourceName": "contracts/Vault.sol",
       "solcConfig": {
         "version": "0.8.10",
@@ -4128,7 +4128,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4159,7 +4159,7 @@
         "./Swaps.sol"
       ],
       "versionPragmas": [
-        "^0.8.10"
+        "^0.8.9"
       ],
       "artifacts": [
         "Vault"
@@ -4176,7 +4176,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4223,7 +4223,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4274,7 +4274,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4321,7 +4321,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4366,7 +4366,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4411,7 +4411,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4456,7 +4456,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4501,7 +4501,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4546,7 +4546,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4591,7 +4591,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4625,301 +4625,6 @@
         "BasePoolFactory"
       ]
     },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePool.sol": {
-      "lastModificationDate": 1636985228221,
-      "contentHash": "b422d3237bdd76f28108b597236e0d3e",
-      "sourceName": "contracts/interfaces/stakePool/IStakePool.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.10"
-      ],
-      "artifacts": [
-        "IStakePool"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolController.sol": {
-      "lastModificationDate": 1636985228221,
-      "contentHash": "77c3eb44ddfd36dfd3fd8c831eb4a5d0",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolController.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.10"
-      ],
-      "artifacts": [
-        "IStakePoolController"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolCreator.sol": {
-      "lastModificationDate": 1636985228221,
-      "contentHash": "46a536c22319a9605e0eba65b1bb3a36",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolCreator.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.10"
-      ],
-      "artifacts": [
-        "IStakePoolCreator"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolEpochReward.sol": {
-      "lastModificationDate": 1636985228221,
-      "contentHash": "720dc4cc7d863326c7823b1345a0907a",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolEpochReward.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.10"
-      ],
-      "artifacts": [
-        "IStakePoolEpochReward"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardFund.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "ae4355a7f7b02b201a5d157f0adfe919",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardFund.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "IStakePoolRewardFund"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "24047d733317e3ba899586eb4929918e",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardMultiplier.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "IStakePoolRewardMultiplier"
-      ]
-    },
-    "/home/achthar/requiem-dex/contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol": {
-      "lastModificationDate": 1636928920301,
-      "contentHash": "13f0267c4ba4a8f803787a64f30f8030",
-      "sourceName": "contracts/interfaces/stakePool/IStakePoolRewardRebaser.sol",
-      "solcConfig": {
-        "version": "0.8.10",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 1
-          },
-          "evmVersion": "istanbul",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": [
-        "IStakePoolRewardRebaser"
-      ]
-    },
     "/home/achthar/requiem-dex/contracts/libraries/Babylonian.sol": {
       "lastModificationDate": 1636985228217,
       "contentHash": "66a5e66178e9e7ae76e799086500b2c5",
@@ -4931,7 +4636,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -4974,7 +4679,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -5017,7 +4722,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -5060,7 +4765,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -5103,7 +4808,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -5154,7 +4859,7 @@
             "enabled": true,
             "runs": 1
           },
-          "evmVersion": "istanbul",
+          "evmVersion": "london",
           "outputSelection": {
             "*": {
               "*": [
@@ -5190,6 +4895,296 @@
       ],
       "artifacts": [
         "VaultOriginal"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/Requiem2PoolTokens.sol": {
+      "lastModificationDate": 1637019961041,
+      "contentHash": "85e2755a9c8b191221084cdf27d41877",
+      "sourceName": "contracts/Requiem2PoolTokens.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./libraries/math/FixedPoint.sol",
+        "./libraries/helpers/InputHelpers.sol",
+        "./libraries/LogCompression.sol",
+        "./libraries/helpers/TemporarilyPausable.sol",
+        "./libraries/math/Math.sol",
+        "./interfaces/IMinimalSwapInfoPool.sol",
+        "./BasePoolAuthorization.sol",
+        "./RequiemPoolToken.sol",
+        "./BasePool.sol",
+        "./libraries/oracle/PoolPriceOracle.sol",
+        "./libraries/oracle/Buffer.sol",
+        "./interfaces/pool/IFormulaProvider.sol",
+        "./interfaces/pool/IRequiemWeightedMath.sol",
+        "./libraries/weighted/WeightedOracleMath.sol",
+        "./libraries/weighted/WeightedPoolUserDataHelpers.sol",
+        "./libraries/weighted/WeightedPool2TokensMiscData.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "Requiem2PoolTokens"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/pool/IFormulaProvider.sol": {
+      "lastModificationDate": 1637003858590,
+      "contentHash": "5902fce41235fcd14cf74ac0c912526c",
+      "sourceName": "contracts/interfaces/pool/IFormulaProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "IFormulaProvider"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/interfaces/pool/IRequiemWeightedMath.sol": {
+      "lastModificationDate": 1637004150415,
+      "contentHash": "8d5b1809ecb05905a504150df63ab6b1",
+      "sourceName": "contracts/interfaces/pool/IRequiemWeightedMath.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "IRequiemWeightedMath"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/Requiem2PoolTokensFactory.sol": {
+      "lastModificationDate": 1637017985814,
+      "contentHash": "2beed5649dd42a578ffd62d893be06d0",
+      "sourceName": "contracts/Requiem2PoolTokensFactory.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IVault.sol",
+        "./libraries/factories/BasePoolSplitCodeFactory.sol",
+        "./interfaces/pool/IFormulaProvider.sol",
+        "./libraries/factories/FactoryWidePauseWindow.sol",
+        "./interfaces/pool/IRequiemWeightedMath.sol",
+        "./Requiem2PoolTokens.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "Requiem2PoolTokensFactory"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/libraries/weighted/RequiemWeightedMath.sol": {
+      "lastModificationDate": 1637018516051,
+      "contentHash": "c1a0b1877758837e21139787be829db3",
+      "sourceName": "contracts/libraries/weighted/RequiemWeightedMath.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./../math/FixedPoint.sol",
+        "./../math/Math.sol",
+        "../helpers/InputHelpers.sol",
+        "../helpers/RequiemErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "RequiemWeightedMath"
+      ]
+    },
+    "/home/achthar/requiem-dex/contracts/test/TestWETH.sol": {
+      "lastModificationDate": 1637051378440,
+      "contentHash": "bf6da8d04d36ea7f50da15eb51c46d0b",
+      "sourceName": "contracts/test/TestWETH.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IWETH.sol",
+        "../libraries/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "TestWETH"
       ]
     }
   }

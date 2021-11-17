@@ -47,8 +47,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		skipIfAlreadyDeployed: true,
 		from: deployer,
 		args: [
-			authorizer,	// IAuthorizer authorizer,
-			weth,	// IWETH weth,
+			authorizer.address,	// IAuthorizer authorizer,
+			weth.address,	// IWETH weth,
 			0,	// uint256 pauseWindowDuration,
 			0,	// uint256 bufferPeriodDuration
 		],
@@ -66,28 +66,49 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	// await execute('T3', { from: user }, 'approve', router.address, ethers.constants.MaxInt256);
 	// await execute('T4', { from: user }, 'approve', router.address, ethers.constants.MaxInt256);
 
-	console.log("--- deploy factory ---")
-	const weighted2PoolFactory = await deploy("WeightedPool2TokensFactory", {
-		contract: "WeightedPool2TokensFactory",
-		skipIfAlreadyDeployed: true,
+	console.log("--- deploy formulas ---")
+	const formula = await deploy("RequiemWeightedMath", {
+		contract: "RequiemWeightedMath",
+		skipIfAlreadyDeployed: false,
 		from: deployer,
 		args: [
-			vault.address
+
+		],
+		log: true,
+	});
+
+	console.log("--- deploy factory ---")
+	const weighted2PoolFactory = await deploy("Requiem2PoolTokensFactory", {
+		contract: "Requiem2PoolTokensFactory",
+		skipIfAlreadyDeployed: false,
+		from: deployer,
+		args: [
+			vault.address,
+			formula.address
 		],
 		log: true,
 	});
 
 	console.log("--- create pool ---")
 
-	const weights = await execute("WeightedPool2TokensFactory", { from: deployer, log: true },
-		"create",
-		"T1-T2", // string memory name,
-		"T12", // string memory symbol,
+
+	console.log(["TT", // string memory name,
+		"TTT", // string memory symbol,
 		[t1.address, t2.address], // IERC20[] memory tokens,
-		[50, 50], // uint256[] memory weights,
-		1e12, // uint256 swapFeePercentage,
-		true, // bool oracleEnabled,
-		deployer, // address owner
+		[BigNumber.from(500), BigNumber.from(500)], // uint256[] memory weights,
+		BigNumber.from('1000000000000'), // uint256 swapFeePercentage,
+		'false', // bool oracleEnabled,
+		deployer]) // address owner)
+
+	const weights = await execute("Requiem2PoolTokensFactory", { from: deployer, log: true },
+		"create",
+		"TT", // string memory name,
+		"TTT", // string memory symbol,
+		[t1.address, t2.address], // IERC20[] memory tokens,
+		[BigNumber.from(50), BigNumber.from(50)], // uint256[] memory weights,
+		BigNumber.from('1000000000000'), // uint256 swapFeePercentage,
+		false, // bool oracleEnabled,
+		deployer // address owner
 	);
 	console.log("---- res: " + weights)
 };
